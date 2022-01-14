@@ -1,12 +1,10 @@
 --- 
-title: "A GitBook Example for Teaching"
-author: "[dr. Caspar J. van Lissa](https://www.uu.nl/staff/CJvanLissa)"
+title: "California Military Economic Impact Study Process Guide"
+author: "Britnee Pannell & Sumeet Bedi"
 date: "`r Sys.Date()`"
-description: This GitBook is an example of a GitBook for teaching. It can be 
-  adapted for specific courses. The output format for this example
-  is bookdown::gitbook.
+description: This GitBook explains the process used to develop the 2020 California Military Economic Impact Study. 
 documentclass: book
-github-repo: cjvanlissa/gitbook-demo
+github-repo: bnpannell/MEIS_Documentation
 link-citations: yes
 bibliography:
 - book.bib
