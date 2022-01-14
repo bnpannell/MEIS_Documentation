@@ -11,7 +11,7 @@ The over all process for this project is as follows:
 - Data was run through IMPLAN.
 - IMPLAN outputs were graphically displayed and distributed via report. 
 
-# Process in Detail
+## Process in Detail
 
 
 
