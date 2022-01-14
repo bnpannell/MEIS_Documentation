@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | California Military Economic Impact Study Process Guide</title>
+  <title>Section 2 Requirements for Project | California Military Economic Impact Study Process Guide</title>
   <meta name="description" content="This GitBook explains the process used to develop the 2020 California Military Economic Impact Study." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | California Military Economic Impact Study Process Guide" />
+  <meta property="og:title" content="Section 2 Requirements for Project | California Military Economic Impact Study Process Guide" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="bnpannell/MEIS_Documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | California Military Economic Impact Study Process Guide" />
+  <meta name="twitter:title" content="Section 2 Requirements for Project | California Military Economic Impact Study Process Guide" />
   
   <meta name="twitter:description" content="This GitBook explains the process used to develop the 2020 California Military Economic Impact Study." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="index.html"/>
+<link rel="next" href="methods.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -126,19 +126,91 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="requirements-for-project" class="section level1" number="2">
+<h1><span class="header-section-number">Section 2</span> Requirements for Project</h1>
+<p>Need to add a section on software requirements, maybe a blurb on obtaining R and RStudio?</p>
+<p>Data used to complete this study was of three varieties: employment and spending data for the four departments of interest, additional data obtained by submitting FOIA requests, and data required for processing employment and spending data for upload into IMPLAN.</p>
+<p>This data can be further broken down into two sub-categories: information provided in the repository in the form of raw data or code to obtain data and data that will have to be manually obtained.</p>
+<div id="employment-data" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Employment Data</h2>
+<div id="obtainable-with-code" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Obtainable With Code</h3>
+<p>Unfortunately, there is no simple way to obtain employment data with code.</p>
+</div>
+<div id="manual-data-retrieval" class="section level3" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Manual Data Retrieval</h3>
+<p>Employment data can be obtained from several sites. There is no guarantee that these websites will exist in this form indefinitely. Care will be taken to keep this document as up to date as possible.</p>
+<ul>
+<li><p>Department of Defense Employment(DOD): Civilian employment from FedScope, and military employment from DMDC.</p></li>
+<li><p>Department of Homeland Security Employment(DHS): Civilian employment from FedScope.</p></li>
+<li><p>Department of Veterans Affairs(VA): Civilian employment from FedScope.</p></li>
+<li><p>Department of Energy(DOE): Civilian employment from FedScope.</p></li>
+</ul>
+</div>
+</div>
+<div id="spending-data" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Spending Data</h2>
+<div id="code-to-obtain-spending-data" class="section level3" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Code to Obtain Spending Data</h3>
+</div>
+<div id="spending-data-obtained-via-foia" class="section level3" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Spending Data Obtained via FOIA</h3>
+</div>
+</div>
+<div id="raw-data-provided-by" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Raw Data Provided by</h2>
+<p>Include details on Data provided in the “data/raw” folder in the code repo- and the justifications on why it was included and not others</p>
+<p>Here is where things get a little annoying
+- Each file used, with an explanation of where
+to get it and how to navigate the sites used for obtaining data
+- What information each file provides
+- Detailed information on how to make a file custom to specific data needs (where applicable)
+- Any notes on how files may differ according to region and individual project goals</p>
+
+<p>Basically and additional chapter break to specify how to get each data type after defining categories in the “requirements” section</p>
+<div id="obtainable-with-code-1" class="section level3" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Obtainable With Code</h3>
+<p>Unfortunately, there is no simple way to obtain employment data with code.</p>
+</div>
+<div id="manual-data-retrieval-1" class="section level3" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Manual Data Retrieval</h3>
+<p>Employment data can be obtained from several sites. There is no guarantee that these websites will exist in this form indefinitely. Care will be taken to keep this document as up to date as possible.</p>
+<ul>
+<li><p>Department of Defense Employment(DOD): Civilian employment from FedScope, and military employment from DMDC.</p></li>
+<li><p>Department of Homeland Security Employment(DHS): Civilian employment from FedScope.</p></li>
+<li><p>Department of Veterans Affairs(VA): Civilian employment from FedScope.</p></li>
+<li><p>Department of Energy(DOE): Civilian employment from FedScope.</p></li>
+</ul>
+</div>
+</div>
+<div id="spending-data-1" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Spending Data</h2>
+<div id="code-to-obtain-spending-data-1" class="section level3" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Code to Obtain Spending Data</h3>
+</div>
+<div id="spending-data-obtained-via-foia-1" class="section level3" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Spending Data Obtained via FOIA</h3>
+</div>
+</div>
+<div id="raw-data-provided-by-1" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Raw Data Provided by</h2>
+<p>Include details on Data provided in the “data/raw” folder in the code repo- and the justifications on why it was included and not others</p>
+<p>Here is where things get a little annoying
+- Each file used, with an explanation of where
+to get it and how to navigate the sites used for obtaining data
+- What information each file provides
+- Detailed information on how to make a file custom to specific data needs (where applicable)
+- Any notes on how files may differ according to region and individual project goals</p>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -169,7 +241,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/cjvanlissa/gitbook-demo/edit/master/%s",
+"link": "https://github.com/cjvanlissa/gitbook-demo/edit/master/requirements.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | California Military Economic Impact Study Process Guide</title>
+  <title>Section 4 Process in Detail | California Military Economic Impact Study Process Guide</title>
   <meta name="description" content="This GitBook explains the process used to develop the 2020 California Military Economic Impact Study." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | California Military Economic Impact Study Process Guide" />
+  <meta property="og:title" content="Section 4 Process in Detail | California Military Economic Impact Study Process Guide" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="bnpannell/MEIS_Documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | California Military Economic Impact Study Process Guide" />
+  <meta name="twitter:title" content="Section 4 Process in Detail | California Military Economic Impact Study Process Guide" />
   
   <meta name="twitter:description" content="This GitBook explains the process used to develop the 2020 California Military Economic Impact Study." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="methods.html"/>
+<link rel="next" href="conclusion-discussion.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -126,19 +126,57 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="process-in-detail" class="section level1" number="4">
+<h1><span class="header-section-number">Section 4</span> Process in Detail</h1>
+<ul>
+<li><p>Obtain data</p>
+<ul>
+<li><p>Spending data</p>
+<ul>
+<li>Grants</li>
+<li>Contracts</li>
+<li>SmartPay (FOIA Required)</li>
+</ul></li>
+<li><p>Employment Data</p>
+<ul>
+<li>Military Personnel</li>
+<li>Civilian Employment</li>
+</ul>
+<p>DMDC- download and parse csv
+FedScope- Initially have users go to website and save values of interest to a separate csv file to use in IMPLAN later
+Eventually set up a code to generate these values acording to state and national level based on parsing out the download from
+the site.</p></li>
+<li><p>NAICS to IMPLAN crosswalks</p></li>
+<li><p>Spreadsheets provided to aid processing and format outputs</p></li>
+</ul></li>
+<li><p>Process data</p>
+<ul>
+<li>Clean contracts and grant data-</li>
+<li>Clean spending data</li>
+<li>Error check contract spending data</li>
+</ul>
+<p>Will need to go into detail about changes in the code between this year (2021) and subsequent years</p>
+<p>More detailed mention of how the error checking of the USASpending.gov contract data is needed
+A detailed walk through of how to manually check data and use the multiple NAICS to IMPLAN crosswalks to catch data
+Mention how IMPLAN automatically removes any codes having to do with construction so those have to be manually coded</p>
+<p>Some errors occur due to the transaction not being given a NAICS code, those need to be manually fixed</p>
+<p>Issues occur with NAICS codes that apply to multiple IMPLAN codes- give detailed explanation of how this was worked around and data was processed and added back to the main cleaned data.</p></li>
+<li><p>Run Data Through IMPLAN
+At this point we stop giving details to users about subsequent processes- we are not responsible for teaching users how to use IMPLAN.
+We should go over the general steps in what we did next to process data from IMPLAN, and how it was displayed graphically to educate the customers and
+summarize results for easier understanding</p></li>
+</ul>
+
+<p>Place holder for section on how to enter the output files into implan and what IMPLAN analysis was run so that our study can be repeated.</p>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="methods.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conclusion-discussion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -169,7 +207,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/cjvanlissa/gitbook-demo/edit/master/%s",
+"link": "https://github.com/cjvanlissa/gitbook-demo/edit/master/methods.Rmd",
 "text": "Edit"
 },
 "history": {

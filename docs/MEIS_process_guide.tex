@@ -1,0 +1,355 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\title{California Military Economic Impact Study Process Guide}
+\author{Britnee Pannell \& Sumeet Bedi}
+\date{2022-01-14}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={California Military Economic Impact Study Process Guide},
+  pdfauthor={Britnee Pannell \& Sumeet Bedi},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{introduction}{%
+\chapter{Introduction}\label{introduction}}
+
+Introduce the project, introduce the sections in the Git Document and fill in links to all of the sections
+
+\begin{itemize}
+\tightlist
+\item
+  Who is funding project
+\item
+  Where is the focus of the project?
+\item
+  When does the project take place?
+\item
+  How does the project get accomplished? (rough overview)
+\end{itemize}
+
+Why are we doing this project? What does it hope to answer?
+Specifically mention this documentation is to allow other areas/states to have a path to follow if they wish to duplicate this work.
+
+This also serves to document and justify our conclusions in the main reports if anyone wants to `check our work.'
+
+\hypertarget{requirements-for-project}{%
+\chapter{Requirements for Project}\label{requirements-for-project}}
+
+Need to add a section on software requirements, maybe a blurb on obtaining R and RStudio?
+
+Data used to complete this study was of three varieties: employment and spending data for the four departments of interest, additional data obtained by submitting FOIA requests, and data required for processing employment and spending data for upload into IMPLAN.
+
+This data can be further broken down into two sub-categories: information provided in the repository in the form of raw data or code to obtain data and data that will have to be manually obtained.
+
+\hypertarget{employment-data}{%
+\section{Employment Data}\label{employment-data}}
+
+\hypertarget{obtainable-with-code}{%
+\subsection{Obtainable With Code}\label{obtainable-with-code}}
+
+Unfortunately, there is no simple way to obtain employment data with code.
+
+\hypertarget{manual-data-retrieval}{%
+\subsection{Manual Data Retrieval}\label{manual-data-retrieval}}
+
+Employment data can be obtained from several sites. There is no guarantee that these websites will exist in this form indefinitely. Care will be taken to keep this document as up to date as possible.
+
+\begin{itemize}
+\item
+  Department of Defense Employment(DOD): Civilian employment from FedScope, and military employment from DMDC.
+\item
+  Department of Homeland Security Employment(DHS): Civilian employment from FedScope.
+\item
+  Department of Veterans Affairs(VA): Civilian employment from FedScope.
+\item
+  Department of Energy(DOE): Civilian employment from FedScope.
+\end{itemize}
+
+\hypertarget{spending-data}{%
+\section{Spending Data}\label{spending-data}}
+
+\hypertarget{code-to-obtain-spending-data}{%
+\subsection{Code to Obtain Spending Data}\label{code-to-obtain-spending-data}}
+
+\hypertarget{spending-data-obtained-via-foia}{%
+\subsection{Spending Data Obtained via FOIA}\label{spending-data-obtained-via-foia}}
+
+\hypertarget{raw-data-provided-by}{%
+\section{Raw Data Provided by}\label{raw-data-provided-by}}
+
+Include details on Data provided in the ``data/raw'' folder in the code repo- and the justifications on why it was included and not others
+
+Here is where things get a little annoying
+- Each file used, with an explanation of where
+to get it and how to navigate the sites used for obtaining data
+- What information each file provides
+- Detailed information on how to make a file custom to specific data needs (where applicable)
+- Any notes on how files may differ according to region and individual project goals
+
+Basically and additional chapter break to specify how to get each data type after defining categories in the ``requirements'' section
+
+\hypertarget{obtainable-with-code-1}{%
+\subsection{Obtainable With Code}\label{obtainable-with-code-1}}
+
+Unfortunately, there is no simple way to obtain employment data with code.
+
+\hypertarget{manual-data-retrieval-1}{%
+\subsection{Manual Data Retrieval}\label{manual-data-retrieval-1}}
+
+Employment data can be obtained from several sites. There is no guarantee that these websites will exist in this form indefinitely. Care will be taken to keep this document as up to date as possible.
+
+\begin{itemize}
+\item
+  Department of Defense Employment(DOD): Civilian employment from FedScope, and military employment from DMDC.
+\item
+  Department of Homeland Security Employment(DHS): Civilian employment from FedScope.
+\item
+  Department of Veterans Affairs(VA): Civilian employment from FedScope.
+\item
+  Department of Energy(DOE): Civilian employment from FedScope.
+\end{itemize}
+
+\hypertarget{spending-data-1}{%
+\section{Spending Data}\label{spending-data-1}}
+
+\hypertarget{code-to-obtain-spending-data-1}{%
+\subsection{Code to Obtain Spending Data}\label{code-to-obtain-spending-data-1}}
+
+\hypertarget{spending-data-obtained-via-foia-1}{%
+\subsection{Spending Data Obtained via FOIA}\label{spending-data-obtained-via-foia-1}}
+
+\hypertarget{raw-data-provided-by-1}{%
+\section{Raw Data Provided by}\label{raw-data-provided-by-1}}
+
+Include details on Data provided in the ``data/raw'' folder in the code repo- and the justifications on why it was included and not others
+
+Here is where things get a little annoying
+- Each file used, with an explanation of where
+to get it and how to navigate the sites used for obtaining data
+- What information each file provides
+- Detailed information on how to make a file custom to specific data needs (where applicable)
+- Any notes on how files may differ according to region and individual project goals
+
+\hypertarget{methods}{%
+\chapter{Methods}\label{methods}}
+
+The following section details how to use the data and R code provided as well as an explanation of how the code works.
+
+\hypertarget{process-outline}{%
+\section{Process Outline}\label{process-outline}}
+
+The over all process for this project is as follows:
+
+\begin{itemize}
+\tightlist
+\item
+  Data was Obtained
+\item
+  Data was Filtered for relevance.
+\item
+  Errors in data were for checked and repaired where found.
+\item
+  Data was formatted for use in IMPLAN.
+\item
+  Data was run through IMPLAN.
+\item
+  IMPLAN outputs were graphically displayed and distributed via report.
+\end{itemize}
+
+\hypertarget{process-in-detail}{%
+\chapter{Process in Detail}\label{process-in-detail}}
+
+\begin{itemize}
+\item
+  Obtain data
+
+  \begin{itemize}
+  \item
+    Spending data
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Grants
+    \item
+      Contracts
+    \item
+      SmartPay (FOIA Required)
+    \end{itemize}
+  \item
+    Employment Data
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Military Personnel
+    \item
+      Civilian Employment
+    \end{itemize}
+
+    DMDC- download and parse csv
+    FedScope- Initially have users go to website and save values of interest to a separate csv file to use in IMPLAN later
+    Eventually set up a code to generate these values acording to state and national level based on parsing out the download from
+    the site.
+  \item
+    NAICS to IMPLAN crosswalks
+  \item
+    Spreadsheets provided to aid processing and format outputs
+  \end{itemize}
+\item
+  Process data
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Clean contracts and grant data-
+  \item
+    Clean spending data
+  \item
+    Error check contract spending data
+  \end{itemize}
+
+  Will need to go into detail about changes in the code between this year (2021) and subsequent years
+
+  More detailed mention of how the error checking of the USASpending.gov contract data is needed
+  A detailed walk through of how to manually check data and use the multiple NAICS to IMPLAN crosswalks to catch data
+  Mention how IMPLAN automatically removes any codes having to do with construction so those have to be manually coded
+
+  Some errors occur due to the transaction not being given a NAICS code, those need to be manually fixed
+
+  Issues occur with NAICS codes that apply to multiple IMPLAN codes- give detailed explanation of how this was worked around and data was processed and added back to the main cleaned data.
+\item
+  Run Data Through IMPLAN
+  At this point we stop giving details to users about subsequent processes- we are not responsible for teaching users how to use IMPLAN.
+  We should go over the general steps in what we did next to process data from IMPLAN, and how it was displayed graphically to educate the customers and
+  summarize results for easier understanding
+\end{itemize}
+
+Place holder for section on how to enter the output files into implan and what IMPLAN analysis was run so that our study can be repeated.
+
+\hypertarget{conclusion-discussion}{%
+\chapter{Conclusion/ Discussion}\label{conclusion-discussion}}
+
+\begin{itemize}
+\tightlist
+\item
+  Importance of modern techniques to get more efficient data analysis in a timely fashion
+\item
+  Other closing remarks
+\end{itemize}
+
+Pitfalls, how refactoring code caught some of them. How this process will result in a more robust study over subsequent years
+
+Government spending data is very difficult to obtain and there is not a lot of good documentation to help lay people use this data
+Hopefully we provide some guidelines and aid in discovering and processing this data so that quality studies can come about and
+Government spending can become more transparent.
+
+Feel good hopeful stuff next.
+
+\hypertarget{license-your-gitbook}{%
+\chapter{License your GitBook}\label{license-your-gitbook}}
+
+In the spirit of Open Science, it is good to think about making your course materials Open Source. That means that other people can use them. In principle, if you publish materials online without license information, you hold the copyright to those materials. If you want them to be Open Source, you must include a license. It is not always obvious what license to choose.
+
+The Creative Commons licenses are typically suitable for course materials. This GitBook, for example, is licensed under CC-BY 4.0. That means you can use and remix it as you like, but you must credit the original source.
+
+If your project is more focused on software or source code, consider using the \href{https://www.gnu.org/licenses/gpl-3.0.en.html}{GNU GPL v3 license} instead.
+
+You can find \href{https://creativecommons.org/share-your-work/licensing-examples}{more information about the Creative Commons Licenses here}. Specific licenses that might be useful are:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://creativecommons.org/share-your-work/public-domain/cc0/}{CC0 (``No Rights Reserved'')}, everybody can do what they want with your work.
+\item
+  \href{https://creativecommons.org/licenses/by/4.0/}{CC-BY 4.0 (``Attribution'')}, everybody can do what they want with your work, but they must credit you. Note that this license may not be suitable for software or source code!
+\end{itemize}
+
+For compatibility between CC and GNU licenses, see \href{https://creativecommons.org/faq/\#Can_I_apply_a_Creative_Commons_license_to_software.3F}{this FAQ}.
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}
