@@ -1,4 +1,6 @@
-Basically and additional chapter break to specify how to get each data type after defining categories in the "requirements" section 
+# How to Obtain Necessary Data
+
+Basically an additional chapter break to specify how to get each data type after defining categories in the "requirements" section 
 
 ### Obtainable With Code
 Unfortunately, there is no simple way to obtain employment data with code.

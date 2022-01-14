@@ -3,7 +3,7 @@
 - Importance of modern techniques to get more efficient data analysis in a timely fashion 
 - Other closing remarks
 
-Pitfalls, how refactoring code caught some of them. How this process will result in a more robust study over subsequent years
+Pitfalls, how re factoring code caught some of them. How this process will result in a more robust study over subsequent years
 
 Government spending data is very difficult to obtain and there is not a lot of good documentation to help lay people use this data
 Hopefully we provide some guidelines and aid in discovering and processing this data so that quality studies can come about and 

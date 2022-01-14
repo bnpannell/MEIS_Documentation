@@ -1,1 +1,6 @@
+# Using IMPLAN
+
+
 Place holder for section on how to enter the output files into implan and what IMPLAN analysis was run so that our study can be repeated. 
+
+Should not go into too much detail, as full instructions on how IMPLAN works is outside of the scope of this process guide. 
