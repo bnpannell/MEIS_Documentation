@@ -1,16 +1,15 @@
-book_filename: "gitbook-demo"
-rmd_files: ["index.Rmd",
-            "prerequisites.Rmd",
-            "get_your_gitbook.Rmd",
-            "editing_the_book.Rmd",
-            "figures_tables.Rmd",
-            "examples.Rmd",
-            "open_educational.Rmd",
-            "use_in_course.Rmd",
+book_filename: "MEIS_methods"
+rmd_files: ["introduction.Rmd",
+            "requirements.Rmd",
+            "how_to_obtain.Rmd",
+            "methods.Rmd",
+            "using_IMPLAN.Rmd",
+            "conclusion.Rmd",
+            "whats_next.Rmd",
             "licenses.Rmd",
             "references.Rmd"]
 output_dir: "docs"
 language:
   ui:
-    chapter_name: "Chapter "
+    chapter_name: "Section "
 delete_merged_file: true

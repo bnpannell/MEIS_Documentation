@@ -1,0 +1,46 @@
+# Requirements for Project
+
+Need to add a section on software requirements, maybe a blurb on obtaining R and RStudio?
+
+Data used to complete this study was of three varieties: employment and spending data for the four departments of interest, additional data obtained by submitting FOIA requests, and data required for processing employment and spending data for upload into IMPLAN. 
+
+This data can be further broken down into two sub-categories: information provided in the repository in the form of raw data or code to obtain data and data that will have to be manually obtained. 
+
+
+## Employment Data
+
+### Obtainable With Code
+Unfortunately, there is no simple way to obtain employment data with code.
+
+### Manual Data Retrieval 
+Employment data can be obtained from several sites. There is no guarantee that these websites will exist in this form indefinitely. Care will be taken to keep this document as up to date as possible.
+
+- Department of Defense Employment(DOD): Civilian employment from FedScope, and military employment from DMDC.
+
+- Department of Homeland Security Employment(DHS): Civilian employment from FedScope.
+
+- Department of Veterans Affairs(VA): Civilian employment from FedScope.
+
+- Department of Energy(DOE): Civilian employment from FedScope.
+
+
+## Spending Data
+
+### Code to Obtain Spending Data
+
+### Spending Data Obtained via FOIA 
+
+
+
+
+
+## Raw Data Provided by
+Include details on Data provided in the "data/raw" folder in the code repo- and the justifications on why it was included and not others
+
+
+Here is where things get a little annoying
+- Each file used, with an explanation of where
+to get it and how to navigate the sites used for obtaining data 
+- What information each file provides 
+- Detailed information on how to make a file custom to specific data needs (where applicable) 
+- Any notes on how files may differ according to region and individual project goals

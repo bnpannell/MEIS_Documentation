@@ -1,0 +1,39 @@
+--- 
+title: "A GitBook Example for Teaching"
+author: "[dr. Caspar J. van Lissa](https://www.uu.nl/staff/CJvanLissa)"
+date: "`r Sys.Date()`"
+description: This GitBook is an example of a GitBook for teaching. It can be 
+  adapted for specific courses. The output format for this example
+  is bookdown::gitbook.
+documentclass: book
+github-repo: cjvanlissa/gitbook-demo
+link-citations: yes
+bibliography:
+- book.bib
+- packages.bib
+site: bookdown::bookdown_site
+biblio-style: apalike
+---
+
+<!--"Using GitBooks to create Open course materials"-->
+# About GitBooks
+
+![](./img/using_gitbook.jpeg)
+
+
+
+
+
+# Introduction
+
+Introduce the project, introduce the sections in the Git Document and fill in links to all of the sections
+
+- Who is funding project 
+- Where is the focus of the project? 
+- When does the project take place? 
+- How does the project get accomplished? (rough overview)
+
+Why are we doing this project? What does it hope to answer? 
+Specifically mention this documentation is to allow other areas/states to have a path to follow if they wish to duplicate this work.
+
+This also serves to document and justify our conclusions in the main reports if anyone wants to 'check our work.'
