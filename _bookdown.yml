@@ -1,5 +1,5 @@
-book_filename: "MEIS_methods"
-rmd_files: ["introduction.Rmd",
+book_filename: "MEIS_process_guide"
+rmd_files: ["index.Rmd",
             "requirements.Rmd",
             "how_to_obtain.Rmd",
             "methods.Rmd",

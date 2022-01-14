@@ -15,15 +15,6 @@ site: bookdown::bookdown_site
 biblio-style: apalike
 ---
 
-<!--"Using GitBooks to create Open course materials"-->
-# About GitBooks
-
-![](./img/using_gitbook.jpeg)
-
-
-
-
-
 # Introduction
 
 Introduce the project, introduce the sections in the Git Document and fill in links to all of the sections
