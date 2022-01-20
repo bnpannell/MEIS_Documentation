@@ -1,24 +1,28 @@
 # Requirements for Project
 
-The primary requirements to recreate California's study or perform studies in additional areas are federal spending data and the software used to obtain and process that data. Fortunately all software used to process this data is free and available online. 
+The primary requirements to recreate California's study or perform studies in additional areas are federal spending data and the software used to obtain and process that data. Fortunately all software and most Federal data is free and available online. 
 
+## Software Requirements
 1. The R coding language from [cloud.r-project.org](https://cloud.r-project.org/). This language is used to obtain and process data.
-2. RStudio Desktop from [rstudio.com](https://rstudio.com/products/rstudio/download/#download). RStudio is the integrated development environment (IDE) used to run R scripts and develop code. 3. Git from [git-scm.com](https://git-scm.com/downloads). A comprehensive guide to installing Git is available at [happygitwithr.com](https://happygitwithr.com/install-git.html). Git allows version control of edits across a multi person team of researchers. 
+
+2. RStudio Desktop from [rstudio.com](https://rstudio.com/products/rstudio/download/#download). RStudio is the integrated development environment (IDE) used to run R scripts and develop code.
+
+3. Git from [git-scm.com](https://git-scm.com/downloads). A comprehensive guide to installing Git is available at [happygitwithr.com](https://happygitwithr.com/install-git.html). Git allows version control of edits across a multi-person team of researchers. 
+
 4. If a Github account is needed, one can sign up and register at <https://github.com/>. Individual free plans are available, as well as [free upgrades](https://help.github.com/en/articles/applying-for-an-educator-or-researcher-discount) for qualifying academic purposes.Github is used to develop and host this project. 
 
 
-
-
+## Data Requirements
 Data used to complete this study was of three varieties: employment and spending data for The Department of Defense (DOD), The Department of Homeland Security (DHS), The Department of Veteran's Affairs (VA), and the Department of Energy (DOE), additional data obtained by submitting FOIA requests, and data sheets required for processing employment and spending data for upload into IMPLAN. 
 
 
 
-## Employment Data
+- Employment Data
 
-### Obtainable With Code
+- Obtainable With Code
 Unfortunately, there is no simple way to obtain employment data with code.
 
-### Manual Data Retrieval 
+- Manual Data Retrieval 
 Employment data can be obtained from several sites. There is no guarantee that these websites will exist in this form indefinitely. Care will be taken to keep this document as up to date as possible.
 
 - Department of Defense Employment(DOD): Civilian employment from FedScope, and military employment from DMDC.
@@ -30,23 +34,5 @@ Employment data can be obtained from several sites. There is no guarantee that t
 - Department of Energy(DOE): Civilian employment from FedScope.
 
 
-## Spending Data
 
-### Code to Obtain Spending Data
-
-### Spending Data Obtained via FOIA 
-
-
-
-
-
-## Raw Data Provided by
-Include details on Data provided in the "data/raw" folder in the code repo- and the justifications on why it was included and not others
-
-
-Here is where things get a little annoying
-- Each file used, with an explanation of where
-to get it and how to navigate the sites used for obtaining data 
-- What information each file provides 
-- Detailed information on how to make a file custom to specific data needs (where applicable) 
-- Any notes on how files may differ according to region and individual project goals
+The next section details how to obtain this necessary data. 
