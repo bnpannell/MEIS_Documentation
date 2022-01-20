@@ -1,6 +1,12 @@
 # Using IMPLAN
 
 
-Place holder for section on how to enter the output files into implan and what IMPLAN analysis was run so that our study can be repeated. 
+*Place holder for section on how to enter the output files into implan and what IMPLAN analysis was run so that our study can be repeated.* 
 
-Should not go into too much detail, as full instructions on how IMPLAN works is outside of the scope of this process guide. 
+*Should not go into too much detail, as full instructions on how IMPLAN works is outside of the scope of this process guide.* 
+
+Once the IMPLAN activity sheets for your desired geographies have been produced, it is time to upload them into IMPLAN and allow the tool to run its analysis. When you log into IMPLAN, the homepage should display 3 boxes to navigate through: Regions, Impacts, and Projects. 
+
+- **Regions:** Click on Regions to begin your analysis. This should open up a map of the United States. Select the region of interest for the analysis and give this project a name. After saving the project, move on to the Impacts tab. 
+
+- **Impacts:** In the Impacts tab, look for the button to the right of the "Save" button. Click on that, and select "upload event template". From there, find the activity sheet for the geography of interest and select that for upload. Ensure that "Industry Change Event" and "Household Spending" can be selected, and choose those for uploading into IMPLAN. The data points for the respective IMPLAN sectors should then auto-populate on IMPLAN. If your analysis is including SmartPay spending data, be sure to manually add that in as type "Institutional Spending", specification 11001, and the value amount. Choose to select all events (to the left of the "Save" button) and drag them over to the geography's model on the right side of the IMPLAN screen. After that, select to run the model at the bottom right. Depending on how big the model, IMPLAN will take time to generate the results. Once the model is done with its analysis, click on the "View Results" button.
