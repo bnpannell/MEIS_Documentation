@@ -13,14 +13,19 @@ The primary requirements to recreate California's study or perform studies in ad
 
 
 ## Data Requirements
-Data used to complete this study was of three varieties: employment and spending data for the DOD, the DHS, the VA, and the DOE, additional data obtained by submitting FOIA requests, and data sheets required for processing employment and spending data for upload into IMPLAN. 
+Data used to complete this study is of three varieties: employment and spending data for the DOD, the DHS, the VA, and the DOE, additional data obtained by submitting FOIA requests, and data sheets required for processing employment and spending data for upload into IMPLAN. 
 
 
+### Employment Data
+Civilian and military employment data is needed for the four departments of interest. 
 
-- Employment Data
+### Spending Data
 
-- Obtainable With Code
-Unfortunately, there is no simple way to obtain employment data with code.
+### Additional Data
+
+### Data Sheets 
+
+
 
 - Manual Data Retrieval 
 Employment data can be obtained from several sites. There is no guarantee that these websites will exist in this form indefinitely. Care will be taken to keep this document as up to date as possible.
