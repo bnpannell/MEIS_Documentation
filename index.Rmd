@@ -15,7 +15,8 @@ biblio-style: apalike
 
 # Introduction
 
-Introduce the project, introduce the sections in the Git Document and fill in links to all of the sections
+Introduce the project
+Add blurb about the history of the project and how it has evolved since then. 
 
 - Who is funding project 
 - Where is the focus of the project? 
