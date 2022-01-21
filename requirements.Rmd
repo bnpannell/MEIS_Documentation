@@ -11,5 +11,8 @@ To recreate California's study or to perform studies in additional areas, specia
 
 4. If a Github account is needed, one can sign up and register at <https://github.com/>. Individual free plans are available, as well as [free upgrades](https://help.github.com/en/articles/applying-for-an-educator-or-researcher-discount) for qualifying academic purposes.Github is used to develop and host this project. 
 
+## Download Necessary R Packages
+dplyr, httr, jsonlite, openxlsx, readxl, tidyverse (double check that our code actually uses all of these packages)
+
 
 The next section details data necessary to complete this project as well as how to obtain it. 

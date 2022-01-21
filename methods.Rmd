@@ -2,18 +2,7 @@
 The following section details how to use the data and R code provided as well as an explanation of how the code works. 
 
 
-## Set Up Repository
-Instructions on how to get repo containing code and raw data provided to end users.
-
-Include link to repo and specifically Readme.md file (won't be able to link this until that repo finds its forever home)
-
-Do we want to have a chapter on just setting up the repo and running through each section and file it contains? AKA a data dictionary for the Repo? To insert before the methods section?? 
-So maybe 2 additional sections 
-
-### Download Necessary R Packages
-dplyr, httr, jsonlite, openxlsx, readxl, tidyverse (double check that our code actually uses all of these packages)
-
-### Parameters File Instructions
+## Parameters File Instructions
 Include detailed info on Parameters file and how to set it up for a specific project. Default entries are for this study of California. 
 Readme will eventually link to this section 
 
@@ -25,11 +14,11 @@ Here is where you obtain your employment data and make the region specific file 
 ## The Code
 Some words here, maybe a rough over view of the process before getting into the specific details? 
 
-### DEPRECATED Master Code
+
 Explanation of code
-Clear Environment
-Load Libraries
-Load Parameters File
+- Clear Environment
+- Load Libraries
+- Load Parameters File
 
 Load Functions
 - obtain USAspending

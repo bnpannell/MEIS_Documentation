@@ -1,0 +1,3 @@
+# Data Dictionary for Repository
+This section details each file contained in the code repository and a summary of what it is used for in the project. For a more detailed explanation, please see the "Methods" section. [add link later]
+

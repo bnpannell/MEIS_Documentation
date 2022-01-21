@@ -1,0 +1,10 @@
+# Setting Up the Repository
+
+## Obtain Repository
+Instructions on how to get repo containing code and raw data provided to end users.
+
+Include link to repo and specifically Readme.md file (won't be able to link this until that repo finds its forever home)
+
+Do we want to have a chapter on just setting up the repo and running through each section and file it contains? AKA a data dictionary for the Repo? To insert before the methods section?? 
+So maybe 2 additional sections 
+

@@ -120,6 +120,11 @@ To recreate California's study or to perform studies in additional areas, specia
   If a Github account is needed, one can sign up and register at \url{https://github.com/}. Individual free plans are available, as well as \href{https://help.github.com/en/articles/applying-for-an-educator-or-researcher-discount}{free upgrades} for qualifying academic purposes.Github is used to develop and host this project.
 \end{enumerate}
 
+\hypertarget{download-necessary-r-packages}{%
+\section{Download Necessary R Packages}\label{download-necessary-r-packages}}
+
+dplyr, httr, jsonlite, openxlsx, readxl, tidyverse (double check that our code actually uses all of these packages)
+
 The next section details data necessary to complete this project as well as how to obtain it.
 
 \hypertarget{data-requirements}{%
@@ -179,13 +184,11 @@ to get it and how to navigate the sites used for obtaining data
 - Detailed information on how to make a file custom to specific data needs (where applicable)
 - Any notes on how files may differ according to region and individual project goals
 
-\hypertarget{methods}{%
-\chapter{Methods}\label{methods}}
+\hypertarget{setting-up-the-repository}{%
+\chapter{Setting Up the Repository}\label{setting-up-the-repository}}
 
-The following section details how to use the data and R code provided as well as an explanation of how the code works.
-
-\hypertarget{set-up-repository}{%
-\section{Set Up Repository}\label{set-up-repository}}
+\hypertarget{obtain-repository}{%
+\section{Obtain Repository}\label{obtain-repository}}
 
 Instructions on how to get repo containing code and raw data provided to end users.
 
@@ -194,13 +197,18 @@ Include link to repo and specifically Readme.md file (won't be able to link this
 Do we want to have a chapter on just setting up the repo and running through each section and file it contains? AKA a data dictionary for the Repo? To insert before the methods section??
 So maybe 2 additional sections
 
-\hypertarget{download-necessary-r-packages}{%
-\subsection{Download Necessary R Packages}\label{download-necessary-r-packages}}
+\hypertarget{data-dictionary-for-repository}{%
+\chapter{Data Dictionary for Repository}\label{data-dictionary-for-repository}}
 
-dplyr, httr, jsonlite, openxlsx, readxl, tidyverse (double check that our code actually uses all of these packages)
+This section details each file contained in the code repository and a summary of what it is used for in the project. For a more detailed explanation, please see the ``Methods'' section. {[}add link later{]}
+
+\hypertarget{methods}{%
+\chapter{Methods}\label{methods}}
+
+The following section details how to use the data and R code provided as well as an explanation of how the code works.
 
 \hypertarget{parameters-file-instructions}{%
-\subsection{Parameters File Instructions}\label{parameters-file-instructions}}
+\section{Parameters File Instructions}\label{parameters-file-instructions}}
 
 Include detailed info on Parameters file and how to set it up for a specific project. Default entries are for this study of California.
 Readme will eventually link to this section
@@ -217,13 +225,10 @@ Here is where you obtain your employment data and make the region specific file 
 
 Some words here, maybe a rough over view of the process before getting into the specific details?
 
-\hypertarget{deprecated-master-code}{%
-\subsection{DEPRECATED Master Code}\label{deprecated-master-code}}
-
 Explanation of code
-Clear Environment
-Load Libraries
-Load Parameters File
+- Clear Environment
+- Load Libraries
+- Load Parameters File
 
 Load Functions
 - obtain USAspending

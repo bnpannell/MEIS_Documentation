@@ -2,6 +2,8 @@ book_filename: "MEIS_process_guide"
 rmd_files: ["index.Rmd",
             "requirements.Rmd",
             "how_to_obtain.Rmd",
+            "set_up_repo.Rmd",
+            "data_dictionary.Rmd",
             "methods.Rmd",
             "using_IMPLAN.Rmd",
             "conclusion.Rmd",
