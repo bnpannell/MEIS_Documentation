@@ -34,12 +34,5 @@ A variety of data sources needed to be obtained online in order to assist with t
 - [NAICS to IMPLAN crosswalk](https://support.implan.com/hc/en-us/articles/360034896614-546-Industries-Conversions-Bridges-Construction-2018-Data) from IMPLAN. At this link, IMPLAN provides a variety of crosswalks that one can use to relate data from other source to IMPLAN's 546 industries. On this page, one can go to the second heading titled "2017 NAICS to IMPLAN 546 Industries" and download the Excel file. This crosswalk is utilized to help relate the USAspending contracts data to IMPLAN sectors in order to run that spending data through the IMPLAN software.
 
 ### Data Provided Raw/Self-Made
-Include details on Data provided in the "data/raw" folder in the code repo- and the justifications on why it was included and not others
 
-
-Here is where things get a little annoying
-- Each file used, with an explanation of where
-to get it and how to navigate the sites used for obtaining data 
-- What information each file provides 
-- Detailed information on how to make a file custom to specific data needs (where applicable) 
-- Any notes on how files may differ according to region and individual project goals
+The repository contains some raw data files that we have prepared for this project. Specific instructions on how to access this repository and utilize these raw data sources are explained in the next section.

@@ -2,29 +2,63 @@
 The following section details how to use the data and R code provided as well as an explanation of how the code works. 
 
 
-## Parameters File Instructions
-Include detailed info on Parameters file and how to set it up for a specific project. Default entries are for this study of California. 
-Readme will eventually link to this section 
+## Reviewing the Parameters File
+The first step in working with this code involves looking at the Parameters file. This file allows for alterations in the data analysis based on particular criteria that one may want to modify in their study, such as geography of interest, year, agencies of interest, and so forth. The default entries in the parameters file are based on this study of California. 
 
-## Make User Specific Data Files
+*Readme will eventually link to this section* 
+
+## Making User Specific Data Files
 Edit framework files in raw data of repo and move into appropriate section of repo.
 
 Here is where you obtain your employment data and make the region specific file to read in those numbers (if we don't just put them in the parameters file?) 
 
-## The Code
-Some words here, maybe a rough over view of the process before getting into the specific details? 
+## Processing the Data
+After modifying the parameter files with the appropriate criteria and creating user specific data, one can begin working through the code to process the data and prepare it for IMPLAN. Refer to the deprecated_run_analysis_master.R script to run through the data analysis process for this project.
 
+### Step 1: Clearing Environment, and Loading in Packages and Parameters
+The first lines of code provide some housekeeping steps prior to running through the analysis. Line 4 allows the user to clear their global environment in RStudio, removing all previously defined or loaded packages, variables, values, etc. In running through the analysis wholesale, a good first step is to clear one's environment. Following this is lines 7-12, which load in the various RStudio library packages that are needed to perform this analysis. For more information on these packages, please refer to our References section ("ADD IN LINK TO REFERENCES AND/OR R PACKAGE DESCRIPTIONS"). The final housekeeping step involves line 15, which loads in the parameters file mentioned above. 
 
-Explanation of code
-- Clear Environment
-- Load Libraries
-- Load Parameters File
+### Step 2: Loading in Functions
+Lines 19-23 compose the second step of the data analysis process: loading in functions that standardize and simplify working through the data. Line 19 loads in a R script that performs a call to USAspending.gov's API in order to grab the relevant contract, grant, and direct payment spending data that we need for our analysis and download it into 2 files (1 for contracts, and 1 for grants/direct payments) at a specified file path location. In this case, the 2 CSV files obtained are downloaded into the data/temp folder. The parameters file is particularly important for this line of code, as the parameters file holds many of the filters that are used to sort what data is obtained from USAspending with this function. Line 20 loads in a function that is used to place additional filters on the obtained USAspending data and write the filtered data into CSV files. These additional filters are also outlined in the parameters file, but the actual filter function is not run until lines 26-30 (see step 3 for more details). 
 
-Load Functions
-- obtain USAspending
-- filter USAspending
-- split USAspenging
+Line 21 loads in a function that concatenates the USAspending contract and grant data files into one dataframe in R, while also removing direct payments from that concatenation (as it is calculated separate from contracts and grants. more on this will be detailed below). The actual concatenate function is not run until lines 39 and 41 (see step 5 for more details). Line 22 loads in a function that splits out the concatenated USAspending dataframe by agency, taking out DOE data from the main dataframe. This is done because DOE's spending activity has been kept separate from the main data analysis of the project. The actual split function is not run until lines 44-47 (see step 6 for more details). Line 23 loads in a function that aggregates the USAspending and DOEspending dataframes by IMPLAN sector. This gets the contracts and grants spending data for 2 IMPLAN activity sheets complete: 1 for the main statewide analysis, and 1 for the DOE statewide analysis. The actual aggregate function is not run until lines 55-60 (see step 7 for more details).
 
+### Step 3: Filtering the USAspending Data
+Lines 26-30 begin the third step of filtering down the USAspending data obtained from the API call. Lines 26 and 27 read in the downloaded contracts and grants/direct payments files (respectively) and assign them each to a variable. Lines 29 and 30 perform the filter_usaspending function (that was loaded in at line 20) on each of those variables. 
+
+The filter_usaspending function has five elements that must be referenced: file_name, state, doe_filters, filters, and out_name. 
+
+- The **file_name** element is a call to whichever data file we want to pass through to be filtered - in this case, the 2 USAspending CSVs that are defined in lines 26 and 27. 
+- The **state** element is defined in our parameters, based on the state of interest for our study. In this case, that state is California. This element is added to ensure that the primary_place_of_performance_state is the same as the recipient_state (which was filtered in our obtain_usaspending function), thus ensuring that all data entries included in the analysis are in the state of interest for the study.
+- The **doe_filters** element is defined in our parameters, based on **doe_offices**. This element is included to filter out DOE spending done in the state that is not national security-related. The basis for this filter element is from a list of DOE sub-agencies that were demarcated as national security-related.
+- The **filters** element is defined in our parameters, based on **contract_columns** and **grant_columns**, respectively. This element is included to pare down the columns of data from the USAspending files to retain only the pertinent columns of data for our analysis.
+- The **out_name** element is defined in our parameters, based on **c_out_name** and **g_out_name**, respectively. This element is included to give a naming convention for the files that get generated as a result of running the filter function.
+
+After running the filter functions, 2 CSVs files should be generated in the data/temp folder, by the name defined from the **out_name** element.
+
+### Step 4: Error checking the USAspending Data
+Lines 34-35 begin the fourth step of checking for errors in the filtered USAspending data and fixing them. The process for error checking and fixing the data differs for contracts and grants.
+
+#### Error Checking USAspending Contracts
+Line 34
+
+#### Error Checking USAspending Grants
+Line 35
+
+### Step 5: Concatenating the USAspending Data
+Lines 39 and 41
+
+### Step 6: Splitting DOE from USAspending Data
+Lines 45, 47, and 48
+
+### Step 7: Aggregating the spending Data for Statewide Numbers
+Lines 55-56 and 58-60 
+
+### Step 8: Compiling Employment Data
+Lines ??-??
+
+### Step 9: Running For Loops to Generate IMPLAN Activity Sheets
+Line ??
 
 - Process data 
   - Clean contracts and grant data- 
@@ -40,5 +74,4 @@ Load Functions
   Some errors occur due to the transaction not being given a NAICS code, those need to be manually fixed
 
   Issues occur with NAICS codes that apply to multiple IMPLAN codes- give detailed explanation of how this was worked around and data was processed and added back to the main cleaned data. 
-
 
