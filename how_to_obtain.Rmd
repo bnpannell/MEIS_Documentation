@@ -1,28 +1,39 @@
-# How to Obtain Necessary Data
+# Data Requirements 
 
-This section details how to obtain each data type, whose categories are defined in the "requirements" section 
+This section details how to obtain each data type, whose categories are defined in the "requirements" section. The data is broken out into 3 types: employment, USAspending, and all other additional data. There is no guarantee that the data sources described below will exist in this form indefinitely, so care will be taken to keep this document as up to date as possible. 
 
-### Obtainable With Code
-Unfortunately, there is no simple way to obtain employment data with code.
+## Employment Data 
 
-### Manual Data Retrieval 
-Employment data was obtained from 2 websites - 1 for civilian employment figures, and 1 for military employment. There is no guarantee that these websites will exist in this form indefinitely, and care will be taken to keep this document as up to date as possible.
+This report focused on 2 types of employment data: civilian and military. These 2 employment data types were found on 2 separate websites:
 
-- Civilian employment: Obtained from the federal OFfice of Personnel Management's (OPM) FedScope website, which provides federal workforce data. Given that the report works based on federal fiscal years, the employment data of interest is of Quarter 3 of a given year (i.e. September). From this site, one can grab the civilian employment numbers for the Departments of Defense (which is an aggregate of the Air Force, Army, Defense, and Navy cabinet agencies), Homeland Security, Veterans Affairs, and Energy. 
+**Civilian employment** was obtained from the [Office of Personnel Management's (OPM) FedScope website](https://www.fedscope.opm.gov/), which provides federal workforce data. From this link, one can click on "Employment" under the "Status Data" bullet point to access quarterly employment data cubes. Given that the report focuses on federal fiscal years, the employment data of interest is of Quarter 3 of a given year (i.e. September). When one clicks on a September cube of their desired year, one can filter the data by agency type ("Cabinet Level") and location ("United States" and a state of one's choice) in order to get the civilian employment numbers for the Departments of Defense (which is an aggregate of the Air Force, Army, Defense, and Navy cabinet agencies), Homeland Security, Veterans Affairs, and Energy. This data can be exported out as a PDF, CSV, or Excel file. 
 
-- Military employment: Obtained from the Defense Manpower Data Center (DMDC) website, which serves under the Office of the Secretary of Defense. Similar to civilian employment, the data of interest is from September of a given year. The data referenced is the "Military and Civilian Personnel by Service/Agency by State/Country" Excel file, available under DoD Personnel, Workforce Reports & Publications on the DMDC website.
+**Military employment** was obtained from the [Defense Manpower Data Center (DMDC) website](https://dwp.dmdc.osd.mil/dwp/app/main), which serves under the Office of the Secretary of Defense. From this link, one can hover over to DoD Data/Reports and select "Statistics & Reports". On this page, scroll to the "DoD Personnel, Workforce Reports & Publications" text, and click on its hyperlink. [This opens up a new window to access the military employment data](https://dwp.dmdc.osd.mil/dwp/app/dod-data-reports/workforce-reports). Similar to civilian employment, the data of interest is from September of a given year. One can scroll to the section "Military and Civilian Personnel by Service/Agency by State/Country (Updated Quarterly)", and download the Excel file for September of their desired year. 
 
-## Spending Data
+## USASpending Data 
+This report utilized [USAspending.gov](https://www.usaspending.gov/) for a large majority of the direct spending done by federal national security agencies in California. The spending types obtained from this site include contracts and grants for DOD, DHS, VA and DOE, as well as direct payments from VA (i.e. veterans' benefits). From this link, one can hover over to "Download" and click on "Custom Award Data". [On this webpage](https://www.usaspending.gov/download_center/custom_award_data), one can select the appropriate spending award types (contracts, grants, and/or direct payments), awarding agency (DOD, DHS, VA, DOE), recipient location (United States for "Country", and a specific state should you want to filter the data further), action date range (a fiscal year "FY 20XX"), and file format. This download process must be done once per agency. 
 
-### Code to Obtain Spending Data
+For obtaining USAspending data, we have developed code that automates this entire process and easily captures all USAspending data in one instance. Please refer to our methods section of this process guide for more details. 
 
-### Spending Data Obtained via FOIA 
+## Additional Data 
 
+### SmartPay Data via FOIA 
 
+The remaining portion of direct spending detailed in these reports was SmartPay, a charge card program for federal employees. In order to obtain this data, Freedom of Information Act requests (commonly known as FOIAs) were sent out to the federal national security agencies. 
 
+For more information about SmartPay, please visit the [General Services Administration's (GSA) SmartPay website](https://www.gsa.gov/travel/plan-book/gsa-smartpay). 
 
+### Data Obtained Online 
 
-## Raw Data Provided by
+A variety of data sources needed to be obtained online in order to assist with the data processing for this report. This includes: 
+
+- [Federal Real Public Property data](https://www.gsa.gov/policy-regulations/policy/real-property-policy/asset-management/federal-real-property-profile-frpp/federal-real-property-public-data-set) from the GSA. At this link, the GSA provides an Excel file that breaks down how much federal property is spread out across the United States. This data is used to help localize the number of statewide DHS and VA civilian employees across counties and districts. 
+
+- [American Community Survey data](https://data.census.gov/cedsci/) from the Census Bureau. At this link, type into the search bar at the center of the webpage "DP03". This returns a table of "Selected economic characteristics". From this table, one can filter to the appropriate geography (state, county, congressional district, etc.), year, and such to download into an Excel file. This data is used to help localize the number of statewide military personnel across counties and districts. 
+
+- [NAICS to IMPLAN crosswalk](https://support.implan.com/hc/en-us/articles/360034896614-546-Industries-Conversions-Bridges-Construction-2018-Data) from IMPLAN. At this link, IMPLAN provides a variety of crosswalks that one can use to relate data from other source to IMPLAN's 546 industries. On this page, one can go to the second heading titled "2017 NAICS to IMPLAN 546 Industries" and download the Excel file. This crosswalk is utilized to help relate the USAspending contracts data to IMPLAN sectors in order to run that spending data through the IMPLAN software.
+
+### Data Provided Raw/Self-Made
 Include details on Data provided in the "data/raw" folder in the code repo- and the justifications on why it was included and not others
 
 

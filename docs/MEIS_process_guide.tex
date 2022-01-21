@@ -153,39 +153,53 @@ Civilian and military employment data is needed for the four departments of inte
 
 The next section details how to obtain this necessary data.
 
-\hypertarget{how-to-obtain-necessary-data}{%
-\chapter{How to Obtain Necessary Data}\label{how-to-obtain-necessary-data}}
+\hypertarget{data-requirements-1}{%
+\chapter{Data Requirements}\label{data-requirements-1}}
 
-This section details how to obtain each data type, whose categories are defined in the ``requirements'' section
+This section details how to obtain each data type, whose categories are defined in the ``requirements'' section. The data is broken out into 3 types: employment, USAspending, and all other additional data. There is no guarantee that the data sources described below will exist in this form indefinitely, so care will be taken to keep this document as up to date as possible.
 
-\hypertarget{obtainable-with-code}{%
-\subsection{Obtainable With Code}\label{obtainable-with-code}}
+\hypertarget{employment-data-1}{%
+\section{Employment Data}\label{employment-data-1}}
 
-Unfortunately, there is no simple way to obtain employment data with code.
+This report focused on 2 types of employment data: civilian and military. These 2 employment data types were found on 2 separate websites:
 
-\hypertarget{manual-data-retrieval}{%
-\subsection{Manual Data Retrieval}\label{manual-data-retrieval}}
+\textbf{Civilian employment} was obtained from the \href{https://www.fedscope.opm.gov/}{Office of Personnel Management's (OPM) FedScope website}, which provides federal workforce data. From this link, one can click on ``Employment'' under the ``Status Data'' bullet point to access quarterly employment data cubes. Given that the report focuses on federal fiscal years, the employment data of interest is of Quarter 3 of a given year (i.e.~September). When one clicks on a September cube of their desired year, one can filter the data by agency type (``Cabinet Level'') and location (``United States'' and a state of one's choice) in order to get the civilian employment numbers for the Departments of Defense (which is an aggregate of the Air Force, Army, Defense, and Navy cabinet agencies), Homeland Security, Veterans Affairs, and Energy. This data can be exported out as a PDF, CSV, or Excel file.
 
-Employment data was obtained from 2 websites - 1 for civilian employment figures, and 1 for military employment. There is no guarantee that these websites will exist in this form indefinitely, and care will be taken to keep this document as up to date as possible.
+\textbf{Military employment} was obtained from the \href{https://dwp.dmdc.osd.mil/dwp/app/main}{Defense Manpower Data Center (DMDC) website}, which serves under the Office of the Secretary of Defense. From this link, one can hover over to DoD Data/Reports and select ``Statistics \& Reports''. On this page, scroll to the ``DoD Personnel, Workforce Reports \& Publications'' text, and click on its hyperlink. \href{https://dwp.dmdc.osd.mil/dwp/app/dod-data-reports/workforce-reports}{This opens up a new window to access the military employment data}. Similar to civilian employment, the data of interest is from September of a given year. One can scroll to the section ``Military and Civilian Personnel by Service/Agency by State/Country (Updated Quarterly)'', and download the Excel file for September of their desired year.
+
+\hypertarget{usaspending-data}{%
+\section{USASpending Data}\label{usaspending-data}}
+
+This report utilized \href{https://www.usaspending.gov/}{USAspending.gov} for a large majority of the direct spending done by federal national security agencies in California. The spending types obtained from this site include contracts and grants for DOD, DHS, VA and DOE, as well as direct payments from VA (i.e.~veterans' benefits). From this link, one can hover over to ``Download'' and click on ``Custom Award Data''. \href{https://www.usaspending.gov/download_center/custom_award_data}{On this webpage}, one can select the appropriate spending award types (contracts, grants, and/or direct payments), awarding agency (DOD, DHS, VA, DOE), recipient location (United States for ``Country'', and a specific state should you want to filter the data further), action date range (a fiscal year ``FY 20XX''), and file format. This download process must be done once per agency.
+
+For obtaining USAspending data, we have developed code that automates this entire process and easily captures all USAspending data in one instance. Please refer to our methods section of this process guide for more details.
+
+\hypertarget{additional-data-1}{%
+\section{Additional Data}\label{additional-data-1}}
+
+\hypertarget{smartpay-data-via-foia}{%
+\subsection{SmartPay Data via FOIA}\label{smartpay-data-via-foia}}
+
+The remaining portion of direct spending detailed in these reports was SmartPay, a charge card program for federal employees. In order to obtain this data, Freedom of Information Act requests (commonly known as FOIAs) were sent out to the federal national security agencies.
+
+For more information about SmartPay, please visit the \href{https://www.gsa.gov/travel/plan-book/gsa-smartpay}{General Services Administration's (GSA) SmartPay website}.
+
+\hypertarget{data-obtained-online}{%
+\subsection{Data Obtained Online}\label{data-obtained-online}}
+
+A variety of data sources needed to be obtained online in order to assist with the data processing for this report. This includes:
 
 \begin{itemize}
 \item
-  Civilian employment: Obtained from the federal OFfice of Personnel Management's (OPM) FedScope website, which provides federal workforce data. Given that the report works based on federal fiscal years, the employment data of interest is of Quarter 3 of a given year (i.e.~September). From this site, one can grab the civilian employment numbers for the Departments of Defense (which is an aggregate of the Air Force, Army, Defense, and Navy cabinet agencies), Homeland Security, Veterans Affairs, and Energy.
+  \href{https://www.gsa.gov/policy-regulations/policy/real-property-policy/asset-management/federal-real-property-profile-frpp/federal-real-property-public-data-set}{Federal Real Public Property data} from the GSA. At this link, the GSA provides an Excel file that breaks down how much federal property is spread out across the United States. This data is used to help localize the number of statewide DHS and VA civilian employees across counties and districts.
 \item
-  Military employment: Obtained from the Defense Manpower Data Center (DMDC) website, which serves under the Office of the Secretary of Defense. Similar to civilian employment, the data of interest is from September of a given year. The data referenced is the ``Military and Civilian Personnel by Service/Agency by State/Country'' Excel file, available under DoD Personnel, Workforce Reports \& Publications on the DMDC website.
+  \href{https://data.census.gov/cedsci/}{American Community Survey data} from the Census Bureau. At this link, type into the search bar at the center of the webpage ``DP03''. This returns a table of ``Selected economic characteristics''. From this table, one can filter to the appropriate geography (state, county, congressional district, etc.), year, and such to download into an Excel file. This data is used to help localize the number of statewide military personnel across counties and districts.
+\item
+  \href{https://support.implan.com/hc/en-us/articles/360034896614-546-Industries-Conversions-Bridges-Construction-2018-Data}{NAICS to IMPLAN crosswalk} from IMPLAN. At this link, IMPLAN provides a variety of crosswalks that one can use to relate data from other source to IMPLAN's 546 industries. On this page, one can go to the second heading titled ``2017 NAICS to IMPLAN 546 Industries'' and download the Excel file. This crosswalk is utilized to help relate the USAspending contracts data to IMPLAN sectors in order to run that spending data through the IMPLAN software.
 \end{itemize}
 
-\hypertarget{spending-data-1}{%
-\section{Spending Data}\label{spending-data-1}}
-
-\hypertarget{code-to-obtain-spending-data}{%
-\subsection{Code to Obtain Spending Data}\label{code-to-obtain-spending-data}}
-
-\hypertarget{spending-data-obtained-via-foia}{%
-\subsection{Spending Data Obtained via FOIA}\label{spending-data-obtained-via-foia}}
-
-\hypertarget{raw-data-provided-by}{%
-\section{Raw Data Provided by}\label{raw-data-provided-by}}
+\hypertarget{data-provided-rawself-made}{%
+\subsection{Data Provided Raw/Self-Made}\label{data-provided-rawself-made}}
 
 Include details on Data provided in the ``data/raw'' folder in the code repo- and the justifications on why it was included and not others
 
@@ -294,18 +308,18 @@ The over all process for this project is as follows:
 \hypertarget{using-implan}{%
 \chapter{Using IMPLAN}\label{using-implan}}
 
-\emph{Place holder for section on how to enter the output files into implan and what IMPLAN analysis was run so that our study can be repeated.}
-
-\emph{Should not go into too much detail, as full instructions on how IMPLAN works is outside of the scope of this process guide.}
-
 Once the IMPLAN activity sheets for your desired geographies have been produced, it is time to upload them into IMPLAN and allow the tool to run its analysis. When you log into IMPLAN, the homepage should display 3 boxes to navigate through: Regions, Impacts, and Projects.
 
 \begin{itemize}
 \item
-  \textbf{Regions:} Click on Regions to begin your analysis. This should open up a map of the United States. Select the region of interest for the analysis and give this project a name. After saving the project, move on to the Impacts tab.
+  \textbf{Regions:} Click on Regions to begin your analysis. This should open up a map of the United States. Select the region of interest for the analysis (state, county, congressional district, etc.) and give this project a name. After saving the project, move on to the Impacts tab.
 \item
-  \textbf{Impacts:} In the Impacts tab, look for the button to the right of the ``Save'' button. Click on that, and select ``upload event template''. From there, find the activity sheet for the geography of interest and select that for upload. Ensure that ``Industry Change Event'' and ``Household Spending'' can be selected, and choose those for uploading into IMPLAN. The data points for the respective IMPLAN sectors should then auto-populate on IMPLAN. If your analysis is including SmartPay spending data, be sure to manually add that in as type ``Institutional Spending'', specification 11001, and the value amount. Choose to select all events (to the left of the ``Save'' button) and drag them over to the geography's model on the right side of the IMPLAN screen. After that, select to run the model at the bottom right. Depending on how big the model, IMPLAN will take time to generate the results. Once the model is done with its analysis, click on the ``View Results'' button.
+  \textbf{Impacts:} In the Impacts tab, look for the button to the right of the ``Save'' button. Click on that, and select ``upload event template''. From there, find the activity sheet for the geography of interest and select that for upload. Ensure that ``Industry Change'' and ``Household Spending'' can be selected, and choose those for uploading into IMPLAN. The data points for the respective IMPLAN sectors should then auto-populate on IMPLAN. If your analysis is including SmartPay spending data, be sure to manually add that in as type ``Institutional Spending'', specification 11001, and the value amount. Choose to select all events (the button to the left of the ``Save'' button) and drag them over to the geography's model on the right side of the IMPLAN screen. After that, select to run the model at the bottom right. Depending on how big the model, IMPLAN will take time to generate the results. Once the model is done with its analysis, click on the ``View Results'' button.
+\item
+  \textbf{Results:} Once on this page, one can sort through the results of the IMPLAN activity sheet that was ran for a geography and download CSV files of a variety of data points. For this report, the data points of interest included economic indicators like output and full-time employment (FTE) opportunities, both generally and across industries, as well as government and tax revenue generated.
 \end{itemize}
+
+As part of our final step before developing and writing the reports, our team created code to combine all the input and output data from IMPLAN into one big spreadsheet which was used to create the graphs and charts seen throughout the reports.
 
 \hypertarget{conclusion-discussion}{%
 \chapter{Conclusion/ Discussion}\label{conclusion-discussion}}
