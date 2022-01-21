@@ -4,10 +4,14 @@
 %
 \documentclass[
 ]{book}
+\title{California Military Economic Impact Study Process Guide}
+\author{Britnee Pannell \& Sumeet Bedi}
+\date{2022-01-20}
+
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -41,7 +45,8 @@
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
-\usepackage{longtable,booktabs}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -50,7 +55,7 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
-\usepackage{graphicx,grffile}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -75,12 +80,12 @@
   \thm@postskip=\thm@preskip
 }
 \makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
-
-\title{California Military Economic Impact Study Process Guide}
-\author{Britnee Pannell \& Sumeet Bedi}
-\date{2022-01-20}
+\nocite{*}
 
 \begin{document}
 \maketitle
@@ -98,13 +103,10 @@ Following these 2 reports, the Office of Planning \& Research and the CRB secure
 
 This process guide and supporting documentation were developed in order to allow other states to replicate the methodology of this study for their respective geography of interest. Additionally, this documentation serves to provide the rationale behind how the data was gathered, wrangled, and analyzed in order to justify the conclusions in our main reports.
 
-\hypertarget{requirements-for-project}{%
-\chapter{Requirements for Project}\label{requirements-for-project}}
+\hypertarget{software-requirements-for-project}{%
+\chapter{Software Requirements for Project}\label{software-requirements-for-project}}
 
-The primary requirements to recreate California's study or perform studies in additional areas are federal spending data and the software used to obtain and process that data. Fortunately all software and most Federal data is free and available online.
-
-\hypertarget{software-requirements}{%
-\section{Software Requirements}\label{software-requirements}}
+To recreate California's study or perform studies in additional areas, the software used to obtain and process that data is needed. Fortunately all software is free and available online.(Where possible, make sure to use the most recent and fully updated versions of the software).
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -118,40 +120,7 @@ The primary requirements to recreate California's study or perform studies in ad
   If a Github account is needed, one can sign up and register at \url{https://github.com/}. Individual free plans are available, as well as \href{https://help.github.com/en/articles/applying-for-an-educator-or-researcher-discount}{free upgrades} for qualifying academic purposes.Github is used to develop and host this project.
 \end{enumerate}
 
-\hypertarget{data-requirements}{%
-\section{Data Requirements}\label{data-requirements}}
-
-Data used to complete this study is of three varieties: employment and spending data for the DOD, the DHS, the VA, and the DOE, additional data obtained by submitting FOIA requests, and data sheets required for processing employment and spending data for upload into IMPLAN.
-
-\hypertarget{employment-data}{%
-\subsection{Employment Data}\label{employment-data}}
-
-Civilian and military employment data is needed for the four departments of interest.
-
-\hypertarget{spending-data}{%
-\subsection{Spending Data}\label{spending-data}}
-
-\hypertarget{additional-data}{%
-\subsection{Additional Data}\label{additional-data}}
-
-\hypertarget{data-sheets}{%
-\subsection{Data Sheets}\label{data-sheets}}
-
-\begin{itemize}
-\item
-  Manual Data Retrieval
-  Employment data can be obtained from several sites. There is no guarantee that these websites will exist in this form indefinitely. Care will be taken to keep this document as up to date as possible.
-\item
-  Department of Defense Employment(DOD): Civilian employment from FedScope, and military employment from DMDC.
-\item
-  Department of Homeland Security Employment(DHS): Civilian employment from FedScope.
-\item
-  Department of Veterans Affairs(VA): Civilian employment from FedScope.
-\item
-  Department of Energy(DOE): Civilian employment from FedScope.
-\end{itemize}
-
-The next section details how to obtain this necessary data.
+The next section details data necessary to complete this project as well as how to obtain it.
 
 \hypertarget{how-to-obtain-necessary-data}{%
 \chapter{How to Obtain Necessary Data}\label{how-to-obtain-necessary-data}}
@@ -175,8 +144,8 @@ Employment data was obtained from 2 websites - 1 for civilian employment figures
   Military employment: Obtained from the Defense Manpower Data Center (DMDC) website, which serves under the Office of the Secretary of Defense. Similar to civilian employment, the data of interest is from September of a given year. The data referenced is the ``Military and Civilian Personnel by Service/Agency by State/Country'' Excel file, available under DoD Personnel, Workforce Reports \& Publications on the DMDC website.
 \end{itemize}
 
-\hypertarget{spending-data-1}{%
-\section{Spending Data}\label{spending-data-1}}
+\hypertarget{spending-data}{%
+\section{Spending Data}\label{spending-data}}
 
 \hypertarget{code-to-obtain-spending-data}{%
 \subsection{Code to Obtain Spending Data}\label{code-to-obtain-spending-data}}

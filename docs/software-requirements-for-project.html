@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 4 Methods | California Military Economic Impact Study Process Guide</title>
+  <title>Section 2 Software Requirements for Project | California Military Economic Impact Study Process Guide</title>
   <meta name="description" content="This GitBook explains the process used to develop the 2020 California Military Economic Impact Study." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 4 Methods | California Military Economic Impact Study Process Guide" />
+  <meta property="og:title" content="Section 2 Software Requirements for Project | California Military Economic Impact Study Process Guide" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="bnpannell/MEIS_Documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 4 Methods | California Military Economic Impact Study Process Guide" />
+  <meta name="twitter:title" content="Section 2 Software Requirements for Project | California Military Economic Impact Study Process Guide" />
   
   <meta name="twitter:description" content="This GitBook explains the process used to develop the 2020 California Military Economic Impact Study." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="how-to-obtain-necessary-data.html"/>
-<link rel="next" href="using-implan.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="how-to-obtain-necessary-data.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -138,71 +138,25 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="methods" class="section level1" number="4">
-<h1><span class="header-section-number">Section 4</span> Methods</h1>
-<p>The following section details how to use the data and R code provided as well as an explanation of how the code works.</p>
-<div id="process-outline" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Process Outline</h2>
-<p>The over all process for this project is as follows:</p>
-<ul>
-<li>Data was Obtained</li>
-<li>Data was Filtered for relevance.</li>
-<li>Errors in data were for checked and repaired where found.</li>
-<li>Data was formatted for use in IMPLAN.</li>
-<li>Data was run through IMPLAN.</li>
-<li>IMPLAN outputs were graphically displayed and distributed via report.</li>
-</ul>
-</div>
-<div id="process-in-detail" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> Process in Detail</h2>
-<ul>
-<li><p>Obtain data</p>
-<ul>
-<li><p>Spending data</p>
-<ul>
-<li>Grants</li>
-<li>Contracts</li>
-<li>SmartPay (FOIA Required)</li>
-</ul></li>
-<li><p>Employment Data</p>
-<ul>
-<li>Military Personnel</li>
-<li>Civilian Employment</li>
-</ul>
-<p>DMDC- download and parse csv
-FedScope- Initially have users go to website and save values of interest to a separate csv file to use in IMPLAN later
-Eventually set up a code to generate these values acording to state and national level based on parsing out the download from
-the site.</p></li>
-<li><p>NAICS to IMPLAN crosswalks</p></li>
-<li><p>Spreadsheets provided to aid processing and format outputs</p></li>
-</ul></li>
-<li><p>Process data</p>
-<ul>
-<li>Clean contracts and grant data-</li>
-<li>Clean spending data</li>
-<li>Error check contract spending data</li>
-</ul>
-<p>Will need to go into detail about changes in the code between this year (2021) and subsequent years</p>
-<p>More detailed mention of how the error checking of the USASpending.gov contract data is needed
-A detailed walk through of how to manually check data and use the multiple NAICS to IMPLAN crosswalks to catch data
-Mention how IMPLAN automatically removes any codes having to do with construction so those have to be manually coded</p>
-<p>Some errors occur due to the transaction not being given a NAICS code, those need to be manually fixed</p>
-<p>Issues occur with NAICS codes that apply to multiple IMPLAN codes- give detailed explanation of how this was worked around and data was processed and added back to the main cleaned data.</p></li>
-<li><p>Run Data Through IMPLAN
-At this point we stop giving details to users about subsequent processes- we are not responsible for teaching users how to use IMPLAN.
-We should go over the general steps in what we did next to process data from IMPLAN, and how it was displayed graphically to educate the customers and
-summarize results for easier understanding</p></li>
-</ul>
+<div id="software-requirements-for-project" class="section level1" number="2">
+<h1><span class="header-section-number">Section 2</span> Software Requirements for Project</h1>
+<p>To recreate California’s study or perform studies in additional areas, the software used to obtain and process that data is needed. Fortunately all software is free and available online.(Where possible, make sure to use the most recent and fully updated versions of the software).</p>
+<ol style="list-style-type: decimal">
+<li><p>The R coding language from <a href="https://cloud.r-project.org/">cloud.r-project.org</a>. This language is used to obtain and process data.</p></li>
+<li><p>RStudio Desktop from <a href="https://rstudio.com/products/rstudio/download/#download">rstudio.com</a>. RStudio is the integrated development environment (IDE) used to run R scripts and develop code.</p></li>
+<li><p>Git from <a href="https://git-scm.com/downloads">git-scm.com</a>. A comprehensive guide to installing Git is available at <a href="https://happygitwithr.com/install-git.html">happygitwithr.com</a>. Git allows version control of edits across a multi-person team of researchers.</p></li>
+<li><p>If a Github account is needed, one can sign up and register at <a href="https://github.com/" class="uri">https://github.com/</a>. Individual free plans are available, as well as <a href="https://help.github.com/en/articles/applying-for-an-educator-or-researcher-discount">free upgrades</a> for qualifying academic purposes.Github is used to develop and host this project.</p></li>
+</ol>
+<p>The next section details data necessary to complete this project as well as how to obtain it.</p>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="how-to-obtain-necessary-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="using-implan.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="how-to-obtain-necessary-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -233,7 +187,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/bnpannell/MEIS_Documentation/methods.Rmd",
+"link": "https://github.com/bnpannell/MEIS_Documentation/requirements.Rmd",
 "text": "Edit"
 },
 "history": {

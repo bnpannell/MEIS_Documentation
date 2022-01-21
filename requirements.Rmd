@@ -1,8 +1,8 @@
-# Requirements for Project
+# Software Requirements
 
-The primary requirements to recreate California's study or perform studies in additional areas are federal spending data and the software used to obtain and process that data. Fortunately all software and most Federal data is free and available online. 
+To recreate California's study or to perform studies in additional areas, specialized software is needed to obtain and process Federal data. Fortunately all software is free and available online.(Where possible, make sure to use the most recent and fully updated versions of the software).
 
-## Software Requirements
+
 1. The R coding language from [cloud.r-project.org](https://cloud.r-project.org/). This language is used to obtain and process data.
 
 2. RStudio Desktop from [rstudio.com](https://rstudio.com/products/rstudio/download/#download). RStudio is the integrated development environment (IDE) used to run R scripts and develop code.
@@ -12,32 +12,4 @@ The primary requirements to recreate California's study or perform studies in ad
 4. If a Github account is needed, one can sign up and register at <https://github.com/>. Individual free plans are available, as well as [free upgrades](https://help.github.com/en/articles/applying-for-an-educator-or-researcher-discount) for qualifying academic purposes.Github is used to develop and host this project. 
 
 
-## Data Requirements
-Data used to complete this study is of three varieties: employment and spending data for the DOD, the DHS, the VA, and the DOE, additional data obtained by submitting FOIA requests, and data sheets required for processing employment and spending data for upload into IMPLAN. 
-
-
-### Employment Data
-Civilian and military employment data is needed for the four departments of interest. 
-
-### Spending Data
-
-### Additional Data
-
-### Data Sheets 
-
-
-
-- Manual Data Retrieval 
-Employment data can be obtained from several sites. There is no guarantee that these websites will exist in this form indefinitely. Care will be taken to keep this document as up to date as possible.
-
-- Department of Defense Employment(DOD): Civilian employment from FedScope, and military employment from DMDC.
-
-- Department of Homeland Security Employment(DHS): Civilian employment from FedScope.
-
-- Department of Veterans Affairs(VA): Civilian employment from FedScope.
-
-- Department of Energy(DOE): Civilian employment from FedScope.
-
-
-
-The next section details how to obtain this necessary data. 
+The next section details data necessary to complete this project as well as how to obtain it. 
