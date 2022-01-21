@@ -31,8 +31,9 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="requirements-for-project.html"/>
+<link rel="prev" href="software-requirements-for-project.html"/>
 <link rel="next" href="methods.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,12 +51,33 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -74,25 +96,20 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="requirements-for-project.html"><a href="requirements-for-project.html"><i class="fa fa-check"></i><b>2</b> Requirements for Project</a><ul>
-<li class="chapter" data-level="2.1" data-path="requirements-for-project.html"><a href="requirements-for-project.html#software-requirements"><i class="fa fa-check"></i><b>2.1</b> Software Requirements</a></li>
-<li class="chapter" data-level="2.2" data-path="requirements-for-project.html"><a href="requirements-for-project.html#data-requirements"><i class="fa fa-check"></i><b>2.2</b> Data Requirements</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="requirements-for-project.html"><a href="requirements-for-project.html#employment-data"><i class="fa fa-check"></i><b>2.2.1</b> Employment Data</a></li>
-<li class="chapter" data-level="2.2.2" data-path="requirements-for-project.html"><a href="requirements-for-project.html#spending-data"><i class="fa fa-check"></i><b>2.2.2</b> Spending Data</a></li>
-<li class="chapter" data-level="2.2.3" data-path="requirements-for-project.html"><a href="requirements-for-project.html#additional-data"><i class="fa fa-check"></i><b>2.2.3</b> Additional Data</a></li>
-<li class="chapter" data-level="2.2.4" data-path="requirements-for-project.html"><a href="requirements-for-project.html#data-sheets"><i class="fa fa-check"></i><b>2.2.4</b> Data Sheets</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="how-to-obtain-necessary-data.html"><a href="how-to-obtain-necessary-data.html"><i class="fa fa-check"></i><b>3</b> How to Obtain Necessary Data</a><ul>
+<li class="chapter" data-level="2" data-path="software-requirements-for-project.html"><a href="software-requirements-for-project.html"><i class="fa fa-check"></i><b>2</b> Software Requirements for Project</a></li>
+<li class="chapter" data-level="3" data-path="how-to-obtain-necessary-data.html"><a href="how-to-obtain-necessary-data.html"><i class="fa fa-check"></i><b>3</b> How to Obtain Necessary Data</a>
+<ul>
 <li class="chapter" data-level="3.0.1" data-path="how-to-obtain-necessary-data.html"><a href="how-to-obtain-necessary-data.html#obtainable-with-code"><i class="fa fa-check"></i><b>3.0.1</b> Obtainable With Code</a></li>
 <li class="chapter" data-level="3.0.2" data-path="how-to-obtain-necessary-data.html"><a href="how-to-obtain-necessary-data.html#manual-data-retrieval"><i class="fa fa-check"></i><b>3.0.2</b> Manual Data Retrieval</a></li>
-<li class="chapter" data-level="3.1" data-path="how-to-obtain-necessary-data.html"><a href="how-to-obtain-necessary-data.html#spending-data-1"><i class="fa fa-check"></i><b>3.1</b> Spending Data</a><ul>
+<li class="chapter" data-level="3.1" data-path="how-to-obtain-necessary-data.html"><a href="how-to-obtain-necessary-data.html#spending-data"><i class="fa fa-check"></i><b>3.1</b> Spending Data</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="how-to-obtain-necessary-data.html"><a href="how-to-obtain-necessary-data.html#code-to-obtain-spending-data"><i class="fa fa-check"></i><b>3.1.1</b> Code to Obtain Spending Data</a></li>
 <li class="chapter" data-level="3.1.2" data-path="how-to-obtain-necessary-data.html"><a href="how-to-obtain-necessary-data.html#spending-data-obtained-via-foia"><i class="fa fa-check"></i><b>3.1.2</b> Spending Data Obtained via FOIA</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="how-to-obtain-necessary-data.html"><a href="how-to-obtain-necessary-data.html#raw-data-provided-by"><i class="fa fa-check"></i><b>3.2</b> Raw Data Provided by</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a><ul>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#process-outline"><i class="fa fa-check"></i><b>4.1</b> Process Outline</a></li>
 <li class="chapter" data-level="4.2" data-path="methods.html"><a href="methods.html#process-in-detail"><i class="fa fa-check"></i><b>4.2</b> Process in Detail</a></li>
 </ul></li>
@@ -121,14 +138,14 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="how-to-obtain-necessary-data" class="section level1">
+<div id="how-to-obtain-necessary-data" class="section level1" number="3">
 <h1><span class="header-section-number">Section 3</span> How to Obtain Necessary Data</h1>
 <p>This section details how to obtain each data type, whose categories are defined in the “requirements” section</p>
-<div id="obtainable-with-code" class="section level3">
+<div id="obtainable-with-code" class="section level3" number="3.0.1">
 <h3><span class="header-section-number">3.0.1</span> Obtainable With Code</h3>
 <p>Unfortunately, there is no simple way to obtain employment data with code.</p>
 </div>
-<div id="manual-data-retrieval" class="section level3">
+<div id="manual-data-retrieval" class="section level3" number="3.0.2">
 <h3><span class="header-section-number">3.0.2</span> Manual Data Retrieval</h3>
 <p>Employment data was obtained from 2 websites - 1 for civilian employment figures, and 1 for military employment. There is no guarantee that these websites will exist in this form indefinitely, and care will be taken to keep this document as up to date as possible.</p>
 <ul>
@@ -136,16 +153,16 @@
 <li><p>Military employment: Obtained from the Defense Manpower Data Center (DMDC) website, which serves under the Office of the Secretary of Defense. Similar to civilian employment, the data of interest is from September of a given year. The data referenced is the “Military and Civilian Personnel by Service/Agency by State/Country” Excel file, available under DoD Personnel, Workforce Reports &amp; Publications on the DMDC website.</p></li>
 </ul>
 </div>
-<div id="spending-data-1" class="section level2">
+<div id="spending-data" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Spending Data</h2>
-<div id="code-to-obtain-spending-data" class="section level3">
+<div id="code-to-obtain-spending-data" class="section level3" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> Code to Obtain Spending Data</h3>
 </div>
-<div id="spending-data-obtained-via-foia" class="section level3">
+<div id="spending-data-obtained-via-foia" class="section level3" number="3.1.2">
 <h3><span class="header-section-number">3.1.2</span> Spending Data Obtained via FOIA</h3>
 </div>
 </div>
-<div id="raw-data-provided-by" class="section level2">
+<div id="raw-data-provided-by" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Raw Data Provided by</h2>
 <p>Include details on Data provided in the “data/raw” folder in the code repo- and the justifications on why it was included and not others</p>
 <p>Here is where things get a little annoying
@@ -162,7 +179,7 @@ to get it and how to navigate the sites used for obtaining data
           </div>
         </div>
       </div>
-<a href="requirements-for-project.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="software-requirements-for-project.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
