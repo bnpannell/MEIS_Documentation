@@ -24,7 +24,7 @@
 <meta name="author" content="Britnee Pannell &amp; Sumeet Bedi" />
 
 
-<meta name="date" content="2022-01-20" />
+<meta name="date" content="2022-01-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -110,8 +110,16 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#process-outline"><i class="fa fa-check"></i><b>4.1</b> Process Outline</a></li>
-<li class="chapter" data-level="4.2" data-path="methods.html"><a href="methods.html#process-in-detail"><i class="fa fa-check"></i><b>4.2</b> Process in Detail</a></li>
+<li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#set-up-repository"><i class="fa fa-check"></i><b>4.1</b> Set Up Repository</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="methods.html"><a href="methods.html#download-necessary-r-packages"><i class="fa fa-check"></i><b>4.1.1</b> Download Necessary R Packages</a></li>
+<li class="chapter" data-level="4.1.2" data-path="methods.html"><a href="methods.html#parameters-file-instructions"><i class="fa fa-check"></i><b>4.1.2</b> Parameters File Instructions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="methods.html"><a href="methods.html#make-user-specific-data-files"><i class="fa fa-check"></i><b>4.2</b> Make User Specific Data Files</a></li>
+<li class="chapter" data-level="4.3" data-path="methods.html"><a href="methods.html#the-code"><i class="fa fa-check"></i><b>4.3</b> The Code</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="methods.html"><a href="methods.html#deprecated-master-code"><i class="fa fa-check"></i><b>4.3.1</b> DEPRECATED Master Code</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="using-implan.html"><a href="using-implan.html"><i class="fa fa-check"></i><b>5</b> Using IMPLAN</a></li>
 <li class="chapter" data-level="6" data-path="conclusion-discussion.html"><a href="conclusion-discussion.html"><i class="fa fa-check"></i><b>6</b> Conclusion/ Discussion</a></li>
@@ -141,41 +149,41 @@ div.csl-indent {
 <div id="methods" class="section level1" number="4">
 <h1><span class="header-section-number">Section 4</span> Methods</h1>
 <p>The following section details how to use the data and R code provided as well as an explanation of how the code works.</p>
-<div id="process-outline" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Process Outline</h2>
-<p>The over all process for this project is as follows:</p>
-<ul>
-<li>Data was Obtained</li>
-<li>Data was Filtered for relevance.</li>
-<li>Errors in data were for checked and repaired where found.</li>
-<li>Data was formatted for use in IMPLAN.</li>
-<li>Data was run through IMPLAN.</li>
-<li>IMPLAN outputs were graphically displayed and distributed via report.</li>
-</ul>
+<div id="set-up-repository" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Set Up Repository</h2>
+<p>Instructions on how to get repo containing code and raw data provided to end users.</p>
+<p>Include link to repo and specifically Readme.md file (won’t be able to link this until that repo finds its forever home)</p>
+<p>Do we want to have a chapter on just setting up the repo and running through each section and file it contains? AKA a data dictionary for the Repo? To insert before the methods section??
+So maybe 2 additional sections</p>
+<div id="download-necessary-r-packages" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Download Necessary R Packages</h3>
+<p>dplyr, httr, jsonlite, openxlsx, readxl, tidyverse (double check that our code actually uses all of these packages)</p>
 </div>
-<div id="process-in-detail" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> Process in Detail</h2>
+<div id="parameters-file-instructions" class="section level3" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Parameters File Instructions</h3>
+<p>Include detailed info on Parameters file and how to set it up for a specific project. Default entries are for this study of California.
+Readme will eventually link to this section</p>
+</div>
+</div>
+<div id="make-user-specific-data-files" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Make User Specific Data Files</h2>
+<p>Edit framework files in raw data of repo and move into appropriate section of repo.</p>
+<p>Here is where you obtain your employment data and make the region specific file to read in those numbers (if we don’t just put them in the parameters file?)</p>
+</div>
+<div id="the-code" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> The Code</h2>
+<p>Some words here, maybe a rough over view of the process before getting into the specific details?</p>
+<div id="deprecated-master-code" class="section level3" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> DEPRECATED Master Code</h3>
+<p>Explanation of code
+Clear Environment
+Load Libraries
+Load Parameters File</p>
+<p>Load Functions
+- obtain USAspending
+- filter USAspending
+- split USAspenging</p>
 <ul>
-<li><p>Obtain data</p>
-<ul>
-<li><p>Spending data</p>
-<ul>
-<li>Grants</li>
-<li>Contracts</li>
-<li>SmartPay (FOIA Required)</li>
-</ul></li>
-<li><p>Employment Data</p>
-<ul>
-<li>Military Personnel</li>
-<li>Civilian Employment</li>
-</ul>
-<p>DMDC- download and parse csv
-FedScope- Initially have users go to website and save values of interest to a separate csv file to use in IMPLAN later
-Eventually set up a code to generate these values acording to state and national level based on parsing out the download from
-the site.</p></li>
-<li><p>NAICS to IMPLAN crosswalks</p></li>
-<li><p>Spreadsheets provided to aid processing and format outputs</p></li>
-</ul></li>
 <li><p>Process data</p>
 <ul>
 <li>Clean contracts and grant data-</li>
@@ -188,12 +196,9 @@ A detailed walk through of how to manually check data and use the multiple NAICS
 Mention how IMPLAN automatically removes any codes having to do with construction so those have to be manually coded</p>
 <p>Some errors occur due to the transaction not being given a NAICS code, those need to be manually fixed</p>
 <p>Issues occur with NAICS codes that apply to multiple IMPLAN codes- give detailed explanation of how this was worked around and data was processed and added back to the main cleaned data.</p></li>
-<li><p>Run Data Through IMPLAN
-At this point we stop giving details to users about subsequent processes- we are not responsible for teaching users how to use IMPLAN.
-We should go over the general steps in what we did next to process data from IMPLAN, and how it was displayed graphically to educate the customers and
-summarize results for easier understanding</p></li>
 </ul>
 
+</div>
 </div>
 </div>
             </section>
