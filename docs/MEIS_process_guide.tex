@@ -175,14 +175,7 @@ A variety of data sources needed to be obtained online in order to assist with t
 \hypertarget{data-provided-rawself-made}{%
 \subsection{Data Provided Raw/Self-Made}\label{data-provided-rawself-made}}
 
-Include details on Data provided in the ``data/raw'' folder in the code repo- and the justifications on why it was included and not others
-
-Here is where things get a little annoying
-- Each file used, with an explanation of where
-to get it and how to navigate the sites used for obtaining data
-- What information each file provides
-- Detailed information on how to make a file custom to specific data needs (where applicable)
-- Any notes on how files may differ according to region and individual project goals
+The repository contains some raw data files that we have prepared for this project. Specific instructions on how to access this repository and utilize these raw data sources are explained in the next section.
 
 \hypertarget{setting-up-the-repository}{%
 \chapter{Setting Up the Repository}\label{setting-up-the-repository}}
@@ -207,33 +200,99 @@ This section details each file contained in the code repository and a summary of
 
 The following section details how to use the data and R code provided as well as an explanation of how the code works.
 
-\hypertarget{parameters-file-instructions}{%
-\section{Parameters File Instructions}\label{parameters-file-instructions}}
+\hypertarget{reviewing-the-parameters-file}{%
+\section{Reviewing the Parameters File}\label{reviewing-the-parameters-file}}
 
-Include detailed info on Parameters file and how to set it up for a specific project. Default entries are for this study of California.
-Readme will eventually link to this section
+The first step in working with this code involves looking at the Parameters file. This file allows for alterations in the data analysis based on particular criteria that one may want to modify in their study, such as geography of interest, year, agencies of interest, and so forth. The default entries in the parameters file are based on this study of California.
 
-\hypertarget{make-user-specific-data-files}{%
-\section{Make User Specific Data Files}\label{make-user-specific-data-files}}
+\emph{Readme will eventually link to this section}
+
+\hypertarget{making-user-specific-data-files}{%
+\section{Making User Specific Data Files}\label{making-user-specific-data-files}}
 
 Edit framework files in raw data of repo and move into appropriate section of repo.
 
 Here is where you obtain your employment data and make the region specific file to read in those numbers (if we don't just put them in the parameters file?)
 
-\hypertarget{the-code}{%
-\section{The Code}\label{the-code}}
+\hypertarget{processing-the-data}{%
+\section{Processing the Data}\label{processing-the-data}}
 
-Some words here, maybe a rough over view of the process before getting into the specific details?
+After modifying the parameter files with the appropriate criteria and creating user specific data, one can begin working through the code to process the data and prepare it for IMPLAN. Refer to the deprecated\_run\_analysis\_master.R script to run through the data analysis process for this project.
 
-Explanation of code
-- Clear Environment
-- Load Libraries
-- Load Parameters File
+\hypertarget{step-1-clearing-environment-and-loading-in-packages-and-parameters}{%
+\subsection{Step 1: Clearing Environment, and Loading in Packages and Parameters}\label{step-1-clearing-environment-and-loading-in-packages-and-parameters}}
 
-Load Functions
-- obtain USAspending
-- filter USAspending
-- split USAspenging
+The first lines of code provide some housekeeping steps prior to running through the analysis. Line 4 allows the user to clear their global environment in RStudio, removing all previously defined or loaded packages, variables, values, etc. In running through the analysis wholesale, a good first step is to clear one's environment. Following this is lines 7-12, which load in the various RStudio library packages that are needed to perform this analysis. For more information on these packages, please refer to our References section (``ADD IN LINK TO REFERENCES AND/OR R PACKAGE DESCRIPTIONS''). The final housekeeping step involves line 15, which loads in the parameters file mentioned above.
+
+\hypertarget{step-2-loading-in-functions}{%
+\subsection{Step 2: Loading in Functions}\label{step-2-loading-in-functions}}
+
+Lines 19-23 compose the second step of the data analysis process: loading in functions that standardize and simplify working through the data. Line 19 loads in a R script that performs a call to USAspending.gov's API in order to grab the relevant contract, grant, and direct payment spending data that we need for our analysis and download it into 2 files (1 for contracts, and 1 for grants/direct payments) at a specified file path location. In this case, the 2 CSV files obtained are downloaded into the data/temp folder. The parameters file is particularly important for this line of code, as the parameters file holds many of the filters that are used to sort what data is obtained from USAspending with this function. Line 20 loads in a function that is used to place additional filters on the obtained USAspending data and write the filtered data into CSV files. These additional filters are also outlined in the parameters file, but the actual filter function is not run until lines 26-30 (see step 3 for more details).
+
+Line 21 loads in a function that concatenates the USAspending contract and grant data files into one dataframe in R, while also removing direct payments from that concatenation (as it is calculated separate from contracts and grants. more on this will be detailed below). The actual concatenate function is not run until lines 39 and 41 (see step 5 for more details). Line 22 loads in a function that splits out the concatenated USAspending dataframe by agency, taking out DOE data from the main dataframe. This is done because DOE's spending activity has been kept separate from the main data analysis of the project. The actual split function is not run until lines 44-47 (see step 6 for more details). Line 23 loads in a function that aggregates the USAspending and DOEspending dataframes by IMPLAN sector. This gets the contracts and grants spending data for 2 IMPLAN activity sheets complete: 1 for the main statewide analysis, and 1 for the DOE statewide analysis. The actual aggregate function is not run until lines 55-60 (see step 7 for more details).
+
+\hypertarget{step-3-filtering-the-usaspending-data}{%
+\subsection{Step 3: Filtering the USAspending Data}\label{step-3-filtering-the-usaspending-data}}
+
+Lines 26-30 begin the third step of filtering down the USAspending data obtained from the API call. Lines 26 and 27 read in the downloaded contracts and grants/direct payments files (respectively) and assign them each to a variable. Lines 29 and 30 perform the filter\_usaspending function (that was loaded in at line 20) on each of those variables.
+
+The filter\_usaspending function has five elements that must be referenced: file\_name, state, doe\_filters, filters, and out\_name.
+
+\begin{itemize}
+\tightlist
+\item
+  The \textbf{file\_name} element is a call to whichever data file we want to pass through to be filtered - in this case, the 2 USAspending CSVs that are defined in lines 26 and 27.
+\item
+  The \textbf{state} element is defined in our parameters, based on the state of interest for our study. In this case, that state is California. This element is added to ensure that the primary\_place\_of\_performance\_state is the same as the recipient\_state (which was filtered in our obtain\_usaspending function), thus ensuring that all data entries included in the analysis are in the state of interest for the study.
+\item
+  The \textbf{doe\_filters} element is defined in our parameters, based on \textbf{doe\_offices}. This element is included to filter out DOE spending done in the state that is not national security-related. The basis for this filter element is from a list of DOE sub-agencies that were demarcated as national security-related.
+\item
+  The \textbf{filters} element is defined in our parameters, based on \textbf{contract\_columns} and \textbf{grant\_columns}, respectively. This element is included to pare down the columns of data from the USAspending files to retain only the pertinent columns of data for our analysis.
+\item
+  The \textbf{out\_name} element is defined in our parameters, based on \textbf{c\_out\_name} and \textbf{g\_out\_name}, respectively. This element is included to give a naming convention for the files that get generated as a result of running the filter function.
+\end{itemize}
+
+After running the filter functions, 2 CSVs files should be generated in the data/temp folder, by the name defined from the \textbf{out\_name} element.
+
+\hypertarget{step-4-error-checking-the-usaspending-data}{%
+\subsection{Step 4: Error checking the USAspending Data}\label{step-4-error-checking-the-usaspending-data}}
+
+Lines 34-35 begin the fourth step of checking for errors in the filtered USAspending data and fixing them. The process for error checking and fixing the data differs for contracts and grants.
+
+\hypertarget{error-checking-usaspending-contracts}{%
+\subsubsection{Error Checking USAspending Contracts}\label{error-checking-usaspending-contracts}}
+
+Line 34
+
+\hypertarget{error-checking-usaspending-grants}{%
+\subsubsection{Error Checking USAspending Grants}\label{error-checking-usaspending-grants}}
+
+Line 35
+
+\hypertarget{step-5-concatenating-the-usaspending-data}{%
+\subsection{Step 5: Concatenating the USAspending Data}\label{step-5-concatenating-the-usaspending-data}}
+
+Lines 39 and 41
+
+\hypertarget{step-6-splitting-doe-from-usaspending-data}{%
+\subsection{Step 6: Splitting DOE from USAspending Data}\label{step-6-splitting-doe-from-usaspending-data}}
+
+Lines 45, 47, and 48
+
+\hypertarget{step-7-aggregating-the-spending-data-for-statewide-numbers}{%
+\subsection{Step 7: Aggregating the spending Data for Statewide Numbers}\label{step-7-aggregating-the-spending-data-for-statewide-numbers}}
+
+Lines 55-56 and 58-60
+
+\hypertarget{step-8-compiling-employment-data}{%
+\subsection{Step 8: Compiling Employment Data}\label{step-8-compiling-employment-data}}
+
+Lines ??-??
+
+\hypertarget{step-9-running-for-loops-to-generate-implan-activity-sheets}{%
+\subsection{Step 9: Running For Loops to Generate IMPLAN Activity Sheets}\label{step-9-running-for-loops-to-generate-implan-activity-sheets}}
+
+Line ??
 
 \begin{itemize}
 \item
