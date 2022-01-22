@@ -195,6 +195,50 @@ So maybe 2 additional sections
 
 This section details each file contained in the code repository and a summary of what it is used for in the project. For a more detailed explanation, please see the ``Methods'' section. {[}add link later{]}
 
+\hypertarget{meis_methodology-folder-change-name-later}{%
+\section{MEIS\_Methodology Folder {[}CHANGE NAME LATER{]}}\label{meis_methodology-folder-change-name-later}}
+
+This is the main folder, containing all data in the repository.
+- .gitignore: Lists files that will be ignored when using Git to synchronize updates to repository.
+- .Rhistory: Contains the history of commands given by a user in an R Session
+- LICENSE: Contains licensing information for the repository
+- MEIS\_Methodology.Rproj: the R project package used to open the repository in an IDE such as RStudio.
+- README.md: The first file you should read in any repository. Contains basic installation information, information on the repository contents and instructions on how to use the repository.
+- parameters.R: Contains all variables that may require user editing in order for code to run properly. Use of this file is documented in the README.md file.
+- run\_analysis\_master.R: The newest version of the code to process the Federal data. Currently this file is in development for the upcoming 2022 version of this project.
+- DEPRECATED\_run\_analysis\_master.R: This file contains the script used for the 2021 project. This process guide pertains mostly to the code running from this master script.
+
+\hypertarget{data-folder}{%
+\section{data Folder}\label{data-folder}}
+
+This is the folder designed to hold data for this project.
+
+\hypertarget{raw-folder}{%
+\subsection{raw Folder}\label{raw-folder}}
+
+This folder contains all raw data provided to the user to aid them in analyzing Federal data for their projects.
+
+\hypertarget{temp-folder}{%
+\subsection{temp Folder}\label{temp-folder}}
+
+This folder holds all files that are made while either master script is running. These files are deleted when the final output is finished being processed.
+
+\hypertarget{output-folder}{%
+\section{output Folder}\label{output-folder}}
+
+This folder holds all of the final output files needed by IMPLAN in order to complete this project. New output files will get created and input to this folder while running scripts from this repository.
+- placeholder.txt: This file prevents Github from deleting the output folder, as it is empty by default.
+
+\hypertarget{src-folder}{%
+\section{src Folder}\label{src-folder}}
+
+This folder contains all script files needed by the master script when it is running. Scripts in this folder may be used by either of the master scripts contained in this repository. DO NOT MODIFY ANY OF THESE FILES.
+
+\hypertarget{deprecated-folder}{%
+\subsection{deprecated Folder}\label{deprecated-folder}}
+
+This folder contains all scripts that are only used by the DEPRECATED\_run\_analysis\_master.R script. DO NOT MODIFY ANY OF THESE FILES.
+
 \hypertarget{methods}{%
 \chapter{Methods}\label{methods}}
 
