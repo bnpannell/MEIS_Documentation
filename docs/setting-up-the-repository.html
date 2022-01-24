@@ -24,7 +24,7 @@
 <meta name="author" content="Britnee Pannell &amp; Sumeet Bedi" />
 
 
-<meta name="date" content="2022-01-21" />
+<meta name="date" content="2022-01-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -135,15 +135,15 @@ div.csl-indent {
 <li class="chapter" data-level="6.2" data-path="methods.html"><a href="methods.html#making-user-specific-data-files"><i class="fa fa-check"></i><b>6.2</b> Making User Specific Data Files</a></li>
 <li class="chapter" data-level="6.3" data-path="methods.html"><a href="methods.html#processing-the-data"><i class="fa fa-check"></i><b>6.3</b> Processing the Data</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="methods.html"><a href="methods.html#step-1-clearing-environment-and-loading-in-packages-and-parameters"><i class="fa fa-check"></i><b>6.3.1</b> Step 1: Clearing Environment, and Loading in Packages and Parameters</a></li>
-<li class="chapter" data-level="6.3.2" data-path="methods.html"><a href="methods.html#step-2-loading-in-functions"><i class="fa fa-check"></i><b>6.3.2</b> Step 2: Loading in Functions</a></li>
-<li class="chapter" data-level="6.3.3" data-path="methods.html"><a href="methods.html#step-3-filtering-the-usaspending-data"><i class="fa fa-check"></i><b>6.3.3</b> Step 3: Filtering the USAspending Data</a></li>
-<li class="chapter" data-level="6.3.4" data-path="methods.html"><a href="methods.html#step-4-error-checking-the-usaspending-data"><i class="fa fa-check"></i><b>6.3.4</b> Step 4: Error checking the USAspending Data</a></li>
-<li class="chapter" data-level="6.3.5" data-path="methods.html"><a href="methods.html#step-5-concatenating-the-usaspending-data"><i class="fa fa-check"></i><b>6.3.5</b> Step 5: Concatenating the USAspending Data</a></li>
-<li class="chapter" data-level="6.3.6" data-path="methods.html"><a href="methods.html#step-6-splitting-doe-from-usaspending-data"><i class="fa fa-check"></i><b>6.3.6</b> Step 6: Splitting DOE from USAspending Data</a></li>
-<li class="chapter" data-level="6.3.7" data-path="methods.html"><a href="methods.html#step-7-aggregating-the-spending-data-for-statewide-numbers"><i class="fa fa-check"></i><b>6.3.7</b> Step 7: Aggregating the spending Data for Statewide Numbers</a></li>
-<li class="chapter" data-level="6.3.8" data-path="methods.html"><a href="methods.html#step-8-compiling-employment-data"><i class="fa fa-check"></i><b>6.3.8</b> Step 8: Compiling Employment Data</a></li>
-<li class="chapter" data-level="6.3.9" data-path="methods.html"><a href="methods.html#step-9-running-for-loops-to-generate-implan-activity-sheets"><i class="fa fa-check"></i><b>6.3.9</b> Step 9: Running For Loops to Generate IMPLAN Activity Sheets</a></li>
+<li class="chapter" data-level="6.3.1" data-path="methods.html"><a href="methods.html#clearing-environment-and-loading-in-packages-and-parameters"><i class="fa fa-check"></i><b>6.3.1</b> Clearing Environment, and Loading in Packages and Parameters</a></li>
+<li class="chapter" data-level="6.3.2" data-path="methods.html"><a href="methods.html#loading-in-functions"><i class="fa fa-check"></i><b>6.3.2</b> Loading in Functions</a></li>
+<li class="chapter" data-level="6.3.3" data-path="methods.html"><a href="methods.html#filtering-the-usaspending-data"><i class="fa fa-check"></i><b>6.3.3</b> Filtering the USAspending Data</a></li>
+<li class="chapter" data-level="6.3.4" data-path="methods.html"><a href="methods.html#error-checking-the-usaspending-data"><i class="fa fa-check"></i><b>6.3.4</b> Error checking the USAspending Data</a></li>
+<li class="chapter" data-level="6.3.5" data-path="methods.html"><a href="methods.html#concatenating-the-usaspending-data"><i class="fa fa-check"></i><b>6.3.5</b> Concatenating the USAspending Data</a></li>
+<li class="chapter" data-level="6.3.6" data-path="methods.html"><a href="methods.html#splitting-doe-from-usaspending-data"><i class="fa fa-check"></i><b>6.3.6</b> Splitting DOE from USAspending Data</a></li>
+<li class="chapter" data-level="6.3.7" data-path="methods.html"><a href="methods.html#aggregating-the-spending-data-for-statewide-numbers"><i class="fa fa-check"></i><b>6.3.7</b> Aggregating the spending Data for Statewide Numbers</a></li>
+<li class="chapter" data-level="6.3.8" data-path="methods.html"><a href="methods.html#compiling-employment-data"><i class="fa fa-check"></i><b>6.3.8</b> Compiling Employment Data</a></li>
+<li class="chapter" data-level="6.3.9" data-path="methods.html"><a href="methods.html#running-for-loops-to-generate-implan-activity-sheets"><i class="fa fa-check"></i><b>6.3.9</b> Running For Loops to Generate IMPLAN Activity Sheets</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="using-implan.html"><a href="using-implan.html"><i class="fa fa-check"></i><b>7</b> Using IMPLAN</a></li>
@@ -173,10 +173,15 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="setting-up-the-repository" class="section level1" number="4">
 <h1><span class="header-section-number">Section 4</span> Setting Up the Repository</h1>
+<p>Our code repository is necessary to repeat the California study. It may also be used as a frame work to run additional studies outside of the initial region. These instructions assume you will be using Github to obtain and manage a copy of the repository.</p>
 <div id="obtain-repository" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Obtain Repository</h2>
-<p>Instructions on how to get repo containing code and raw data provided to end users.</p>
-<p>Include link to repo and specifically Readme.md file (won’t be able to link this until that repo finds its forever home)</p>
+<ol style="list-style-type: decimal">
+<li>Using Github, navigate to the repository ([LINK TO REPO FOREVER HOME HERE]) and fork the repository to the user’s account.</li>
+<li>Clone the repository to a new RStudio Project.</li>
+<li>Open the ‘README.md’ file ([LINK])<br />
+Include link to repo and specifically Readme.md file (won’t be able to link this until that repo finds its forever home)</li>
+</ol>
 <p>Do we want to have a chapter on just setting up the repo and running through each section and file it contains? AKA a data dictionary for the Repo? To insert before the methods section??
 So maybe 2 additional sections</p>
 

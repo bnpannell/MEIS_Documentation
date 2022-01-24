@@ -3,14 +3,13 @@ This section details each file contained in the code repository and a summary of
 
 ## MEIS_Methodology Folder [CHANGE NAME LATER]
 This is the main folder, containing all data in the repository. 
-  - .gitignore: Lists files that will be ignored when using Git to synchronize updates to repository.
-  - .Rhistory: Contains the history of commands given by a user in an R Session 
-  - LICENSE: Contains licensing information for the repository
-  - MEIS_Methodology.Rproj: the R project package used to open the repository in an IDE such as RStudio.
-  - README.md: The first file you should read in any repository. Contains basic installation information, information on the repository contents and instructions on how to use the repository. 
-  - parameters.R: Contains all variables that may require user editing in order for code to run properly. Use of this file is documented in the README.md file.
-  - run_analysis_master.R: The newest version of the code to process the Federal data. Currently this file is in development for the upcoming 2022 version of this project.
-  - DEPRECATED_run_analysis_master.R: This file contains the script used for the 2021 project. This process guide pertains mostly to the code running from this master script. 
+* .gitignore: Lists files that will be ignored when using Git to synchronize updates to repository.
+* .Rhistory: Contains the history of commands given by a user in an R Session 
+* LICENSE: Contains licensing information for the repository
+* MEIS_Methodology.Rproj: the R project package used to open the repository in an IDE such as RStudio.
+* README.md: The first file you should read in any repository. Contains basic installation information, information on the repository contents and instructions on how to use the repository. * parameters.R: Contains all variables that may require user editing in order for code to run properly. Use of this file is documented in the README.md file.
+* run_analysis_master.R: The newest version of the code to process the Federal data. Currently this file is in development for the upcoming 2022 version of this project.
+* DEPRECATED_run_analysis_master.R: This file contains the script used for the 2021 project. This process guide pertains mostly to the code running from this master script. 
 
 ## data Folder
 This is the folder designed to hold data for this project.

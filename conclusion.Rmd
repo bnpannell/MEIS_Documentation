@@ -1,6 +1,5 @@
 # Conclusion/ Discussion
 
-Government spending data is very difficult to obtain and there is not a lot of good documentation to help lay people use this data
 Hopefully we provide some guidelines and aid in discovering and processing this data so that quality studies can come about and 
 Government spending can become more transparent.
 

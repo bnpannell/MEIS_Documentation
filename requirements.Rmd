@@ -1,6 +1,6 @@
 # Software Requirements
 
-To recreate or replicate this study, specialized software is needed to obtain and process federal data. Fortunately, all the software that was used in this process is free and available online. *(Where possible, make sure to use the most recent and fully updated versions of the software).*
+To recreate or replicate this study, specialized software is needed to obtain and process federal data. Fortunately, all the software that was used in this process is free and available online. It is best practice to use the most updated software version.  
 
 1. The R coding language from [cloud.r-project.org](https://cloud.r-project.org/). This language is used to obtain and process data.
 

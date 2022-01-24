@@ -24,7 +24,7 @@
 <meta name="author" content="Britnee Pannell &amp; Sumeet Bedi" />
 
 
-<meta name="date" content="2022-01-21" />
+<meta name="date" content="2022-01-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -135,15 +135,15 @@ div.csl-indent {
 <li class="chapter" data-level="6.2" data-path="methods.html"><a href="methods.html#making-user-specific-data-files"><i class="fa fa-check"></i><b>6.2</b> Making User Specific Data Files</a></li>
 <li class="chapter" data-level="6.3" data-path="methods.html"><a href="methods.html#processing-the-data"><i class="fa fa-check"></i><b>6.3</b> Processing the Data</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="methods.html"><a href="methods.html#step-1-clearing-environment-and-loading-in-packages-and-parameters"><i class="fa fa-check"></i><b>6.3.1</b> Step 1: Clearing Environment, and Loading in Packages and Parameters</a></li>
-<li class="chapter" data-level="6.3.2" data-path="methods.html"><a href="methods.html#step-2-loading-in-functions"><i class="fa fa-check"></i><b>6.3.2</b> Step 2: Loading in Functions</a></li>
-<li class="chapter" data-level="6.3.3" data-path="methods.html"><a href="methods.html#step-3-filtering-the-usaspending-data"><i class="fa fa-check"></i><b>6.3.3</b> Step 3: Filtering the USAspending Data</a></li>
-<li class="chapter" data-level="6.3.4" data-path="methods.html"><a href="methods.html#step-4-error-checking-the-usaspending-data"><i class="fa fa-check"></i><b>6.3.4</b> Step 4: Error checking the USAspending Data</a></li>
-<li class="chapter" data-level="6.3.5" data-path="methods.html"><a href="methods.html#step-5-concatenating-the-usaspending-data"><i class="fa fa-check"></i><b>6.3.5</b> Step 5: Concatenating the USAspending Data</a></li>
-<li class="chapter" data-level="6.3.6" data-path="methods.html"><a href="methods.html#step-6-splitting-doe-from-usaspending-data"><i class="fa fa-check"></i><b>6.3.6</b> Step 6: Splitting DOE from USAspending Data</a></li>
-<li class="chapter" data-level="6.3.7" data-path="methods.html"><a href="methods.html#step-7-aggregating-the-spending-data-for-statewide-numbers"><i class="fa fa-check"></i><b>6.3.7</b> Step 7: Aggregating the spending Data for Statewide Numbers</a></li>
-<li class="chapter" data-level="6.3.8" data-path="methods.html"><a href="methods.html#step-8-compiling-employment-data"><i class="fa fa-check"></i><b>6.3.8</b> Step 8: Compiling Employment Data</a></li>
-<li class="chapter" data-level="6.3.9" data-path="methods.html"><a href="methods.html#step-9-running-for-loops-to-generate-implan-activity-sheets"><i class="fa fa-check"></i><b>6.3.9</b> Step 9: Running For Loops to Generate IMPLAN Activity Sheets</a></li>
+<li class="chapter" data-level="6.3.1" data-path="methods.html"><a href="methods.html#clearing-environment-and-loading-in-packages-and-parameters"><i class="fa fa-check"></i><b>6.3.1</b> Clearing Environment, and Loading in Packages and Parameters</a></li>
+<li class="chapter" data-level="6.3.2" data-path="methods.html"><a href="methods.html#loading-in-functions"><i class="fa fa-check"></i><b>6.3.2</b> Loading in Functions</a></li>
+<li class="chapter" data-level="6.3.3" data-path="methods.html"><a href="methods.html#filtering-the-usaspending-data"><i class="fa fa-check"></i><b>6.3.3</b> Filtering the USAspending Data</a></li>
+<li class="chapter" data-level="6.3.4" data-path="methods.html"><a href="methods.html#error-checking-the-usaspending-data"><i class="fa fa-check"></i><b>6.3.4</b> Error checking the USAspending Data</a></li>
+<li class="chapter" data-level="6.3.5" data-path="methods.html"><a href="methods.html#concatenating-the-usaspending-data"><i class="fa fa-check"></i><b>6.3.5</b> Concatenating the USAspending Data</a></li>
+<li class="chapter" data-level="6.3.6" data-path="methods.html"><a href="methods.html#splitting-doe-from-usaspending-data"><i class="fa fa-check"></i><b>6.3.6</b> Splitting DOE from USAspending Data</a></li>
+<li class="chapter" data-level="6.3.7" data-path="methods.html"><a href="methods.html#aggregating-the-spending-data-for-statewide-numbers"><i class="fa fa-check"></i><b>6.3.7</b> Aggregating the spending Data for Statewide Numbers</a></li>
+<li class="chapter" data-level="6.3.8" data-path="methods.html"><a href="methods.html#compiling-employment-data"><i class="fa fa-check"></i><b>6.3.8</b> Compiling Employment Data</a></li>
+<li class="chapter" data-level="6.3.9" data-path="methods.html"><a href="methods.html#running-for-loops-to-generate-implan-activity-sheets"><i class="fa fa-check"></i><b>6.3.9</b> Running For Loops to Generate IMPLAN Activity Sheets</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="using-implan.html"><a href="using-implan.html"><i class="fa fa-check"></i><b>7</b> Using IMPLAN</a></li>
@@ -173,23 +173,23 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="data-requirements" class="section level1" number="3">
 <h1><span class="header-section-number">Section 3</span> Data Requirements</h1>
-<p>This section details how to obtain each data type, whose categories are defined in the “requirements” section. The data is broken out into 3 types: employment, USAspending, and all other additional data. There is no guarantee that the data sources described below will exist in this form indefinitely, so care will be taken to keep this document as up to date as possible.</p>
+<p>This section details how to obtain all the necessary data for this project, which we broke out into 3 types: 1) employment, 2) USAspending, and 3) all other additional data. <em>There is no guarantee that the data sources described below will exist in this form indefinitely, so care will be taken to keep this document as up to date as possible.</em></p>
 <div id="employment-data" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Employment Data</h2>
-<p>This report focused on 2 types of employment data: civilian and military. These 2 employment data types were found on 2 separate websites:</p>
+<p>This report focused on two types of employment data: civilian and military. These employment data types were found on two separate websites:</p>
 <p><strong>Civilian employment</strong> was obtained from the <a href="https://www.fedscope.opm.gov/">Office of Personnel Management’s (OPM) FedScope website</a>, which provides federal workforce data. From this link, one can click on “Employment” under the “Status Data” bullet point to access quarterly employment data cubes. Given that the report focuses on federal fiscal years, the employment data of interest is of Quarter 3 of a given year (i.e. September). When one clicks on a September cube of their desired year, one can filter the data by agency type (“Cabinet Level”) and location (“United States” and a state of one’s choice) in order to get the civilian employment numbers for the Departments of Defense (which is an aggregate of the Air Force, Army, Defense, and Navy cabinet agencies), Homeland Security, Veterans Affairs, and Energy. This data can be exported out as a PDF, CSV, or Excel file.</p>
-<p><strong>Military employment</strong> was obtained from the <a href="https://dwp.dmdc.osd.mil/dwp/app/main">Defense Manpower Data Center (DMDC) website</a>, which serves under the Office of the Secretary of Defense. From this link, one can hover over to DoD Data/Reports and select “Statistics &amp; Reports.” On this page, scroll to the “DoD Personnel, Workforce Reports &amp; Publications” text, and click on its hyperlink. <a href="https://dwp.dmdc.osd.mil/dwp/app/dod-data-reports/workforce-reports">This opens up a new window to access the military employment data</a>. Similar to civilian employment, the data of interest is from September of a given year. One can scroll to the section “Military and Civilian Personnel by Service/Agency by State/Country (Updated Quarterly),” and download the Excel file for September of their desired year.</p>
+<p><strong>Military employment</strong> was obtained from the <a href="https://dwp.dmdc.osd.mil/dwp/app/main">Defense Manpower Data Center (DMDC) website</a>, which serves under the Office of the Secretary of Defense. From this link, one can hover over to DoD Data/Reports and select “Statistics &amp; Reports.” On this page, scroll to the “DoD Personnel, Workforce Reports &amp; Publications” text, and click on its hyperlink. <a href="https://dwp.dmdc.osd.mil/dwp/app/DoD-data-reports/workforce-reports">This opens up a new window to access the military employment data</a>. Similar to civilian employment, the data of interest is from September of a given year. One can scroll to the section “Military and Civilian Personnel by Service/Agency by State/Country (Updated Quarterly),” and download the Excel file for September of their desired year.</p>
 </div>
 <div id="usaspending-data" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> USASpending Data</h2>
-<p>This report utilized <a href="https://www.usaspending.gov/">USAspending.gov</a> for a large majority of the direct spending done by federal national security agencies in California. The spending types obtained from this site include contracts and grants for DOD, DHS, VA and DOE, as well as direct payments from VA (i.e. veterans’ benefits). From this link, one can hover over to “Download” and click on “Custom Award Data.” <a href="https://www.usaspending.gov/download_center/custom_award_data">On this webpage</a>, one can select the appropriate spending award types (contracts, grants, and/or direct payments), awarding agency (DOD, DHS, VA, DOE), recipient location (United States for “Country,” and a specific state should you want to filter the data further), action date range (a fiscal year “FY 20XX”), and file format. This download process must be done once per agency.</p>
+<p>This report utilized <a href="https://www.usaspending.gov/">USAspending.gov</a> for a large majority of the direct spending done by federal national security agencies in California. The spending types obtained from this site include contracts and grants for DoD, DHS, VA and DOE, as well as direct payments from VA (i.e. veterans’ benefits). From this link, one can hover over to “Download” and click on “Custom Award Data.” <a href="https://www.usaspending.gov/download_center/custom_award_data">On this webpage</a>, one can select the appropriate spending award types (contracts, grants, and/or direct payments), awarding agency (DoD, DHS, VA, DOE), recipient location (United States for “Country,” and a specific state should you want to filter the data further), action date range (a fiscal year “FY 20XX”), and file format. This download process must be done once per agency.</p>
 <p>For obtaining USAspending data, we have developed code that automates this entire process and easily captures all USAspending data in one instance. Please refer to our methods section of this process guide for more details.</p>
 </div>
 <div id="additional-data" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Additional Data</h2>
 <div id="smartpay-data-via-foia" class="section level3" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> SmartPay Data via FOIA</h3>
-<p>The remaining portion of direct spending detailed in these reports was SmartPay, a charge card program for federal employees. In order to obtain this data, Freedom of Information Act requests (commonly known as FOIAs) were sent out to the federal national security agencies.</p>
+<p>The remaining portion of direct spending detailed in these reports was SmartPay, a charge card program for federal employees. In order to obtain this data, Freedom of Information Act requests (commonly known as FOIAs) were filed to the federal national security agencies.</p>
 <p>For more information about SmartPay, please visit the <a href="https://www.gsa.gov/travel/plan-book/gsa-smartpay">General Services Administration’s (GSA) SmartPay website</a>.</p>
 </div>
 <div id="data-obtained-online" class="section level3" number="3.3.2">

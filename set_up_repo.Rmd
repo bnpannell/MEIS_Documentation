@@ -1,8 +1,10 @@
 # Setting Up the Repository
+Our code repository is necessary to repeat the California study. It may also be used as a frame work to run additional studies outside of the initial region. These instructions assume you will be using Github to obtain and manage a copy of the repository. 
 
 ## Obtain Repository
-Instructions on how to get repo containing code and raw data provided to end users.
-
+1. Using Github, navigate to the repository ([LINK TO REPO FOREVER HOME HERE]) and fork the repository to the user's account. 
+2. Clone the repository to a new RStudio Project. 
+3. Open the 'README.md' file ([LINK])  
 Include link to repo and specifically Readme.md file (won't be able to link this until that repo finds its forever home)
 
 Do we want to have a chapter on just setting up the repo and running through each section and file it contains? AKA a data dictionary for the Repo? To insert before the methods section?? 

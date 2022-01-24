@@ -6,7 +6,7 @@
 ]{book}
 \title{California Military Economic Impact Study Process Guide}
 \author{Britnee Pannell \& Sumeet Bedi}
-\date{2022-01-21}
+\date{2022-01-24}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -97,16 +97,16 @@
 \hypertarget{introduction}{%
 \chapter{Introduction}\label{introduction}}
 
-The California Military Economic Impact Study report series began in 2018, when the California Governor's Office of Planning \& Research and the Governor's Military Council requested the California Research Bureau (CRB, a unit of the California State Library) to conduct this study. This report provides detailed statewide and localized economic impacts of federal national security activity in the state of California. The federal agencies identified as relevant to national security includes the Departments of Defense (DOD), Homeland Security (DHS), Veterans Affairs (VA), and specified sub-agencies of The Department of Energy (DOE). The type of economic activity detailed includes spending (contracts, grants, veterans' benefits, and SmartPay charge card) and employment data (civilian and military). The first report, published in August 2018, utilized federal fiscal year 2016 data, while the second report, published in December 2019, used fiscal year 2018 data.
+The California Military Economic Impact Study report series began in 2018, when the California Governor's Office of Planning \& Research (OPR) and the Governor's Military Council (GMC) requested the California Research Bureau (CRB, a unit of the California State Library) to conduct this study. This report provides detailed statewide and localized economic impacts of federal national security activity in the state of California. The federal agencies identified as related to national security includes the Departments of Defense (DoD), Homeland Security (DHS), Veterans Affairs (VA), and specified sub-agencies of the Department of Energy (DOE). The type of economic activity detailed includes spending (contracts, grants, veterans' benefits, and SmartPay charge card) and employment data (civilian and military). The first report, published in August 2018, utilized federal fiscal year 2016 data, while the second report, published in December 2019, used fiscal year 2018 data.
 
-Following these 2 reports, the Office of Planning \& Research and the CRB secured grant funding from the DOD to support two full-time equivalent (FTE) positions to develop supplemental reports that help localize the economic impacts detailed in the statewide report. In December 2020, the CRB produced the 2020 California Military Economic Impact Study, and followed this third edition of the statewide report with 2 first-time supplements that discuss the economic impacts in every county and congressional district in California. In December 2021, the Research Bureau completed the fourth version of the statewide report as well as the second edition of the county and congressional district supplements. After completion of the second round of supplements, the CRB was tasked with producing this process guide document.
+Following these 2 reports, OPR and CRB secured grant funding from DoD to support two full-time equivalent (FTE) positions to develop supplemental reports that help localize the economic impacts detailed in the statewide report. In December 2020, CRB produced the 2020 California Military Economic Impact Study, and followed this third edition of the statewide report with two first-time supplements that discuss the economic impacts in every county and congressional district in California. In December 2021, CRB completed the fourth version of the statewide report as well as the second edition of the county and congressional district supplements. After completion of the second round of supplements, CRB was tasked with producing this process guide document.
 
-This process guide and supporting documentation were developed in order to allow other states to replicate the methodology of this study for their respective geography of interest. Additionally, this documentation serves to provide the rationale behind how the data was gathered, wrangled, and analyzed in order to justify the conclusions in our main reports.
+This process guide and supporting documentation were developed in order to allow other states to replicate the methodology of this study for their respective geography of interest. Additionally, this documentation serves to provide the rationale behind how the data was gathered, wrangled, and analyzed in order to justify the conclusions in our reports.
 
 \hypertarget{software-requirements}{%
 \chapter{Software Requirements}\label{software-requirements}}
 
-To recreate California's study or to perform studies in additional areas, specialized software is needed to obtain and process Federal data. Fortunately all software is free and available online.(Where possible, make sure to use the most recent and fully updated versions of the software).
+To recreate or replicate this study, specialized software is needed to obtain and process federal data. Fortunately, all the software that was used in this process is free and available online. It is best practice to use the most updated software version.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -117,7 +117,7 @@ To recreate California's study or to perform studies in additional areas, specia
 \item
   Git from \href{https://git-scm.com/downloads}{git-scm.com}. A comprehensive guide to installing Git is available at \href{https://happygitwithr.com/install-git.html}{happygitwithr.com}. Git allows version control of edits across a multi-person team of researchers.
 \item
-  If a Github account is needed, one can sign up and register at \url{https://github.com/}. Individual free plans are available, as well as \href{https://help.github.com/en/articles/applying-for-an-educator-or-researcher-discount}{free upgrades} for qualifying academic purposes.Github is used to develop and host this project.
+  If a GitHub account is needed, one can sign up and register at \url{https://github.com/}. Individual free plans are available, as well as \href{https://help.github.com/en/articles/applying-for-an-educator-or-researcher-discount}{free upgrades} for qualifying academic purposes. GitHub is used to develop and host this project.
 \end{enumerate}
 
 \hypertarget{download-necessary-r-packages}{%
@@ -130,21 +130,21 @@ The next section details data necessary to complete this project as well as how 
 \hypertarget{data-requirements}{%
 \chapter{Data Requirements}\label{data-requirements}}
 
-This section details how to obtain each data type, whose categories are defined in the ``requirements'' section. The data is broken out into 3 types: employment, USAspending, and all other additional data. There is no guarantee that the data sources described below will exist in this form indefinitely, so care will be taken to keep this document as up to date as possible.
+This section details how to obtain all the necessary data for this project, which we broke out into 3 types: 1) employment, 2) USAspending, and 3) all other additional data. \emph{There is no guarantee that the data sources described below will exist in this form indefinitely, so care will be taken to keep this document as up to date as possible.}
 
 \hypertarget{employment-data}{%
 \section{Employment Data}\label{employment-data}}
 
-This report focused on 2 types of employment data: civilian and military. These 2 employment data types were found on 2 separate websites:
+This report focused on two types of employment data: civilian and military. These employment data types were found on two separate websites:
 
 \textbf{Civilian employment} was obtained from the \href{https://www.fedscope.opm.gov/}{Office of Personnel Management's (OPM) FedScope website}, which provides federal workforce data. From this link, one can click on ``Employment'' under the ``Status Data'' bullet point to access quarterly employment data cubes. Given that the report focuses on federal fiscal years, the employment data of interest is of Quarter 3 of a given year (i.e.~September). When one clicks on a September cube of their desired year, one can filter the data by agency type (``Cabinet Level'') and location (``United States'' and a state of one's choice) in order to get the civilian employment numbers for the Departments of Defense (which is an aggregate of the Air Force, Army, Defense, and Navy cabinet agencies), Homeland Security, Veterans Affairs, and Energy. This data can be exported out as a PDF, CSV, or Excel file.
 
-\textbf{Military employment} was obtained from the \href{https://dwp.dmdc.osd.mil/dwp/app/main}{Defense Manpower Data Center (DMDC) website}, which serves under the Office of the Secretary of Defense. From this link, one can hover over to DoD Data/Reports and select ``Statistics \& Reports''. On this page, scroll to the ``DoD Personnel, Workforce Reports \& Publications'' text, and click on its hyperlink. \href{https://dwp.dmdc.osd.mil/dwp/app/dod-data-reports/workforce-reports}{This opens up a new window to access the military employment data}. Similar to civilian employment, the data of interest is from September of a given year. One can scroll to the section ``Military and Civilian Personnel by Service/Agency by State/Country (Updated Quarterly)'', and download the Excel file for September of their desired year.
+\textbf{Military employment} was obtained from the \href{https://dwp.dmdc.osd.mil/dwp/app/main}{Defense Manpower Data Center (DMDC) website}, which serves under the Office of the Secretary of Defense. From this link, one can hover over to DoD Data/Reports and select ``Statistics \& Reports''. On this page, scroll to the ``DoD Personnel, Workforce Reports \& Publications'' text, and click on its hyperlink. \href{https://dwp.dmdc.osd.mil/dwp/app/DoD-data-reports/workforce-reports}{This opens up a new window to access the military employment data}. Similar to civilian employment, the data of interest is from September of a given year. One can scroll to the section ``Military and Civilian Personnel by Service/Agency by State/Country (Updated Quarterly)'', and download the Excel file for September of their desired year.
 
 \hypertarget{usaspending-data}{%
 \section{USASpending Data}\label{usaspending-data}}
 
-This report utilized \href{https://www.usaspending.gov/}{USAspending.gov} for a large majority of the direct spending done by federal national security agencies in California. The spending types obtained from this site include contracts and grants for DOD, DHS, VA and DOE, as well as direct payments from VA (i.e.~veterans' benefits). From this link, one can hover over to ``Download'' and click on ``Custom Award Data''. \href{https://www.usaspending.gov/download_center/custom_award_data}{On this webpage}, one can select the appropriate spending award types (contracts, grants, and/or direct payments), awarding agency (DOD, DHS, VA, DOE), recipient location (United States for ``Country'', and a specific state should you want to filter the data further), action date range (a fiscal year ``FY 20XX''), and file format. This download process must be done once per agency.
+This report utilized \href{https://www.usaspending.gov/}{USAspending.gov} for a large majority of the direct spending done by federal national security agencies in California. The spending types obtained from this site include contracts and grants for DoD, DHS, VA and DOE, as well as direct payments from VA (i.e.~veterans' benefits). From this link, one can hover over to ``Download'' and click on ``Custom Award Data''. \href{https://www.usaspending.gov/download_center/custom_award_data}{On this webpage}, one can select the appropriate spending award types (contracts, grants, and/or direct payments), awarding agency (DoD, DHS, VA, DOE), recipient location (United States for ``Country'', and a specific state should you want to filter the data further), action date range (a fiscal year ``FY 20XX''), and file format. This download process must be done once per agency.
 
 For obtaining USAspending data, we have developed code that automates this entire process and easily captures all USAspending data in one instance. Please refer to our methods section of this process guide for more details.
 
@@ -154,7 +154,7 @@ For obtaining USAspending data, we have developed code that automates this entir
 \hypertarget{smartpay-data-via-foia}{%
 \subsection{SmartPay Data via FOIA}\label{smartpay-data-via-foia}}
 
-The remaining portion of direct spending detailed in these reports was SmartPay, a charge card program for federal employees. In order to obtain this data, Freedom of Information Act requests (commonly known as FOIAs) were sent out to the federal national security agencies.
+The remaining portion of direct spending detailed in these reports was SmartPay, a charge card program for federal employees. In order to obtain this data, Freedom of Information Act requests (commonly known as FOIAs) were filed to the federal national security agencies.
 
 For more information about SmartPay, please visit the \href{https://www.gsa.gov/travel/plan-book/gsa-smartpay}{General Services Administration's (GSA) SmartPay website}.
 
@@ -180,12 +180,22 @@ The repository contains some raw data files that we have prepared for this proje
 \hypertarget{setting-up-the-repository}{%
 \chapter{Setting Up the Repository}\label{setting-up-the-repository}}
 
+Our code repository is necessary to repeat the California study. It may also be used as a frame work to run additional studies outside of the initial region. These instructions assume you will be using Github to obtain and manage a copy of the repository.
+
 \hypertarget{obtain-repository}{%
 \section{Obtain Repository}\label{obtain-repository}}
 
-Instructions on how to get repo containing code and raw data provided to end users.
-
-Include link to repo and specifically Readme.md file (won't be able to link this until that repo finds its forever home)
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Using Github, navigate to the repository ({[}LINK TO REPO FOREVER HOME HERE{]}) and fork the repository to the user's account.
+\item
+  Clone the repository to a new RStudio Project.
+\item
+  Open the `README.md' file ({[}LINK{]})\\
+  Include link to repo and specifically Readme.md file (won't be able to link this until that repo finds its forever home)
+\end{enumerate}
 
 Do we want to have a chapter on just setting up the repo and running through each section and file it contains? AKA a data dictionary for the Repo? To insert before the methods section??
 So maybe 2 additional sections
@@ -199,14 +209,13 @@ This section details each file contained in the code repository and a summary of
 \section{MEIS\_Methodology Folder {[}CHANGE NAME LATER{]}}\label{meis_methodology-folder-change-name-later}}
 
 This is the main folder, containing all data in the repository.
-- .gitignore: Lists files that will be ignored when using Git to synchronize updates to repository.
-- .Rhistory: Contains the history of commands given by a user in an R Session
-- LICENSE: Contains licensing information for the repository
-- MEIS\_Methodology.Rproj: the R project package used to open the repository in an IDE such as RStudio.
-- README.md: The first file you should read in any repository. Contains basic installation information, information on the repository contents and instructions on how to use the repository.
-- parameters.R: Contains all variables that may require user editing in order for code to run properly. Use of this file is documented in the README.md file.
-- run\_analysis\_master.R: The newest version of the code to process the Federal data. Currently this file is in development for the upcoming 2022 version of this project.
-- DEPRECATED\_run\_analysis\_master.R: This file contains the script used for the 2021 project. This process guide pertains mostly to the code running from this master script.
+* .gitignore: Lists files that will be ignored when using Git to synchronize updates to repository.
+* .Rhistory: Contains the history of commands given by a user in an R Session
+* LICENSE: Contains licensing information for the repository
+* MEIS\_Methodology.Rproj: the R project package used to open the repository in an IDE such as RStudio.
+* README.md: The first file you should read in any repository. Contains basic installation information, information on the repository contents and instructions on how to use the repository. * parameters.R: Contains all variables that may require user editing in order for code to run properly. Use of this file is documented in the README.md file.
+* run\_analysis\_master.R: The newest version of the code to process the Federal data. Currently this file is in development for the upcoming 2022 version of this project.
+* DEPRECATED\_run\_analysis\_master.R: This file contains the script used for the 2021 project. This process guide pertains mostly to the code running from this master script.
 
 \hypertarget{data-folder}{%
 \section{data Folder}\label{data-folder}}
@@ -261,22 +270,22 @@ Here is where you obtain your employment data and make the region specific file 
 \hypertarget{processing-the-data}{%
 \section{Processing the Data}\label{processing-the-data}}
 
-After modifying the parameter files with the appropriate criteria and creating user specific data, one can begin working through the code to process the data and prepare it for IMPLAN. Refer to the deprecated\_run\_analysis\_master.R script to run through the data analysis process for this project.
+After modifying the parameter files with the appropriate criteria and creating user specific data, one can begin working through the code to process the data and prepare it for IMPLAN. Refer to the \textbf{deprecated\_run\_analysis\_master.R} script to run through the data analysis process for this project.
 
-\hypertarget{step-1-clearing-environment-and-loading-in-packages-and-parameters}{%
-\subsection{Step 1: Clearing Environment, and Loading in Packages and Parameters}\label{step-1-clearing-environment-and-loading-in-packages-and-parameters}}
+\hypertarget{clearing-environment-and-loading-in-packages-and-parameters}{%
+\subsection{Clearing Environment, and Loading in Packages and Parameters}\label{clearing-environment-and-loading-in-packages-and-parameters}}
 
 The first lines of code provide some housekeeping steps prior to running through the analysis. Line 4 allows the user to clear their global environment in RStudio, removing all previously defined or loaded packages, variables, values, etc. In running through the analysis wholesale, a good first step is to clear one's environment. Following this is lines 7-12, which load in the various RStudio library packages that are needed to perform this analysis. For more information on these packages, please refer to our References section (``ADD IN LINK TO REFERENCES AND/OR R PACKAGE DESCRIPTIONS''). The final housekeeping step involves line 15, which loads in the parameters file mentioned above.
 
-\hypertarget{step-2-loading-in-functions}{%
-\subsection{Step 2: Loading in Functions}\label{step-2-loading-in-functions}}
+\hypertarget{loading-in-functions}{%
+\subsection{Loading in Functions}\label{loading-in-functions}}
 
 Lines 19-23 compose the second step of the data analysis process: loading in functions that standardize and simplify working through the data. Line 19 loads in a R script that performs a call to USAspending.gov's API in order to grab the relevant contract, grant, and direct payment spending data that we need for our analysis and download it into 2 files (1 for contracts, and 1 for grants/direct payments) at a specified file path location. In this case, the 2 CSV files obtained are downloaded into the data/temp folder. The parameters file is particularly important for this line of code, as the parameters file holds many of the filters that are used to sort what data is obtained from USAspending with this function. Line 20 loads in a function that is used to place additional filters on the obtained USAspending data and write the filtered data into CSV files. These additional filters are also outlined in the parameters file, but the actual filter function is not run until lines 26-30 (see step 3 for more details).
 
 Line 21 loads in a function that concatenates the USAspending contract and grant data files into one dataframe in R, while also removing direct payments from that concatenation (as it is calculated separate from contracts and grants. more on this will be detailed below). The actual concatenate function is not run until lines 39 and 41 (see step 5 for more details). Line 22 loads in a function that splits out the concatenated USAspending dataframe by agency, taking out DOE data from the main dataframe. This is done because DOE's spending activity has been kept separate from the main data analysis of the project. The actual split function is not run until lines 44-47 (see step 6 for more details). Line 23 loads in a function that aggregates the USAspending and DOEspending dataframes by IMPLAN sector. This gets the contracts and grants spending data for 2 IMPLAN activity sheets complete: 1 for the main statewide analysis, and 1 for the DOE statewide analysis. The actual aggregate function is not run until lines 55-60 (see step 7 for more details).
 
-\hypertarget{step-3-filtering-the-usaspending-data}{%
-\subsection{Step 3: Filtering the USAspending Data}\label{step-3-filtering-the-usaspending-data}}
+\hypertarget{filtering-the-usaspending-data}{%
+\subsection{Filtering the USAspending Data}\label{filtering-the-usaspending-data}}
 
 Lines 26-30 begin the third step of filtering down the USAspending data obtained from the API call. Lines 26 and 27 read in the downloaded contracts and grants/direct payments files (respectively) and assign them each to a variable. Lines 29 and 30 perform the filter\_usaspending function (that was loaded in at line 20) on each of those variables.
 
@@ -298,43 +307,43 @@ The filter\_usaspending function has five elements that must be referenced: file
 
 After running the filter functions, 2 CSVs files should be generated in the data/temp folder, by the name defined from the \textbf{out\_name} element.
 
-\hypertarget{step-4-error-checking-the-usaspending-data}{%
-\subsection{Step 4: Error checking the USAspending Data}\label{step-4-error-checking-the-usaspending-data}}
+\hypertarget{error-checking-the-usaspending-data}{%
+\subsection{Error checking the USAspending Data}\label{error-checking-the-usaspending-data}}
 
 Lines 34-35 begin the fourth step of checking for errors in the filtered USAspending data and fixing them. The process for error checking and fixing the data differs for contracts and grants.
 
-\hypertarget{error-checking-usaspending-contracts}{%
-\subsubsection{Error Checking USAspending Contracts}\label{error-checking-usaspending-contracts}}
+\hypertarget{error-checking-contracts}{%
+\subsubsection{Error Checking Contracts}\label{error-checking-contracts}}
 
 Line 34
 
-\hypertarget{error-checking-usaspending-grants}{%
-\subsubsection{Error Checking USAspending Grants}\label{error-checking-usaspending-grants}}
+\hypertarget{error-checking-grantsdirect-payments}{%
+\subsubsection{Error Checking Grants/Direct Payments}\label{error-checking-grantsdirect-payments}}
 
 Line 35
 
-\hypertarget{step-5-concatenating-the-usaspending-data}{%
-\subsection{Step 5: Concatenating the USAspending Data}\label{step-5-concatenating-the-usaspending-data}}
+\hypertarget{concatenating-the-usaspending-data}{%
+\subsection{Concatenating the USAspending Data}\label{concatenating-the-usaspending-data}}
 
 Lines 39 and 41
 
-\hypertarget{step-6-splitting-doe-from-usaspending-data}{%
-\subsection{Step 6: Splitting DOE from USAspending Data}\label{step-6-splitting-doe-from-usaspending-data}}
+\hypertarget{splitting-doe-from-usaspending-data}{%
+\subsection{Splitting DOE from USAspending Data}\label{splitting-doe-from-usaspending-data}}
 
 Lines 45, 47, and 48
 
-\hypertarget{step-7-aggregating-the-spending-data-for-statewide-numbers}{%
-\subsection{Step 7: Aggregating the spending Data for Statewide Numbers}\label{step-7-aggregating-the-spending-data-for-statewide-numbers}}
+\hypertarget{aggregating-the-spending-data-for-statewide-numbers}{%
+\subsection{Aggregating the spending Data for Statewide Numbers}\label{aggregating-the-spending-data-for-statewide-numbers}}
 
 Lines 55-56 and 58-60
 
-\hypertarget{step-8-compiling-employment-data}{%
-\subsection{Step 8: Compiling Employment Data}\label{step-8-compiling-employment-data}}
+\hypertarget{compiling-employment-data}{%
+\subsection{Compiling Employment Data}\label{compiling-employment-data}}
 
 Lines ??-??
 
-\hypertarget{step-9-running-for-loops-to-generate-implan-activity-sheets}{%
-\subsection{Step 9: Running For Loops to Generate IMPLAN Activity Sheets}\label{step-9-running-for-loops-to-generate-implan-activity-sheets}}
+\hypertarget{running-for-loops-to-generate-implan-activity-sheets}{%
+\subsection{Running For Loops to Generate IMPLAN Activity Sheets}\label{running-for-loops-to-generate-implan-activity-sheets}}
 
 Line ??
 
@@ -382,7 +391,6 @@ As part of our final step before developing and writing the reports, our team cr
 \hypertarget{conclusion-discussion}{%
 \chapter{Conclusion/ Discussion}\label{conclusion-discussion}}
 
-Government spending data is very difficult to obtain and there is not a lot of good documentation to help lay people use this data
 Hopefully we provide some guidelines and aid in discovering and processing this data so that quality studies can come about and
 Government spending can become more transparent.
 
