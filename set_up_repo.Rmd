@@ -5,8 +5,6 @@ Our code repository is necessary to repeat the California study. It may also be 
 1. Using Github, navigate to the repository ([LINK TO REPO FOREVER HOME HERE]) and fork the repository to the user's account. 
 2. Clone the repository to a new RStudio Project. 
 3. Open the 'README.md' file ([LINK])  
-Include link to repo and specifically Readme.md file (won't be able to link this until that repo finds its forever home)
+4. Fill out the parameters file to the specifications required. The 'README.md' file contains general instructions, section 
 
-Do we want to have a chapter on just setting up the repo and running through each section and file it contains? AKA a data dictionary for the Repo? To insert before the methods section?? 
-So maybe 2 additional sections 
 

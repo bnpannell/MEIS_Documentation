@@ -120,10 +120,26 @@ To recreate or replicate this study, specialized software is needed to obtain an
   If a GitHub account is needed, one can sign up and register at \url{https://github.com/}. Individual free plans are available, as well as \href{https://help.github.com/en/articles/applying-for-an-educator-or-researcher-discount}{free upgrades} for qualifying academic purposes. GitHub is used to develop and host this project.
 \end{enumerate}
 
-\hypertarget{download-necessary-r-packages}{%
-\section{Download Necessary R Packages}\label{download-necessary-r-packages}}
+\hypertarget{download-necessary-r-libraries}{%
+\section{Download Necessary R Libraries}\label{download-necessary-r-libraries}}
 
-dplyr, httr, jsonlite, openxlsx, readxl, tidyverse (double check that our code actually uses all of these packages)
+To make sure the code can be run, please ensure that the following R library packages are installed. If you are using RStudio, packages can be installed from CRAN using the ``install.packages(\emph{{[}package\_name{]}})'' command in the terminal.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{dplyr:} Used for manipulating dataframes. \citep{dplyr1}
+\item
+  \textbf{httr:} Used for working with URLs and HTTP. \citep{httr2}
+\item
+  \textbf{jsonlite:} Used for interacting with JSON data and web APIs. \citep{json3}
+\item
+  \textbf{openxlsx:} Used for reading, writing and editing xlsx files. \citep{openxlsx4}
+\item
+  \textbf{readxl:} Used for legacy excel .xls files. \citep{readxl5}
+\item
+  \textbf{tidyverse:} A collection of R packages optimized for data science. \citep{tidyverse6}
+\end{itemize}
 
 The next section details data necessary to complete this project as well as how to obtain it.
 
@@ -194,11 +210,9 @@ Our code repository is necessary to repeat the California study. It may also be 
   Clone the repository to a new RStudio Project.
 \item
   Open the `README.md' file ({[}LINK{]})\\
-  Include link to repo and specifically Readme.md file (won't be able to link this until that repo finds its forever home)
+\item
+  Fill out the parameters file to the specifications required. The `README.md' file contains general instructions, section
 \end{enumerate}
-
-Do we want to have a chapter on just setting up the repo and running through each section and file it contains? AKA a data dictionary for the Repo? To insert before the methods section??
-So maybe 2 additional sections
 
 \hypertarget{data-dictionary-for-repository}{%
 \chapter{Data Dictionary for Repository}\label{data-dictionary-for-repository}}
