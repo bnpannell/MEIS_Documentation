@@ -13,11 +13,11 @@ To recreate or replicate this study, specialized software is needed to obtain an
 ## Download Necessary R Libraries
 To make sure the code can be run, please ensure that the following R library packages are installed. If you are using RStudio, packages can be installed from CRAN using the "install.packages(*[package_name]*)" command in the terminal.
 
-- **dplyr:** Used for manipulating dataframes. \citep{dplyr1}
-- **httr:** Used for working with URLs and HTTP. \citep{httr2}
-- **jsonlite:** Used for interacting with JSON data and web APIs. \citep{json3}
-- **openxlsx:** Used for reading, writing and editing xlsx files. \citep{openxlsx4}
-- **readxl:** Used for legacy excel .xls files. \citep{readxl5}
-- **tidyverse:** A collection of R packages optimized for data science. \citep{tidyverse6} 
+- **dplyr:** Used for manipulating dataframes. [@dplyr1]
+- **httr:** Used for working with URLs and HTTP. [@httr2]
+- **jsonlite:** Used for interacting with JSON data and web APIs. [@json3]
+- **openxlsx:** Used for reading, writing and editing xlsx files. [@openxlsx4]
+- **readxl:** Used for legacy excel .xls files. [@readxl5]
+- **tidyverse:** A collection of R packages optimized for data science. [@tidyverse6] 
 
 The next section details data necessary to complete this project as well as how to obtain it. 

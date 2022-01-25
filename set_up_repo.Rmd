@@ -5,6 +5,11 @@ Our code repository is necessary to repeat the California study. It may also be 
 1. Using Github, navigate to the repository ([LINK TO REPO FOREVER HOME HERE]) and fork the repository to the user's account. 
 2. Clone the repository to a new RStudio Project. 
 3. Open the 'README.md' file ([LINK])  
-4. Fill out the parameters file to the specifications required. The 'README.md' file contains general instructions, section 
+4. Fill out the parameters file with required specifications. The 'README.md' file contains general instructions, section 6.1 of the Methods section ([add link to section here]) has more detailed explanations.
+
+## Modify Data Files
+
+Section used for instructing how to set up data repositories for custom user made data? Link back to this section from section 6
+
 
 
