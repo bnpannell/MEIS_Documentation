@@ -3,29 +3,67 @@ This section details each file contained in the code repository and a summary of
 
 ## MEIS_Methodology Folder [CHANGE NAME LATER]
 This is the main folder, containing all data in the repository. 
-* .gitignore: Lists files that will be ignored when using Git to synchronize updates to repository.
-* .Rhistory: Contains the history of commands given by a user in an R Session 
-* LICENSE: Contains licensing information for the repository
-* MEIS_Methodology.Rproj: the R project package used to open the repository in an IDE such as RStudio.
-* README.md: The first file you should read in any repository. Contains basic installation information, information on the repository contents and instructions on how to use the repository. * parameters.R: Contains all variables that may require user editing in order for code to run properly. Use of this file is documented in the README.md file.
-* run_analysis_master.R: The newest version of the code to process the Federal data. Currently this file is in development for the upcoming 2022 version of this project.
-* DEPRECATED_run_analysis_master.R: This file contains the script used for the 2021 project. This process guide pertains mostly to the code running from this master script. 
+
+- **.gitignore:** Lists files that will be ignored when using Git to synchronize updates to repository.
+- **.Rhistory:** Contains the history of commands given by a user in an R Session 
+- **LICENSE:** Contains licensing information for the repository
+- **MEIS_Methodology.Rproj:** the R project package used to open the repository in an IDE such as RStudio.
+- **README.md:** The first file you should read in any repository. Contains basic installation information, information on the repository contents and instructions on how to use the repository. 
+- **parameters.R:** Contains all variables that may require user editing in order for code to run properly. Use of this file is documented in the README.md file.
+- **run_analysis_master.R:** The newest version of the code to process the Federal data. Currently this file is in development for the upcoming 2022 version of this project.
+- **DEPRECATED_run_analysis_master.R:** This file contains the script used for the 2021 project. This process guide pertains mostly to the code running from this master script. 
 
 ## data Folder
-This is the folder designed to hold data for this project.
+This is a folder located in the main folder and is designed to hold data for this project.
 
 ### raw Folder
-This folder contains all raw data provided to the user to aid them in analyzing Federal data for their projects. 
+This folder is located within the data folder and contains all raw data provided to the user. The purpose of the raw data is to simplify the data processing. 
+
+- **2007_to_2017_NAICS.xlsx:** This file contains the cross walk used in the master script to update 2007 NAICs codes to 2017 NAICs codes. This file is a new development to automate error checking when linking IMPLAN codes to NAICs codes. It is NOT used in the Deprecated master script. 
+- **2012_2017_NAICS_to_IMPLAN.xlsx:** This file contains the 2017 NAICS to IMPLAN crosswalk (available online from IMPLAN), as well as several additions. 2012 NAICS to IMPLAN values were appended to this file in addition to several 2002 NAICs codes that required updating. This file is a new development to automate error checking when linking IMPLAN codes to NAICs codes. It is NOT used in the Deprecated master script. 
+- **business_type_to_implan546_crosswalk.csv:** This file was created to serve as a crosswalk between grant recipient business types and their corresponding IMPLAN codes. This file was made by manually looking up each business type and entering its corresponding IMPLAN code value. 
+- **contract_recipient_to_district_crosswalk.xlxs:** This file was created to serve as an aid to error checking by assigning a District values to certain contract data that lacked them. Creation of this file involved looking up addresses of businesses with no given District in order to correctly assign a District to the data. It is NOT used in the Deprecated master script.
+
+#### Blank_Sheets_for_R Folder
+This folder contains the template spreadsheets used in the final preparation of data for entry into IMPLAN. 
+
+- **CommodityOutput2.xlsx:** 
+- **HouseholdSpendingChange4.xlsx:**
+- **IndustrySpendingPattern5.xlsx:**
+- **InstitutionSpendingPattern6.xlsx**
+- **LaborIncomeChange3.xlsx:**
+
+#### deprecated Folder
+This folder contains raw data only used by the Deprecated master script. 
+
+- **2017_implan_online_naics_to_implan546.xlsx:** This file contains the crosswalk for linking 2017 IMPLAN codes to NAICs code. 
+- **2021_employment_totals.xlsx:** 
+- **DOD_County_Shares_R.xlsx:** This file contains the percentage of each County by surface area that is assigned to each Californian Congressional District as of 2021. 
 
 ### temp Folder
-This folder holds all files that are made while either master script is running. These files are deleted when the final output is finished being processed. 
+This folder is also located within the data folder and holds all files that are made while either master script is running. These files are deleted when the final output is finished being processed. 
+
+- **placeholderfortemp.txt:** This file prevents Github from deleting the temp folder, as it is empty by default.
 
 ## output Folder
-This folder holds all of the final output files needed by IMPLAN in order to complete this project. New output files will get created and input to this folder while running scripts from this repository.
-  - placeholder.txt: This file prevents Github from deleting the output folder, as it is empty by default.  
+This folder is within the main folder and holds all of the final output files needed by IMPLAN in order to complete this project. New output files will get created and placed into this folder as scripts are run.
+
+- **placeholder.txt:** This file prevents Github from deleting the output folder, as it is empty by default.  
 
 ## src Folder
-This folder contains all script files needed by the master script when it is running. Scripts in this folder may be used by either of the master scripts contained in this repository. DO NOT MODIFY ANY OF THESE FILES. 
+This folder within the main folder contains all script files needed by the master script when it is running. Scripts in this folder may be used by either of the master scripts contained in this repository. DO NOT MODIFY ANY OF THESE FILES. 
+
+- **aggregate_usaspending.R:**
+- **concatenate_usaspending.R:**
+- **error_check_and_weight_contracts.R:**
+- **error_check_grants.R:**
+- **filter_usaspending.R:**
+- **obtain_usaspending.R:**
+- **split_usaspending.R:**
 
 ### deprecated Folder
-This folder contains all scripts that are only used by the DEPRECATED_run_analysis_master.R script. DO NOT MODIFY ANY OF THESE FILES. 
+This folder within the src folder contains all scripts that are only used by the DEPRECATED_run_analysis_master.R script. DO NOT MODIFY ANY OF THESE FILES. 
+
+- **DEPRECATED_create_implan_sheets.R:**
+- **DEPRECATED_error_check_contracts.R:**
+- **DEPRECATED_error_check_grants.R:** 

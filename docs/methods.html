@@ -126,7 +126,7 @@ div.csl-indent {
 <li class="chapter" data-level="5.3" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#output-folder"><i class="fa fa-check"></i><b>5.3</b> output Folder</a></li>
 <li class="chapter" data-level="5.4" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#src-folder"><i class="fa fa-check"></i><b>5.4</b> src Folder</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#deprecated-folder"><i class="fa fa-check"></i><b>5.4.1</b> deprecated Folder</a></li>
+<li class="chapter" data-level="5.4.1" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#deprecated-folder-1"><i class="fa fa-check"></i><b>5.4.1</b> deprecated Folder</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>6</b> Methods</a>
@@ -137,13 +137,15 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="6.3.1" data-path="methods.html"><a href="methods.html#clearing-environment-and-loading-in-packages-and-parameters"><i class="fa fa-check"></i><b>6.3.1</b> Clearing Environment, and Loading in Packages and Parameters</a></li>
 <li class="chapter" data-level="6.3.2" data-path="methods.html"><a href="methods.html#loading-in-functions"><i class="fa fa-check"></i><b>6.3.2</b> Loading in Functions</a></li>
-<li class="chapter" data-level="6.3.3" data-path="methods.html"><a href="methods.html#filtering-the-usaspending-data"><i class="fa fa-check"></i><b>6.3.3</b> Filtering the USAspending Data</a></li>
-<li class="chapter" data-level="6.3.4" data-path="methods.html"><a href="methods.html#error-checking-the-usaspending-data"><i class="fa fa-check"></i><b>6.3.4</b> Error checking the USAspending Data</a></li>
-<li class="chapter" data-level="6.3.5" data-path="methods.html"><a href="methods.html#concatenating-the-usaspending-data"><i class="fa fa-check"></i><b>6.3.5</b> Concatenating the USAspending Data</a></li>
-<li class="chapter" data-level="6.3.6" data-path="methods.html"><a href="methods.html#splitting-doe-from-usaspending-data"><i class="fa fa-check"></i><b>6.3.6</b> Splitting DOE from USAspending Data</a></li>
-<li class="chapter" data-level="6.3.7" data-path="methods.html"><a href="methods.html#aggregating-the-spending-data-for-statewide-numbers"><i class="fa fa-check"></i><b>6.3.7</b> Aggregating the spending Data for Statewide Numbers</a></li>
-<li class="chapter" data-level="6.3.8" data-path="methods.html"><a href="methods.html#compiling-employment-data"><i class="fa fa-check"></i><b>6.3.8</b> Compiling Employment Data</a></li>
-<li class="chapter" data-level="6.3.9" data-path="methods.html"><a href="methods.html#running-for-loops-to-generate-implan-activity-sheets"><i class="fa fa-check"></i><b>6.3.9</b> Running For Loops to Generate IMPLAN Activity Sheets</a></li>
+<li class="chapter" data-level="6.3.3" data-path="methods.html"><a href="methods.html#obtaining-the-usaspending-data"><i class="fa fa-check"></i><b>6.3.3</b> Obtaining the USAspending Data</a></li>
+<li class="chapter" data-level="6.3.4" data-path="methods.html"><a href="methods.html#filtering-the-usaspending-data"><i class="fa fa-check"></i><b>6.3.4</b> Filtering the USAspending Data</a></li>
+<li class="chapter" data-level="6.3.5" data-path="methods.html"><a href="methods.html#error-checking-the-usaspending-data"><i class="fa fa-check"></i><b>6.3.5</b> Error checking the USAspending Data</a></li>
+<li class="chapter" data-level="6.3.6" data-path="methods.html"><a href="methods.html#manually-fixing-congressional-district-errors"><i class="fa fa-check"></i><b>6.3.6</b> Manually Fixing Congressional District Errors</a></li>
+<li class="chapter" data-level="6.3.7" data-path="methods.html"><a href="methods.html#concatenating-the-usaspending-data"><i class="fa fa-check"></i><b>6.3.7</b> Concatenating the USAspending Data</a></li>
+<li class="chapter" data-level="6.3.8" data-path="methods.html"><a href="methods.html#splitting-doe-from-usaspending-data"><i class="fa fa-check"></i><b>6.3.8</b> Splitting DOE from USAspending Data</a></li>
+<li class="chapter" data-level="6.3.9" data-path="methods.html"><a href="methods.html#aggregating-the-spending-data-for-statewide-numbers"><i class="fa fa-check"></i><b>6.3.9</b> Aggregating the spending Data for Statewide Numbers</a></li>
+<li class="chapter" data-level="6.3.10" data-path="methods.html"><a href="methods.html#compiling-employment-data"><i class="fa fa-check"></i><b>6.3.10</b> Compiling Employment Data</a></li>
+<li class="chapter" data-level="6.3.11" data-path="methods.html"><a href="methods.html#running-for-loops-to-generate-implan-activity-sheets"><i class="fa fa-check"></i><b>6.3.11</b> Running For Loops to Generate IMPLAN Activity Sheets</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="using-implan.html"><a href="using-implan.html"><i class="fa fa-check"></i><b>7</b> Using IMPLAN</a></li>
@@ -181,64 +183,78 @@ div.csl-indent {
 </div>
 <div id="making-user-specific-data-files" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> Making User Specific Data Files</h2>
-<p>Edit framework files in raw data of repo and move into appropriate section of repo.</p>
-<p>Here is where you obtain your employment data and make the region specific file to read in those numbers (if we don’t just put them in the parameters file?)</p>
+<p>The second step to focus on after modifying the parameters file is to ensure that user specific data files have been created in order to run this analysis. In this particular case, employment data (detailed in Section 3.1) and error check files were created in order to properly assign and allocate employment and spending data across California counties and congressional districts.</p>
 </div>
 <div id="processing-the-data" class="section level2" number="6.3">
 <h2><span class="header-section-number">6.3</span> Processing the Data</h2>
 <p>After modifying the parameter files with the appropriate criteria and creating user specific data, one can begin working through the code to process the data and prepare it for IMPLAN. Refer to the <strong>deprecated_run_analysis_master.R</strong> script to run through the data analysis process for this project.</p>
 <div id="clearing-environment-and-loading-in-packages-and-parameters" class="section level3" number="6.3.1">
 <h3><span class="header-section-number">6.3.1</span> Clearing Environment, and Loading in Packages and Parameters</h3>
-<p>The first lines of code provide some housekeeping steps prior to running through the analysis. Line 4 allows the user to clear their global environment in RStudio, removing all previously defined or loaded packages, variables, values, etc. In running through the analysis wholesale, a good first step is to clear one’s environment. Following this is lines 7-12, which load in the various RStudio library packages that are needed to perform this analysis. For more information on these packages, please refer to our References section (“ADD IN LINK TO REFERENCES AND/OR R PACKAGE DESCRIPTIONS”). The final housekeeping step involves line 15, which loads in the parameters file mentioned above.</p>
+<p>The first lines of code provide some housekeeping steps prior to running through the analysis. Line 6 allows the user to clear their global environment in RStudio, removing all previously defined or loaded packages, variables, values, etc. In running through the analysis wholesale, a good first step is to clear one’s environment. Following this is lines 9-14, which load in the various RStudio library packages that are needed to perform this analysis. For more information on these packages, please refer to our References section (“ADD IN LINK TO REFERENCES AND/OR R PACKAGE DESCRIPTIONS”). The final housekeeping step involves line 17, which loads in the parameters file mentioned above.</p>
 </div>
 <div id="loading-in-functions" class="section level3" number="6.3.2">
 <h3><span class="header-section-number">6.3.2</span> Loading in Functions</h3>
-<p>Lines 19-23 compose the second step of the data analysis process: loading in functions that standardize and simplify working through the data. Line 19 loads in a R script that performs a call to USAspending.gov’s API in order to grab the relevant contract, grant, and direct payment spending data that we need for our analysis and download it into 2 files (1 for contracts, and 1 for grants/direct payments) at a specified file path location. In this case, the 2 CSV files obtained are downloaded into the data/temp folder. The parameters file is particularly important for this line of code, as the parameters file holds many of the filters that are used to sort what data is obtained from USAspending with this function. Line 20 loads in a function that is used to place additional filters on the obtained USAspending data and write the filtered data into CSV files. These additional filters are also outlined in the parameters file, but the actual filter function is not run until lines 26-30 (see step 3 for more details).</p>
-<p>Line 21 loads in a function that concatenates the USAspending contract and grant data files into one dataframe in R, while also removing direct payments from that concatenation (as it is calculated separate from contracts and grants. more on this will be detailed below). The actual concatenate function is not run until lines 39 and 41 (see step 5 for more details). Line 22 loads in a function that splits out the concatenated USAspending dataframe by agency, taking out DOE data from the main dataframe. This is done because DOE’s spending activity has been kept separate from the main data analysis of the project. The actual split function is not run until lines 44-47 (see step 6 for more details). Line 23 loads in a function that aggregates the USAspending and DOEspending dataframes by IMPLAN sector. This gets the contracts and grants spending data for 2 IMPLAN activity sheets complete: 1 for the main statewide analysis, and 1 for the DOE statewide analysis. The actual aggregate function is not run until lines 55-60 (see step 7 for more details).</p>
+<p>Lines 20-23 compose the second step of the data analysis process: loading in functions that standardize and simplify working through the data. Line 20 loads in a function that is used to place additional filters on the obtained USAspending data and write the filtered data into CSV files. These additional filters are also outlined in the parameters file, but the actual filter function is not run until lines 26-30 (see step 3 for more details).</p>
+<p>Line 21 loads in a function that concatenates the USAspending contract and grant data files into one dataframe in R, while also removing direct payments from that concatenation (as it is calculated separate from contracts and grants. more on this will be detailed below). The actual concatenate function is not run until lines 39 and 41 (see step 5 for more details). Line 22 loads in a function that splits out the concatenated USAspending dataframe by agency, taking out DOE data from the main dataframe. This is done because DOE’s spending activity has been kept separate from the main data analysis of the project. The actual split function is not run until lines 44-47 (see step 6 for more details). Line 23 loads in a function that aggregates the USAspending and DOEspending dataframes by IMPLAN sector. This gets the contracts and grants spending data for two IMPLAN activity sheets complete: one for the main statewide analysis, and one for the DOE statewide analysis. The actual aggregate function is not run until lines 55-60 (see step 7 for more details).</p>
 </div>
-<div id="filtering-the-usaspending-data" class="section level3" number="6.3.3">
-<h3><span class="header-section-number">6.3.3</span> Filtering the USAspending Data</h3>
-<p>Lines 26-30 begin the third step of filtering down the USAspending data obtained from the API call. Lines 26 and 27 read in the downloaded contracts and grants/direct payments files (respectively) and assign them each to a variable. Lines 29 and 30 perform the filter_usaspending function (that was loaded in at line 20) on each of those variables.</p>
+<div id="obtaining-the-usaspending-data" class="section level3" number="6.3.3">
+<h3><span class="header-section-number">6.3.3</span> Obtaining the USAspending Data</h3>
+<p>Line 26 loads in a R script that performs a call to USAspending.gov’s API that grabs the relevant contract, grant, and direct payment spending data that we need for our analysis and downloads it into two files (one for contracts, and one for grants/direct payments) at a specified file path location. In this case, the two CSV files obtained are downloaded into the data/temp folder. The parameters file is particularly important for this line of code, as the parameters file holds many of the filters that are used to sort what data is obtained from USAspending with this code.</p>
+</div>
+<div id="filtering-the-usaspending-data" class="section level3" number="6.3.4">
+<h3><span class="header-section-number">6.3.4</span> Filtering the USAspending Data</h3>
+<p>Lines 29-34 begin the third step of filtering down the USAspending data obtained from the API call. Lines 29 and 30 read in the downloaded contracts and grants/direct payments files (respectively) and assign them each to a variable. Lines 33 and 34 perform the filter_usaspending function (that was loaded in at line 20) on each of those variables.</p>
 <p>The filter_usaspending function has five elements that must be referenced: file_name, state, doe_filters, filters, and out_name.</p>
 <ul>
-<li>The <strong>file_name</strong> element is a call to whichever data file we want to pass through to be filtered - in this case, the 2 USAspending CSVs that are defined in lines 26 and 27.</li>
+<li>The <strong>file_name</strong> element is a call to whichever data file we want to pass through to be filtered - in this case, the two USAspending CSVs that are defined in lines 29 and 30.</li>
 <li>The <strong>state</strong> element is defined in our parameters, based on the state of interest for our study. In this case, that state is California. This element is added to ensure that the primary_place_of_performance_state is the same as the recipient_state (which was filtered in our obtain_usaspending function), thus ensuring that all data entries included in the analysis are in the state of interest for the study.</li>
 <li>The <strong>doe_filters</strong> element is defined in our parameters, based on <strong>doe_offices</strong>. This element is included to filter out DOE spending done in the state that is not national security-related. The basis for this filter element is from a list of DOE sub-agencies that were demarcated as national security-related.</li>
 <li>The <strong>filters</strong> element is defined in our parameters, based on <strong>contract_columns</strong> and <strong>grant_columns</strong>, respectively. This element is included to pare down the columns of data from the USAspending files to retain only the pertinent columns of data for our analysis.</li>
 <li>The <strong>out_name</strong> element is defined in our parameters, based on <strong>c_out_name</strong> and <strong>g_out_name</strong>, respectively. This element is included to give a naming convention for the files that get generated as a result of running the filter function.</li>
 </ul>
-<p>After running the filter functions, 2 CSVs files should be generated in the data/temp folder, by the name defined from the <strong>out_name</strong> element.</p>
+<p>After running the filter functions, two CSVs files should be generated in the data/temp folder, by the name defined from the <strong>out_name</strong> element.</p>
 </div>
-<div id="error-checking-the-usaspending-data" class="section level3" number="6.3.4">
-<h3><span class="header-section-number">6.3.4</span> Error checking the USAspending Data</h3>
-<p>Lines 34-35 begin the fourth step of checking for errors in the filtered USAspending data and fixing them. The process for error checking and fixing the data differs for contracts and grants.</p>
-<div id="error-checking-contracts" class="section level4" number="6.3.4.1">
-<h4><span class="header-section-number">6.3.4.1</span> Error Checking Contracts</h4>
-<p>Line 34</p>
+<div id="error-checking-the-usaspending-data" class="section level3" number="6.3.5">
+<h3><span class="header-section-number">6.3.5</span> Error checking the USAspending Data</h3>
+<p>Lines 37-38 begin the fourth step of checking for errors in the filtered USAspending data and fixing them to have an IMPLAN code associated with each entry. The process for error checking and fixing the data are relatively the same for contracts and grants - the only major difference being the variable of interest in fixing the errors. For contracts, the focus is on NAICS codes, while the grants look at business types.</p>
+<div id="error-checking-contracts" class="section level4" number="6.3.5.1">
+<h4><span class="header-section-number">6.3.5.1</span> Error Checking Contracts</h4>
+<p>Line 37 loads in a R script file that goes through the filtered USAspending contracts file and remediates issues in certain contract entries. The first lines in this R script load two files into two dataframes: 1) the filtered USAspending contracts file (<strong>contracts</strong>); and 2) a NAICS to IMPLAN crosswalk that was <a href="https://support.implan.com/hc/en-us/articles/360034896614-546-Industries-Conversions-Bridges-Construction-2018-Data">provided online on IMPLAN’s website</a> (<strong>naics_to_implan</strong>). After reading in the NAICS to IMPLAN crosswalk, there are a couple of code fixes and removal of duplicate codes that our team determined to, in our best knowledge, be the most accurate way to relate those NAICS codes to an IMPLAN code. After this, the NAICS to IMPLAN crosswalk is merged into the contracts dataframe by NAICS code in order to get an IMPLAN code associated with each contract entry.</p>
+<p>However, this merge does not give all contract entries an IMPLAN code. This can be for a variety of reasons, including: 1) a contract entry from USAspending not having a NAICS code; and 2) an incorrect and/or outdated NAICS code that was not a part of IMPLAN’s provided crosswalk. The lines of code following the merge work to fix the error contract entries. First, the contracts with no NAICS codes were hardcoded in the <strong>contracts</strong> dataframe to a specific IMPLAN code based on the contract recipient’s name and the industry which they work in. Next, the contracts which had a mistyped or older NAICS code were pulled out to a new dataframe (<strong>contracts_missing_implan</strong>) and hardcoded to an IMPLAN code based on our team’s best research into which IMPLAN code each entry would best fit into. This presents a degree of error when parsing out the contract spending, but also represents the best available workaround given time and information constraints. A new way of handling the error checks for contracts is detailed in <a href="LINK%20TO%20SECTION%209%20OF%20PROCESS%20GUIDE">Section 9: What’s Next</a>.</p>
+<p>The final steps of this contracts error check involve dropping out the contract entries which had no IMPLAN code from the original <strong>contracts</strong> dataframe. Then, the dataframe which fixed the contracts that were missing IMPLAN codes (<strong>contracts_missing_implan</strong>) is merged back into the original <strong>contracts</strong> dataframe. The <strong>contracts</strong> dataframe now has all contract entries “cleaned” with an IMPLAN code for each entry. Last, only the columns necessary for this analysis are selected, and then the cleaned <strong>contracts</strong> dataframe is written into a new CSV file.</p>
 </div>
-<div id="error-checking-grantsdirect-payments" class="section level4" number="6.3.4.2">
-<h4><span class="header-section-number">6.3.4.2</span> Error Checking Grants/Direct Payments</h4>
-<p>Line 35</p>
+<div id="error-checking-grantsdirect-payments" class="section level4" number="6.3.5.2">
+<h4><span class="header-section-number">6.3.5.2</span> Error Checking Grants/Direct Payments</h4>
+<p>Line 38 loads in a R script file that goes through the filtered USAspending grants and direct payments file and remediates issues in certain grants entries. First, the script loads in the filtered USAspending grants and direct payments file into a dataframe (<strong>grants</strong>). Next, we pull out the VA direct payments from the <strong>grants</strong> dataframe, and define it into its’ own dataframe (<strong>va_benefits</strong>). This is done because VA direct payments does not a require an IMPLAN code and is thus calculated separate from contracts and grants from IMPLAN in the IMPLAN activity sheets. The <strong>grants</strong> dataframe filters out the direct payments based on the <strong>assistance_code</strong> column of the data, where entries that have an assistance code of 10 are the direct payment entries.</p>
+<p>After VA direct payments are separate from grants, the next step is to load a business type to IMPLAN crosswalk into a dataframe (<strong>business_to_implan</strong>). This file was self-created by the team as the best method for relating grants data to IMPLAN codes, given that USAspending grants data entries do not provide for NAICS codes. The business type to crosswalk is then merged with the <strong>grants</strong> dataframe in order to get an IMPLAN code associated with every grant entry.</p>
+<p>However, this merge does not give all grant entries an IMPLAN code. In the case of the grants data, they may be missing a business type value, or their business type may be one that is not captured in the self-created crosswalk. Thus, the lines after the merge work to hardcode IMPLAN codes into the <strong>grants</strong> dataframe based on the grant recipient’s name and the industry which they work in. After these hardcodes, a second dataframe (<strong>grants_missing_implan</strong>) is defined to capture if any other grant entries are missing an IMPLAN code. If a grant entry is still missing an IMPLAN code, it would need to be fixed in the <strong>grants_missing_implan</strong> dataframe and then merged back into the original <strong>grants</strong> dataframe.</p>
+<p>Now that the grants data has been “cleaned,” the final steps in this script involve selecting only the necessary columns of data for the <strong>va_benefits</strong> and <strong>grants</strong> dataframes, and writing each one into their own respective CSV files.</p>
 </div>
 </div>
-<div id="concatenating-the-usaspending-data" class="section level3" number="6.3.5">
-<h3><span class="header-section-number">6.3.5</span> Concatenating the USAspending Data</h3>
-<p>Lines 39 and 41</p>
+<div id="manually-fixing-congressional-district-errors" class="section level3" number="6.3.6">
+<h3><span class="header-section-number">6.3.6</span> Manually Fixing Congressional District Errors</h3>
+<p>Lines 40 and 42 provide an important notice to only continue with the code once some manual fixes have been implemented in the three cleaned CSV files produced from the above error check codes. <strong>This step is essential to ensuring no weird errors come out along the way.</strong> The issue in the USAspending data for contracts, grants, and direct payments is the <strong>recipient_congressional_district</strong> column, where certain entries in all three CSV files have a district value of “NA” (contracts) or “90” (grants, and direct payments). There may be multiple reasons for this error, with the most plausible being that these data entries are in locations that span across multiple counties and/or congressional districts.</p>
+<p>In order to properly remediate these issues, our team utilized the <em>DOD_County_Shares_R.xlsx</em> file in the raw data folder. Looking at this file, the “Districts” tab in that Excel sheet provides a breakdown of how much a county spans across one or multiple congressional district(s) based on land area from the California Redistricting Commission. We would then filter the contract, grant, or direct payment entries by county, and randomly assign a certain number of entries to a district based on their county. For example, if 20 contract entries that had a “NA” value in the district column were in Alameda County, we would assign 47% of those entries (~9) to CA-13, 42% (~8) to CA-15, and 12% (~3) to CA-17.</p>
+<p>This method also inherently presents a degree of error with allocating spending across congressional districts. Even so, given time constraints, this workaround presented itself as the best solution at the time. Our team is working on a new way to address these manual fixes through code - for more details, refer to <a href="LINK%20TO%20SECTION%209%20OF%20PROCESS%20GUIDE">Section 9: What’s Next</a>.</p>
 </div>
-<div id="splitting-doe-from-usaspending-data" class="section level3" number="6.3.6">
-<h3><span class="header-section-number">6.3.6</span> Splitting DOE from USAspending Data</h3>
-<p>Lines 45, 47, and 48</p>
+<div id="concatenating-the-usaspending-data" class="section level3" number="6.3.7">
+<h3><span class="header-section-number">6.3.7</span> Concatenating the USAspending Data</h3>
+<p>Lines 45-46</p>
 </div>
-<div id="aggregating-the-spending-data-for-statewide-numbers" class="section level3" number="6.3.7">
-<h3><span class="header-section-number">6.3.7</span> Aggregating the spending Data for Statewide Numbers</h3>
-<p>Lines 55-56 and 58-60</p>
+<div id="splitting-doe-from-usaspending-data" class="section level3" number="6.3.8">
+<h3><span class="header-section-number">6.3.8</span> Splitting DOE from USAspending Data</h3>
+<p>Lines 49-52</p>
 </div>
-<div id="compiling-employment-data" class="section level3" number="6.3.8">
-<h3><span class="header-section-number">6.3.8</span> Compiling Employment Data</h3>
+<div id="aggregating-the-spending-data-for-statewide-numbers" class="section level3" number="6.3.9">
+<h3><span class="header-section-number">6.3.9</span> Aggregating the spending Data for Statewide Numbers</h3>
+<p>Lines 58-59 and 61-63</p>
+</div>
+<div id="compiling-employment-data" class="section level3" number="6.3.10">
+<h3><span class="header-section-number">6.3.10</span> Compiling Employment Data</h3>
 <p>Lines ??-??</p>
 </div>
-<div id="running-for-loops-to-generate-implan-activity-sheets" class="section level3" number="6.3.9">
-<h3><span class="header-section-number">6.3.9</span> Running For Loops to Generate IMPLAN Activity Sheets</h3>
+<div id="running-for-loops-to-generate-implan-activity-sheets" class="section level3" number="6.3.11">
+<h3><span class="header-section-number">6.3.11</span> Running For Loops to Generate IMPLAN Activity Sheets</h3>
 <p>Line ??</p>
 <ul>
 <li><p>Process data</p>

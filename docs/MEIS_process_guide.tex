@@ -209,44 +209,142 @@ This section details each file contained in the code repository and a summary of
 \section{MEIS\_Methodology Folder {[}CHANGE NAME LATER{]}}\label{meis_methodology-folder-change-name-later}}
 
 This is the main folder, containing all data in the repository.
-* .gitignore: Lists files that will be ignored when using Git to synchronize updates to repository.
-* .Rhistory: Contains the history of commands given by a user in an R Session
-* LICENSE: Contains licensing information for the repository
-* MEIS\_Methodology.Rproj: the R project package used to open the repository in an IDE such as RStudio.
-* README.md: The first file you should read in any repository. Contains basic installation information, information on the repository contents and instructions on how to use the repository. * parameters.R: Contains all variables that may require user editing in order for code to run properly. Use of this file is documented in the README.md file.
-* run\_analysis\_master.R: The newest version of the code to process the Federal data. Currently this file is in development for the upcoming 2022 version of this project.
-* DEPRECATED\_run\_analysis\_master.R: This file contains the script used for the 2021 project. This process guide pertains mostly to the code running from this master script.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{.gitignore:} Lists files that will be ignored when using Git to synchronize updates to repository.
+\item
+  \textbf{.Rhistory:} Contains the history of commands given by a user in an R Session
+\item
+  \textbf{LICENSE:} Contains licensing information for the repository
+\item
+  \textbf{MEIS\_Methodology.Rproj:} the R project package used to open the repository in an IDE such as RStudio.
+\item
+  \textbf{README.md:} The first file you should read in any repository. Contains basic installation information, information on the repository contents and instructions on how to use the repository.
+\item
+  \textbf{parameters.R:} Contains all variables that may require user editing in order for code to run properly. Use of this file is documented in the README.md file.
+\item
+  \textbf{run\_analysis\_master.R:} The newest version of the code to process the Federal data. Currently this file is in development for the upcoming 2022 version of this project.
+\item
+  \textbf{DEPRECATED\_run\_analysis\_master.R:} This file contains the script used for the 2021 project. This process guide pertains mostly to the code running from this master script.
+\end{itemize}
 
 \hypertarget{data-folder}{%
 \section{data Folder}\label{data-folder}}
 
-This is the folder designed to hold data for this project.
+This is a folder located in the main folder and is designed to hold data for this project.
 
 \hypertarget{raw-folder}{%
 \subsection{raw Folder}\label{raw-folder}}
 
-This folder contains all raw data provided to the user to aid them in analyzing Federal data for their projects.
+This folder is located within the data folder and contains all raw data provided to the user. The purpose of the raw data is to simplify the data processing.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{2007\_to\_2017\_NAICS.xlsx:} This file contains the cross walk used in the master script to update 2007 NAICs codes to 2017 NAICs codes. This file is a new development to automate error checking when linking IMPLAN codes to NAICs codes. It is NOT used in the Deprecated master script.
+\item
+  \textbf{2012\_2017\_NAICS\_to\_IMPLAN.xlsx:} This file contains the 2017 NAICS to IMPLAN crosswalk (available online from IMPLAN), as well as several additions. 2012 NAICS to IMPLAN values were appended to this file in addition to several 2002 NAICs codes that required updating. This file is a new development to automate error checking when linking IMPLAN codes to NAICs codes. It is NOT used in the Deprecated master script.
+\item
+  \textbf{business\_type\_to\_implan546\_crosswalk.csv:} This file was created to serve as a crosswalk between grant recipient business types and their corresponding IMPLAN codes. This file was made by manually looking up each business type and entering its corresponding IMPLAN code value.
+\item
+  \textbf{contract\_recipient\_to\_district\_crosswalk.xlxs:} This file was created to serve as an aid to error checking by assigning a District values to certain contract data that lacked them. Creation of this file involved looking up addresses of businesses with no given District in order to correctly assign a District to the data. It is NOT used in the Deprecated master script.
+\end{itemize}
+
+\hypertarget{blank_sheets_for_r-folder}{%
+\subsubsection{Blank\_Sheets\_for\_R Folder}\label{blank_sheets_for_r-folder}}
+
+This folder contains the template spreadsheets used in the final preparation of data for entry into IMPLAN.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{CommodityOutput2.xlsx:}
+\item
+  \textbf{HouseholdSpendingChange4.xlsx:}
+\item
+  \textbf{IndustrySpendingPattern5.xlsx:}
+\item
+  \textbf{InstitutionSpendingPattern6.xlsx}
+\item
+  \textbf{LaborIncomeChange3.xlsx:}
+\end{itemize}
+
+\hypertarget{deprecated-folder}{%
+\subsubsection{deprecated Folder}\label{deprecated-folder}}
+
+This folder contains raw data only used by the Deprecated master script.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{2017\_implan\_online\_naics\_to\_implan546.xlsx:} This file contains the crosswalk for linking 2017 IMPLAN codes to NAICs code.
+\item
+  \textbf{2021\_employment\_totals.xlsx:}
+\item
+  \textbf{DOD\_County\_Shares\_R.xlsx:} This file contains the percentage of each County by surface area that is assigned to each Californian Congressional District as of 2021.
+\end{itemize}
 
 \hypertarget{temp-folder}{%
 \subsection{temp Folder}\label{temp-folder}}
 
-This folder holds all files that are made while either master script is running. These files are deleted when the final output is finished being processed.
+This folder is also located within the data folder and holds all files that are made while either master script is running. These files are deleted when the final output is finished being processed.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{placeholderfortemp.txt:} This file prevents Github from deleting the temp folder, as it is empty by default.
+\end{itemize}
 
 \hypertarget{output-folder}{%
 \section{output Folder}\label{output-folder}}
 
-This folder holds all of the final output files needed by IMPLAN in order to complete this project. New output files will get created and input to this folder while running scripts from this repository.
-- placeholder.txt: This file prevents Github from deleting the output folder, as it is empty by default.
+This folder is within the main folder and holds all of the final output files needed by IMPLAN in order to complete this project. New output files will get created and placed into this folder as scripts are run.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{placeholder.txt:} This file prevents Github from deleting the output folder, as it is empty by default.
+\end{itemize}
 
 \hypertarget{src-folder}{%
 \section{src Folder}\label{src-folder}}
 
-This folder contains all script files needed by the master script when it is running. Scripts in this folder may be used by either of the master scripts contained in this repository. DO NOT MODIFY ANY OF THESE FILES.
+This folder within the main folder contains all script files needed by the master script when it is running. Scripts in this folder may be used by either of the master scripts contained in this repository. DO NOT MODIFY ANY OF THESE FILES.
 
-\hypertarget{deprecated-folder}{%
-\subsection{deprecated Folder}\label{deprecated-folder}}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{aggregate\_usaspending.R:}
+\item
+  \textbf{concatenate\_usaspending.R:}
+\item
+  \textbf{error\_check\_and\_weight\_contracts.R:}
+\item
+  \textbf{error\_check\_grants.R:}
+\item
+  \textbf{filter\_usaspending.R:}
+\item
+  \textbf{obtain\_usaspending.R:}
+\item
+  \textbf{split\_usaspending.R:}
+\end{itemize}
 
-This folder contains all scripts that are only used by the DEPRECATED\_run\_analysis\_master.R script. DO NOT MODIFY ANY OF THESE FILES.
+\hypertarget{deprecated-folder-1}{%
+\subsection{deprecated Folder}\label{deprecated-folder-1}}
+
+This folder within the src folder contains all scripts that are only used by the DEPRECATED\_run\_analysis\_master.R script. DO NOT MODIFY ANY OF THESE FILES.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{DEPRECATED\_create\_implan\_sheets.R:}
+\item
+  \textbf{DEPRECATED\_error\_check\_contracts.R:}
+\item
+  \textbf{DEPRECATED\_error\_check\_grants.R:}
+\end{itemize}
 
 \hypertarget{methods}{%
 \chapter{Methods}\label{methods}}
@@ -263,9 +361,7 @@ The first step in working with this code involves looking at the Parameters file
 \hypertarget{making-user-specific-data-files}{%
 \section{Making User Specific Data Files}\label{making-user-specific-data-files}}
 
-Edit framework files in raw data of repo and move into appropriate section of repo.
-
-Here is where you obtain your employment data and make the region specific file to read in those numbers (if we don't just put them in the parameters file?)
+The second step to focus on after modifying the parameters file is to ensure that user specific data files have been created in order to run this analysis. In this particular case, employment data (detailed in Section 3.1) and error check files were created in order to properly assign and allocate employment and spending data across California counties and congressional districts.
 
 \hypertarget{processing-the-data}{%
 \section{Processing the Data}\label{processing-the-data}}
@@ -275,26 +371,31 @@ After modifying the parameter files with the appropriate criteria and creating u
 \hypertarget{clearing-environment-and-loading-in-packages-and-parameters}{%
 \subsection{Clearing Environment, and Loading in Packages and Parameters}\label{clearing-environment-and-loading-in-packages-and-parameters}}
 
-The first lines of code provide some housekeeping steps prior to running through the analysis. Line 4 allows the user to clear their global environment in RStudio, removing all previously defined or loaded packages, variables, values, etc. In running through the analysis wholesale, a good first step is to clear one's environment. Following this is lines 7-12, which load in the various RStudio library packages that are needed to perform this analysis. For more information on these packages, please refer to our References section (``ADD IN LINK TO REFERENCES AND/OR R PACKAGE DESCRIPTIONS''). The final housekeeping step involves line 15, which loads in the parameters file mentioned above.
+The first lines of code provide some housekeeping steps prior to running through the analysis. Line 6 allows the user to clear their global environment in RStudio, removing all previously defined or loaded packages, variables, values, etc. In running through the analysis wholesale, a good first step is to clear one's environment. Following this is lines 9-14, which load in the various RStudio library packages that are needed to perform this analysis. For more information on these packages, please refer to our References section (``ADD IN LINK TO REFERENCES AND/OR R PACKAGE DESCRIPTIONS''). The final housekeeping step involves line 17, which loads in the parameters file mentioned above.
 
 \hypertarget{loading-in-functions}{%
 \subsection{Loading in Functions}\label{loading-in-functions}}
 
-Lines 19-23 compose the second step of the data analysis process: loading in functions that standardize and simplify working through the data. Line 19 loads in a R script that performs a call to USAspending.gov's API in order to grab the relevant contract, grant, and direct payment spending data that we need for our analysis and download it into 2 files (1 for contracts, and 1 for grants/direct payments) at a specified file path location. In this case, the 2 CSV files obtained are downloaded into the data/temp folder. The parameters file is particularly important for this line of code, as the parameters file holds many of the filters that are used to sort what data is obtained from USAspending with this function. Line 20 loads in a function that is used to place additional filters on the obtained USAspending data and write the filtered data into CSV files. These additional filters are also outlined in the parameters file, but the actual filter function is not run until lines 26-30 (see step 3 for more details).
+Lines 20-23 compose the second step of the data analysis process: loading in functions that standardize and simplify working through the data. Line 20 loads in a function that is used to place additional filters on the obtained USAspending data and write the filtered data into CSV files. These additional filters are also outlined in the parameters file, but the actual filter function is not run until lines 26-30 (see step 3 for more details).
 
-Line 21 loads in a function that concatenates the USAspending contract and grant data files into one dataframe in R, while also removing direct payments from that concatenation (as it is calculated separate from contracts and grants. more on this will be detailed below). The actual concatenate function is not run until lines 39 and 41 (see step 5 for more details). Line 22 loads in a function that splits out the concatenated USAspending dataframe by agency, taking out DOE data from the main dataframe. This is done because DOE's spending activity has been kept separate from the main data analysis of the project. The actual split function is not run until lines 44-47 (see step 6 for more details). Line 23 loads in a function that aggregates the USAspending and DOEspending dataframes by IMPLAN sector. This gets the contracts and grants spending data for 2 IMPLAN activity sheets complete: 1 for the main statewide analysis, and 1 for the DOE statewide analysis. The actual aggregate function is not run until lines 55-60 (see step 7 for more details).
+Line 21 loads in a function that concatenates the USAspending contract and grant data files into one dataframe in R, while also removing direct payments from that concatenation (as it is calculated separate from contracts and grants. more on this will be detailed below). The actual concatenate function is not run until lines 39 and 41 (see step 5 for more details). Line 22 loads in a function that splits out the concatenated USAspending dataframe by agency, taking out DOE data from the main dataframe. This is done because DOE's spending activity has been kept separate from the main data analysis of the project. The actual split function is not run until lines 44-47 (see step 6 for more details). Line 23 loads in a function that aggregates the USAspending and DOEspending dataframes by IMPLAN sector. This gets the contracts and grants spending data for two IMPLAN activity sheets complete: one for the main statewide analysis, and one for the DOE statewide analysis. The actual aggregate function is not run until lines 55-60 (see step 7 for more details).
+
+\hypertarget{obtaining-the-usaspending-data}{%
+\subsection{Obtaining the USAspending Data}\label{obtaining-the-usaspending-data}}
+
+Line 26 loads in a R script that performs a call to USAspending.gov's API that grabs the relevant contract, grant, and direct payment spending data that we need for our analysis and downloads it into two files (one for contracts, and one for grants/direct payments) at a specified file path location. In this case, the two CSV files obtained are downloaded into the data/temp folder. The parameters file is particularly important for this line of code, as the parameters file holds many of the filters that are used to sort what data is obtained from USAspending with this code.
 
 \hypertarget{filtering-the-usaspending-data}{%
 \subsection{Filtering the USAspending Data}\label{filtering-the-usaspending-data}}
 
-Lines 26-30 begin the third step of filtering down the USAspending data obtained from the API call. Lines 26 and 27 read in the downloaded contracts and grants/direct payments files (respectively) and assign them each to a variable. Lines 29 and 30 perform the filter\_usaspending function (that was loaded in at line 20) on each of those variables.
+Lines 29-34 begin the third step of filtering down the USAspending data obtained from the API call. Lines 29 and 30 read in the downloaded contracts and grants/direct payments files (respectively) and assign them each to a variable. Lines 33 and 34 perform the filter\_usaspending function (that was loaded in at line 20) on each of those variables.
 
 The filter\_usaspending function has five elements that must be referenced: file\_name, state, doe\_filters, filters, and out\_name.
 
 \begin{itemize}
 \tightlist
 \item
-  The \textbf{file\_name} element is a call to whichever data file we want to pass through to be filtered - in this case, the 2 USAspending CSVs that are defined in lines 26 and 27.
+  The \textbf{file\_name} element is a call to whichever data file we want to pass through to be filtered - in this case, the two USAspending CSVs that are defined in lines 29 and 30.
 \item
   The \textbf{state} element is defined in our parameters, based on the state of interest for our study. In this case, that state is California. This element is added to ensure that the primary\_place\_of\_performance\_state is the same as the recipient\_state (which was filtered in our obtain\_usaspending function), thus ensuring that all data entries included in the analysis are in the state of interest for the study.
 \item
@@ -305,37 +406,56 @@ The filter\_usaspending function has five elements that must be referenced: file
   The \textbf{out\_name} element is defined in our parameters, based on \textbf{c\_out\_name} and \textbf{g\_out\_name}, respectively. This element is included to give a naming convention for the files that get generated as a result of running the filter function.
 \end{itemize}
 
-After running the filter functions, 2 CSVs files should be generated in the data/temp folder, by the name defined from the \textbf{out\_name} element.
+After running the filter functions, two CSVs files should be generated in the data/temp folder, by the name defined from the \textbf{out\_name} element.
 
 \hypertarget{error-checking-the-usaspending-data}{%
 \subsection{Error checking the USAspending Data}\label{error-checking-the-usaspending-data}}
 
-Lines 34-35 begin the fourth step of checking for errors in the filtered USAspending data and fixing them. The process for error checking and fixing the data differs for contracts and grants.
+Lines 37-38 begin the fourth step of checking for errors in the filtered USAspending data and fixing them to have an IMPLAN code associated with each entry. The process for error checking and fixing the data are relatively the same for contracts and grants - the only major difference being the variable of interest in fixing the errors. For contracts, the focus is on NAICS codes, while the grants look at business types.
 
 \hypertarget{error-checking-contracts}{%
 \subsubsection{Error Checking Contracts}\label{error-checking-contracts}}
 
-Line 34
+Line 37 loads in a R script file that goes through the filtered USAspending contracts file and remediates issues in certain contract entries. The first lines in this R script load two files into two dataframes: 1) the filtered USAspending contracts file (\textbf{contracts}); and 2) a NAICS to IMPLAN crosswalk that was \href{https://support.implan.com/hc/en-us/articles/360034896614-546-Industries-Conversions-Bridges-Construction-2018-Data}{provided online on IMPLAN's website} (\textbf{naics\_to\_implan}). After reading in the NAICS to IMPLAN crosswalk, there are a couple of code fixes and removal of duplicate codes that our team determined to, in our best knowledge, be the most accurate way to relate those NAICS codes to an IMPLAN code. After this, the NAICS to IMPLAN crosswalk is merged into the contracts dataframe by NAICS code in order to get an IMPLAN code associated with each contract entry.
+
+However, this merge does not give all contract entries an IMPLAN code. This can be for a variety of reasons, including: 1) a contract entry from USAspending not having a NAICS code; and 2) an incorrect and/or outdated NAICS code that was not a part of IMPLAN's provided crosswalk. The lines of code following the merge work to fix the error contract entries. First, the contracts with no NAICS codes were hardcoded in the \textbf{contracts} dataframe to a specific IMPLAN code based on the contract recipient's name and the industry which they work in. Next, the contracts which had a mistyped or older NAICS code were pulled out to a new dataframe (\textbf{contracts\_missing\_implan}) and hardcoded to an IMPLAN code based on our team's best research into which IMPLAN code each entry would best fit into. This presents a degree of error when parsing out the contract spending, but also represents the best available workaround given time and information constraints. A new way of handling the error checks for contracts is detailed in \href{LINK\%20TO\%20SECTION\%209\%20OF\%20PROCESS\%20GUIDE}{Section 9: What's Next}.
+
+The final steps of this contracts error check involve dropping out the contract entries which had no IMPLAN code from the original \textbf{contracts} dataframe. Then, the dataframe which fixed the contracts that were missing IMPLAN codes (\textbf{contracts\_missing\_implan}) is merged back into the original \textbf{contracts} dataframe. The \textbf{contracts} dataframe now has all contract entries ``cleaned'' with an IMPLAN code for each entry. Last, only the columns necessary for this analysis are selected, and then the cleaned \textbf{contracts} dataframe is written into a new CSV file.
 
 \hypertarget{error-checking-grantsdirect-payments}{%
 \subsubsection{Error Checking Grants/Direct Payments}\label{error-checking-grantsdirect-payments}}
 
-Line 35
+Line 38 loads in a R script file that goes through the filtered USAspending grants and direct payments file and remediates issues in certain grants entries. First, the script loads in the filtered USAspending grants and direct payments file into a dataframe (\textbf{grants}). Next, we pull out the VA direct payments from the \textbf{grants} dataframe, and define it into its' own dataframe (\textbf{va\_benefits}). This is done because VA direct payments does not a require an IMPLAN code and is thus calculated separate from contracts and grants from IMPLAN in the IMPLAN activity sheets. The \textbf{grants} dataframe filters out the direct payments based on the \textbf{assistance\_code} column of the data, where entries that have an assistance code of 10 are the direct payment entries.
+
+After VA direct payments are separate from grants, the next step is to load a business type to IMPLAN crosswalk into a dataframe (\textbf{business\_to\_implan}). This file was self-created by the team as the best method for relating grants data to IMPLAN codes, given that USAspending grants data entries do not provide for NAICS codes. The business type to crosswalk is then merged with the \textbf{grants} dataframe in order to get an IMPLAN code associated with every grant entry.
+
+However, this merge does not give all grant entries an IMPLAN code. In the case of the grants data, they may be missing a business type value, or their business type may be one that is not captured in the self-created crosswalk. Thus, the lines after the merge work to hardcode IMPLAN codes into the \textbf{grants} dataframe based on the grant recipient's name and the industry which they work in. After these hardcodes, a second dataframe (\textbf{grants\_missing\_implan}) is defined to capture if any other grant entries are missing an IMPLAN code. If a grant entry is still missing an IMPLAN code, it would need to be fixed in the \textbf{grants\_missing\_implan} dataframe and then merged back into the original \textbf{grants} dataframe.
+
+Now that the grants data has been ``cleaned'', the final steps in this script involve selecting only the necessary columns of data for the \textbf{va\_benefits} and \textbf{grants} dataframes, and writing each one into their own respective CSV files.
+
+\hypertarget{manually-fixing-congressional-district-errors}{%
+\subsection{Manually Fixing Congressional District Errors}\label{manually-fixing-congressional-district-errors}}
+
+Lines 40 and 42 provide an important notice to only continue with the code once some manual fixes have been implemented in the three cleaned CSV files produced from the above error check codes. \textbf{This step is essential to ensuring no weird errors come out along the way.} The issue in the USAspending data for contracts, grants, and direct payments is the \textbf{recipient\_congressional\_district} column, where certain entries in all three CSV files have a district value of ``NA'' (contracts) or ``90'' (grants, and direct payments). There may be multiple reasons for this error, with the most plausible being that these data entries are in locations that span across multiple counties and/or congressional districts.
+
+In order to properly remediate these issues, our team utilized the \emph{DOD\_County\_Shares\_R.xlsx} file in the raw data folder. Looking at this file, the ``Districts'' tab in that Excel sheet provides a breakdown of how much a county spans across one or multiple congressional district(s) based on land area from the California Redistricting Commission. We would then filter the contract, grant, or direct payment entries by county, and randomly assign a certain number of entries to a district based on their county. For example, if 20 contract entries that had a ``NA'' value in the district column were in Alameda County, we would assign 47\% of those entries (\textasciitilde9) to CA-13, 42\% (\textasciitilde8) to CA-15, and 12\% (\textasciitilde3) to CA-17.
+
+This method also inherently presents a degree of error with allocating spending across congressional districts. Even so, given time constraints, this workaround presented itself as the best solution at the time. Our team is working on a new way to address these manual fixes through code - for more details, refer to \href{LINK\%20TO\%20SECTION\%209\%20OF\%20PROCESS\%20GUIDE}{Section 9: What's Next}.
 
 \hypertarget{concatenating-the-usaspending-data}{%
 \subsection{Concatenating the USAspending Data}\label{concatenating-the-usaspending-data}}
 
-Lines 39 and 41
+Lines 45-46
 
 \hypertarget{splitting-doe-from-usaspending-data}{%
 \subsection{Splitting DOE from USAspending Data}\label{splitting-doe-from-usaspending-data}}
 
-Lines 45, 47, and 48
+Lines 49-52
 
 \hypertarget{aggregating-the-spending-data-for-statewide-numbers}{%
 \subsection{Aggregating the spending Data for Statewide Numbers}\label{aggregating-the-spending-data-for-statewide-numbers}}
 
-Lines 55-56 and 58-60
+Lines 58-59 and 61-63
 
 \hypertarget{compiling-employment-data}{%
 \subsection{Compiling Employment Data}\label{compiling-employment-data}}
