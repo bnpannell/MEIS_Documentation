@@ -1,7 +1,7 @@
 # Data Dictionary for Repository
-This section details each file contained in the code repository and a summary of what it is used for in the project. For a more detailed explanation, please see the Methods section. ([LINK]). 
+This section details each file contained in the code repository and a summary of what it is used for in the project. For a more detailed explanation, please see Section **\@ref(methods)**, "Methods".  
 
-## MEIS_Methodology Folder
+## MEIS_Methodology Folder {#MEIS-folder}
 This is the main folder, containing all data in the repository. 
 
 - **.gitignore:** Lists files that will be ignored when using Git to synchronize updates to repository. 
@@ -13,10 +13,10 @@ This is the main folder, containing all data in the repository.
 - **.Rhistory:** Contains the history of commands given by a user in an R Session. 
 - **run_analysis_master.R:** The newest version of the code to process the Federal data. Currently, this file is in development for the upcoming 2022 version of this project and is not yet ready for use. 
 
-## Data Folder
+## Data Folder {#data-folder}
 This is a folder located in the main folder and is designed to hold data for this project.
 
-### Raw Folder
+### Raw Folder {#raw-folder}
 This folder is within the data folder and contains all raw data provided to the user. The purpose of the raw data is to simplify data processing. 
 
 - **2007_to_2017_NAICS.xlsx:** This file contains the crosswalk used in the master script to update 2007 NAICS codes to 2017 NAICS codes. This file is a new development to automate error checking when linking IMPLAN codes to NAICS codes. It is NOT used in the Deprecated master script. 
@@ -27,7 +27,7 @@ This folder is within the data folder and contains all raw data provided to the 
 - **dod_county_shares.xlsx:** This file contains the percentage of each county by land area that is assigned to each California congressional district as of 2021. 
 - **TEMPLATE_emp.csv:** This file is a template for users to fill out employment numbers for their region of interest. Follow instructions in ([link to MODIFY DATA section]) to make use of this file.
 
-#### Blank_Sheets_for_R Folder
+#### Blank_Sheets_for_R Folder {#sheets}
 This folder contains the template spreadsheets used in the final preparation of data for entry into IMPLAN. For more information on the difference between the event types that comprise IMPLAN’s activity sheet, refer to [IMPLAN’s article on this topic](https://support.implan.com/hc/en-us/articles/360019638713-Explaining-Event-Types).
 
 - **CommodityOutput2.xlsx:** An Excel sheet that goes into the IMPLAN activity sheets as the second worksheet tab. 
@@ -36,13 +36,13 @@ This folder contains the template spreadsheets used in the final preparation of 
 - **IndustrySpendingPattern5.xlsx:** An Excel sheet that goes into the IMPLAN activity sheets as the fifth worksheet tab. 
 - **InstitutionSpendingPattern6.xlsx:** An Excel sheet that goes into the IMPLAN activity sheets as the sixth worksheet tab. 
 
-#### deprecated Folder
+#### deprecated Folder {deprecated-raw}
 This folder contains raw data only used by the Deprecated master script. 
 
 - **2017_implan_online_naics_to_implan546.xlsx:** This file contains the crosswalk for linking 2017 IMPLAN codes to NAICS code. 
 - **2021_employment_totals.xlsx:** This file contains the necessary employment data broken out by each California county and congressional district
 
-### Temp Folder
+### Temp Folder {temp-folder}
 This folder is also located within the data folder and holds all files that are made while either master script is running. These files are deleted when the final output is finished being processed. 
 
 - **placeholderfortemp.txt:** This file prevents Github from deleting the temp folder, as it is empty by default.
@@ -52,7 +52,7 @@ This folder is located within the main folder and holds all the final output fil
 
 - **placeholder.txt:** This file prevents Github from deleting the output folder, as it is empty by default.  
 
-## SRC Folder
+## SRC Folder {#src-folder}
 This folder within the main folder contains all script files needed by the master script when it is running. Scripts in this folder may be used by either of the master scripts contained in this repository. DO NOT MODIFY ANY OF THESE FILES. 
 
 - **obtain_usaspending.R:** An R script that calls to USAspending’s Application Programming Interface (API) in order to obtain the USAspending data desired based on the criteria defined in this R script. 
@@ -65,7 +65,7 @@ This folder within the main folder contains all script files needed by the maste
 - **aggregate_usaspending.R:** An R script that defines a function for aggregating a defined dataframe’s spending figure (in this study, federal_action_obligation from USAspending data) by IMPLAN code. 
 - **generate_employment_dataframe.R:** An R script that calculates employment data and generates two dataframes, one for the county and one for the district IMPLAN sheets. 
 
-### Deprecated Folder
+### Deprecated Folder {deprecated-script}
 This folder within the src folder contains all scripts that are only used by the DEPRECATED_run_analysis_master.R script. DO NOT MODIFY ANY OF THESE FILES. 
 
 - **DEPRECATED_error_check_contracts.R:** An R script of hardcode fixes to errors in the contracts data in order to get an IMPLAN code for every entry. 

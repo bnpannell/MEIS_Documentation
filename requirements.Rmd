@@ -7,7 +7,7 @@ To recreate or replicate this study, specialized software is needed to obtain an
 3. Git from [git-scm.com](https://git-scm.com/downloads). A comprehensive guide to installing Git is available at [happygitwithr.com](https://happygitwithr.com/install-git.html). Git allows version control of edits across a multi-person team of researchers. 
 4. If a GitHub account is needed, one can sign up and register at <https://github.com/>. Individual free plans are available, as well as [free upgrades](https://help.github.com/en/articles/applying-for-an-educator-or-researcher-discount) for qualifying academic purposes. GitHub is used to develop and host this project. 
 
-## Download Necessary R Libraries{#libraries}
+## Download Necessary R Libraries {#libraries}
 To make sure the code can be run, please ensure that the following R library packages are installed. If you are using RStudio, packages can be installed from CRAN using the 'install.packages("**[package_name]**")' command in the terminal.
 
 - **dplyr:** Used for manipulating dataframes. [@dplyr1]

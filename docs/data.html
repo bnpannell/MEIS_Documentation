@@ -24,7 +24,6 @@
 <meta name="author" content="Britnee Pannell &amp; Sumeet Bedi" />
 
 
-<meta name="date" content="2022-02-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -102,12 +101,12 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>3</b> Data Requirements</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#employ"><i class="fa fa-check"></i><b>3.1</b> Employment Data</a></li>
+<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#employment"><i class="fa fa-check"></i><b>3.1</b> Employment Data</a></li>
 <li class="chapter" data-level="3.2" data-path="data.html"><a href="data.html#usa"><i class="fa fa-check"></i><b>3.2</b> USASpending Data</a></li>
 <li class="chapter" data-level="3.3" data-path="data.html"><a href="data.html#additional"><i class="fa fa-check"></i><b>3.3</b> Additional Data</a>
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="data.html"><a href="data.html#smartpay"><i class="fa fa-check"></i><b>3.3.1</b> SmartPay Data via FOIA</a></li>
-<li class="chapter" data-level="3.3.2" data-path="data.html"><a href="data.html#data-obtained-online"><i class="fa fa-check"></i><b>3.3.2</b> Data Obtained Online</a></li>
+<li class="chapter" data-level="3.3.2" data-path="data.html"><a href="data.html#online-data"><i class="fa fa-check"></i><b>3.3.2</b> Data Obtained Online</a></li>
 <li class="chapter" data-level="3.3.3" data-path="data.html"><a href="data.html#provided"><i class="fa fa-check"></i><b>3.3.3</b> Data Provided Raw/Self-Made</a></li>
 </ul></li>
 </ul></li>
@@ -118,16 +117,16 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="5" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html"><i class="fa fa-check"></i><b>5</b> Data Dictionary for Repository</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#meis_methodology-folder"><i class="fa fa-check"></i><b>5.1</b> MEIS_Methodology Folder</a></li>
+<li class="chapter" data-level="5.1" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#MEIS-folder"><i class="fa fa-check"></i><b>5.1</b> MEIS_Methodology Folder</a></li>
 <li class="chapter" data-level="5.2" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#data-folder"><i class="fa fa-check"></i><b>5.2</b> Data Folder</a>
 <ul>
 <li class="chapter" data-level="5.2.1" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#raw-folder"><i class="fa fa-check"></i><b>5.2.1</b> Raw Folder</a></li>
-<li class="chapter" data-level="5.2.2" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#temp-folder"><i class="fa fa-check"></i><b>5.2.2</b> Temp Folder</a></li>
+<li class="chapter" data-level="5.2.2" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#temp-folder-temp-folder"><i class="fa fa-check"></i><b>5.2.2</b> Temp Folder {temp-folder}</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#output-folder"><i class="fa fa-check"></i><b>5.3</b> Output Folder</a></li>
 <li class="chapter" data-level="5.4" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#src-folder"><i class="fa fa-check"></i><b>5.4</b> SRC Folder</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#deprecated-folder-1"><i class="fa fa-check"></i><b>5.4.1</b> Deprecated Folder</a></li>
+<li class="chapter" data-level="5.4.1" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#deprecated-folder-deprecated-script"><i class="fa fa-check"></i><b>5.4.1</b> Deprecated Folder {deprecated-script}</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>6</b> Methods</a>
@@ -187,7 +186,7 @@ div.csl-indent {
 <li><strong>Additional Data</strong></li>
 </ul>
 <p><em>Please note, there is no guarantee that the data sources described below will exist in this form indefinitely.</em></p>
-<div id="employ" class="section level2" number="3.1">
+<div id="employment" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Employment Data</h2>
 <p>This report focused on two types of employment data:</p>
 <ul>
@@ -196,20 +195,27 @@ div.csl-indent {
 <li><strong>Military</strong></li>
 </ul>
 <p>These employment data types were sourced from two separate websites.</p>
-<p><strong>Civilian employment</strong> is available from the <a href="https://www.fedscope.opm.gov/">Office of Personnel Management’s (OPM) FedScope website</a>, which provides federal workforce data. The report uses September data to align with the federal fiscal year. To obtain the data:
-1. Load the Office of Personnel Management’s (OPM) FedScope website.
-2. Click on “Employment” under the “Status Data” bullet point to access quarterly employment data cubes. 3. Click September of the desired year.
-Filter the data by agency type (“Cabinet Level”) and location (“United States” and a state of one’s choice) in order to get the civilian employment numbers for the Departments of Defense (which is an aggregate of the Air Force, Army, Defense, and Navy cabinet agencies), Homeland Security, Veterans Affairs, and Energy. This data can be exported out as a PDF, CSV, or Excel file.</p>
-<p><strong>Military employment</strong> is available from the <a href="https://dwp.dmdc.osd.mil/dwp/app/main">Defense Manpower Data Center (DMDC) website</a>. As with civilian employment, the report uses September data to align with the federal fiscal year. To obtain the data:<br />
-1. Load the Defense Manpower Data Center (DMDC) website.
-2. Hover over to Department of Defense (DoD) Data/Reports and select “Statistics &amp; Reports.”<br />
-3. On the linked page, scroll to the “DoD Personnel, Workforce Reports &amp; Publications” text, and click on its hyperlink. This opens up a new window to access the military employment data.<br />
-4. Scroll to the section “Military and Civilian Personnel by Service/Agency by State/Country (Updated Quarterly)” and download the Excel file for September of the desired year.</p>
+<p><strong>Civilian employment</strong> is available from the <a href="https://www.fedscope.opm.gov/">Office of Personnel Management’s (OPM) FedScope website</a>, which provides federal workforce data. The report uses September data to align with the federal fiscal year. To obtain the data:</p>
+<ol style="list-style-type: decimal">
+<li>Load the Office of Personnel Management’s (OPM) FedScope website.</li>
+<li>Click on “Employment” under the “Status Data” bullet point to access quarterly employment data cubes.</li>
+<li>Click September of the desired year.</li>
+</ol>
+<p>Filter the data by agency type (“Cabinet Level”) and location (“United States” and a state of one’s choice) in order to get the civilian employment numbers for the Departments of Defense (which is an aggregate of the Air Force, Army, Defense, and Navy cabinet agencies), Homeland Security, Veterans Affairs, and Energy. This data can be exported out as a PDF, CSV, or Excel file.</p>
+<p><strong>Military employment</strong> is available from the <a href="https://dwp.dmdc.osd.mil/dwp/app/main">Defense Manpower Data Center (DMDC) website</a>. As with civilian employment, the report uses September data to align with the federal fiscal year. To obtain the data:</p>
+<ol style="list-style-type: decimal">
+<li>Load the Defense Manpower Data Center (DMDC) website.</li>
+<li>Hover over to Department of Defense (DoD) Data/Reports and select “Statistics &amp; Reports.”<br />
+</li>
+<li>On the linked page, scroll to the “DoD Personnel, Workforce Reports &amp; Publications” text, and click on its hyperlink. This opens up a new window to access the military employment data.<br />
+</li>
+<li>Scroll to the section “Military and Civilian Personnel by Service/Agency by State/Country (Updated Quarterly)” and download the Excel file for September of the desired year.</li>
+</ol>
 </div>
 <div id="usa" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> USASpending Data</h2>
 <p>This report utilizes <a href="https://www.usaspending.gov/">USAspending.gov</a> for the majority of its direct spending data. The spending types obtained from this site include contracts and grants for the U.S. Departments of Defense, Homeland Security, Veterans Affairs, and Energy, as well as direct payments from Veterans Affairs (i.e., veterans’ benefits). Data is available from the <a href="https://www.usaspending.gov/download_center/custom_award_data">“Custom Awards Data”</a> webpage. Data is available by award type (contracts, grants, and/or direct payments), awarding agency (Defense, Homeland Security, Veterans Affairs, Energy), recipient location (United States for “Country,” and, optionally, a specific state), action date range (a fiscal year “FY 20XX”), and file format. This download process must be done once per agency.</p>
-<p>Code that automates this entire process has been developed to capture all USAspending data at once. Please refer to Section <a href="methods.html#processing-data">6.3</a> in the Methods section for more details.</p>
+<p>Code that automates this entire process has been developed to capture all USAspending data at once. Please refer to Section <strong><a href="methods.html#processing-data">6.3</a></strong> in the Methods section for more details.</p>
 </div>
 <div id="additional" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Additional Data</h2>
@@ -218,7 +224,7 @@ Filter the data by agency type (“Cabinet Level”) and location (“United Sta
 <p>The remainder of direct spending data used in these reports was SmartPay, a charge card program for federal employees. In order to obtain this data, Freedom of Information Act requests (commonly known as FOIAs) were filed to the federal agencies.</p>
 <p>For more information about SmartPay, please visit the <a href="https://www.gsa.gov/travel/plan-book/gsa-smartpay">General Services Administration’s (GSA) SmartPay website</a>.</p>
 </div>
-<div id="data-obtained-online" class="section level3" number="3.3.2">
+<div id="online-data" class="section level3" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> Data Obtained Online</h3>
 <p>A variety of data sources are obtained online in order to assist with the data processing for this report. This includes:</p>
 <ul>

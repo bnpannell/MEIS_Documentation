@@ -8,7 +8,7 @@ This section details how to obtain all the necessary data for this project. Data
 
 *Please note, there is no guarantee that the data sources described below will exist in this form indefinitely.*  
 
-## Employment Data{#employ}
+## Employment Data {#employment}
 This report focused on two types of employment data:  
 
 - **Civilian**  
@@ -17,11 +17,15 @@ This report focused on two types of employment data:
 These employment data types were sourced from two separate websites. 
 
 **Civilian employment** is available from the [Office of Personnel Management's (OPM) FedScope website](https://www.fedscope.opm.gov/), which provides federal workforce data. The report uses September data to align with the federal fiscal year. To obtain the data: 
+
 1. Load the Office of Personnel Management’s (OPM) FedScope website. 
-2. Click on “Employment” under the “Status Data” bullet point to access quarterly employment data cubes. 3. Click September of the desired year. 
+2. Click on “Employment” under the “Status Data” bullet point to access quarterly employment data cubes. 
+3. Click September of the desired year. 
+
 Filter the data by agency type (“Cabinet Level”) and location (“United States” and a state of one’s choice) in order to get the civilian employment numbers for the Departments of Defense (which is an aggregate of the Air Force, Army, Defense, and Navy cabinet agencies), Homeland Security, Veterans Affairs, and Energy. This data can be exported out as a PDF, CSV, or Excel file. 
 
-**Military employment** is available from the [Defense Manpower Data Center (DMDC) website](https://dwp.dmdc.osd.mil/dwp/app/main). As with civilian employment, the report uses September data to align with the federal fiscal year. To obtain the data:  
+**Military employment** is available from the [Defense Manpower Data Center (DMDC) website](https://dwp.dmdc.osd.mil/dwp/app/main). As with civilian employment, the report uses September data to align with the federal fiscal year. To obtain the data:
+
 1. Load the Defense Manpower Data Center (DMDC) website. 
 2. Hover over to Department of Defense (DoD) Data/Reports and select “Statistics & Reports.”  
 3. On the linked page, scroll to the “DoD Personnel, Workforce Reports & Publications” text, and click on its hyperlink. This opens up a new window to access the military employment data.  
@@ -30,7 +34,7 @@ Filter the data by agency type (“Cabinet Level”) and location (“United Sta
 ## USASpending Data {#usa}
 This report utilizes [USAspending.gov](https://www.usaspending.gov/) for the majority of its direct spending data. The spending types obtained from this site include contracts and grants for the U.S. Departments of Defense, Homeland Security, Veterans Affairs, and Energy, as well as direct payments from Veterans Affairs (i.e., veterans’ benefits).  Data is available from the [“Custom Awards Data”](https://www.usaspending.gov/download_center/custom_award_data) webpage. Data is available by award type (contracts, grants, and/or direct payments), awarding agency (Defense, Homeland Security, Veterans Affairs, Energy), recipient location (United States for “Country,” and, optionally, a specific state), action date range (a fiscal year “FY 20XX”), and file format. This download process must be done once per agency. 
 
-Code that automates this entire process has been developed to capture all USAspending data at once. Please refer to Section \@ref(processing-data) in the Methods section for more details. 
+Code that automates this entire process has been developed to capture all USAspending data at once. Please refer to Section **\@ref(processing-data)** in the Methods section for more details. 
 
 ## Additional Data {#additional}
 ### SmartPay Data via FOIA {#smartpay}
@@ -38,7 +42,7 @@ The remainder of direct spending data used in these reports was SmartPay, a char
 
 For more information about SmartPay, please visit the [General Services Administration's (GSA) SmartPay website](https://www.gsa.gov/travel/plan-book/gsa-smartpay). 
 
-### Data Obtained Online 
+### Data Obtained Online {#online-data}
 A variety of data sources are obtained online in order to assist with the data processing for this report. This includes: 
 
 - [Federal Real Public Property data](https://www.gsa.gov/policy-regulations/policy/real-property-policy/asset-management/federal-real-property-profile-frpp/federal-real-property-public-data-set) from the GSA. The GSA provides an Excel file that details federal property by location. This data is used to distribute statewide Homeland Security and Veterans Affairs civilian employment across counties and districts. 

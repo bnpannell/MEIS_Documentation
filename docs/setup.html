@@ -24,7 +24,6 @@
 <meta name="author" content="Britnee Pannell &amp; Sumeet Bedi" />
 
 
-<meta name="date" content="2022-02-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -102,12 +101,12 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>3</b> Data Requirements</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#employ"><i class="fa fa-check"></i><b>3.1</b> Employment Data</a></li>
+<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#employment"><i class="fa fa-check"></i><b>3.1</b> Employment Data</a></li>
 <li class="chapter" data-level="3.2" data-path="data.html"><a href="data.html#usa"><i class="fa fa-check"></i><b>3.2</b> USASpending Data</a></li>
 <li class="chapter" data-level="3.3" data-path="data.html"><a href="data.html#additional"><i class="fa fa-check"></i><b>3.3</b> Additional Data</a>
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="data.html"><a href="data.html#smartpay"><i class="fa fa-check"></i><b>3.3.1</b> SmartPay Data via FOIA</a></li>
-<li class="chapter" data-level="3.3.2" data-path="data.html"><a href="data.html#data-obtained-online"><i class="fa fa-check"></i><b>3.3.2</b> Data Obtained Online</a></li>
+<li class="chapter" data-level="3.3.2" data-path="data.html"><a href="data.html#online-data"><i class="fa fa-check"></i><b>3.3.2</b> Data Obtained Online</a></li>
 <li class="chapter" data-level="3.3.3" data-path="data.html"><a href="data.html#provided"><i class="fa fa-check"></i><b>3.3.3</b> Data Provided Raw/Self-Made</a></li>
 </ul></li>
 </ul></li>
@@ -118,16 +117,16 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="5" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html"><i class="fa fa-check"></i><b>5</b> Data Dictionary for Repository</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#meis_methodology-folder"><i class="fa fa-check"></i><b>5.1</b> MEIS_Methodology Folder</a></li>
+<li class="chapter" data-level="5.1" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#MEIS-folder"><i class="fa fa-check"></i><b>5.1</b> MEIS_Methodology Folder</a></li>
 <li class="chapter" data-level="5.2" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#data-folder"><i class="fa fa-check"></i><b>5.2</b> Data Folder</a>
 <ul>
 <li class="chapter" data-level="5.2.1" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#raw-folder"><i class="fa fa-check"></i><b>5.2.1</b> Raw Folder</a></li>
-<li class="chapter" data-level="5.2.2" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#temp-folder"><i class="fa fa-check"></i><b>5.2.2</b> Temp Folder</a></li>
+<li class="chapter" data-level="5.2.2" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#temp-folder-temp-folder"><i class="fa fa-check"></i><b>5.2.2</b> Temp Folder {temp-folder}</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#output-folder"><i class="fa fa-check"></i><b>5.3</b> Output Folder</a></li>
 <li class="chapter" data-level="5.4" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#src-folder"><i class="fa fa-check"></i><b>5.4</b> SRC Folder</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#deprecated-folder-1"><i class="fa fa-check"></i><b>5.4.1</b> Deprecated Folder</a></li>
+<li class="chapter" data-level="5.4.1" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#deprecated-folder-deprecated-script"><i class="fa fa-check"></i><b>5.4.1</b> Deprecated Folder {deprecated-script}</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>6</b> Methods</a>
@@ -187,18 +186,18 @@ div.csl-indent {
 <li>Using GitHub, navigate to the repository ([LINK TO REPO FOREVER HOME HERE]) and fork the repository to the user’s account.</li>
 <li>Clone the repository to a new RStudio Project.</li>
 <li>Open the ‘README.md’ file ([LINK])</li>
-<li>Fill out the parameters file with required specifications. The ‘README.md’ file contains general instructions, and section 6.1 of the Methods section ([add link to section here]) has more detailed explanations.</li>
+<li>Fill out the parameters file with required specifications. The ‘README.md’ file contains general instructions, and Section <strong><a href="methods.html#review-p">6.1</a></strong> of the Methods section has more detailed explanations.</li>
 </ol>
 </div>
 <div id="modify-data" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Modify Data Files</h2>
-<p>There are certain custom user files that must be created as part of this analysis. In particular, the <em>TEMPLATE_emp.csv</em> file in the data/raw/ folder must be altered to properly load in and calculate employment data. Because employment data for this report is not easily obtainable or transmissible via code, our team has created this template file for users to fill in their statewide employment numbers. Also provided is the .csv file used in this study, labeled <em>CALIFORNIA_emp.csv</em>, to serve as an example of a properly filled out form. The first two columns in this file, active_duty_military and reserve_military, are military employment numbers from DMDC, while the remaining seven columns are civilian employment numbers (for the Departments of Defense, Homeland Security, Veterans Affairs, and Energy) from FedScope. For more information on how to obtain this data, refer to section 3.1 ([LINK]) on data requirements for employment data. After edits are made to this file, it should be renamed based on the study area named in the “state” general parameter ([LINK]) and saved to the data/raw/ folder in the repository.</p>
+<p>There are certain custom user files that must be created as part of this analysis. In particular, the <em>TEMPLATE_emp.csv</em> file in the data/raw/ folder must be altered to properly load in and calculate employment data. Because employment data for this report is not easily obtainable or transmissible via code, our team has created this template file for users to fill in their statewide employment numbers. Also provided is the .csv file used in this study, labeled <em>CALIFORNIA_emp.csv</em>, to serve as an example of a properly filled out form. The first two columns in this file, active_duty_military and reserve_military, are military employment numbers from DMDC, while the remaining seven columns are civilian employment numbers (for the Departments of Defense, Homeland Security, Veterans Affairs, and Energy) from FedScope. For more information on how to obtain this data, refer to Section <strong><a href="data.html#employment">3.1</a></strong> on data requirements for employment data. After edits are made to this file, it should be renamed based on the study area named in the “state” general variable in the parameters file and saved to the data/raw/ folder in the repository.</p>
 <p>The repository requires two additional files to be obtained and added to the data/temp/ folder:</p>
 <ul>
 <li><strong>Federal Real Public Property Data</strong></li>
 <li><strong>American Community Survey Data</strong></li>
 </ul>
-<p>Refer to section 3.3.2 ([LINK]) for details on how to retrieve these files. After these files are downloaded, they should be renamed and saved to the data/temp/ folder in the repository. It is recommended to use a consistent naming convention to make references and use of these files easier. Our naming convention involves naming the relevant data contained in the file, and the analysis year the file was obtained for. Hence the property data becomes <em>“fed_prop_2021.csv.”</em> The ACS data was renamed <em>“2019_acs.xlsx”</em> to reflect the year the file was obtained for, and the data it contains.</p>
+<p>Refer to Section <strong><a href="data.html#online-data">3.3.2</a></strong> for details on how to retrieve these files. After these files are downloaded, they should be renamed and saved to the data/temp/ folder in the repository. It is recommended to use a consistent naming convention to make references and use of these files easier. Our naming convention involves naming the relevant data contained in the file, and the analysis year the file was obtained for. Hence the property data becomes <em>“fed_prop_2021.csv.”</em> The ACS data was renamed <em>“2019_acs.xlsx”</em> to reflect the year the file was obtained for, and the data it contains.</p>
 <p>The American Community Survey Data file requires an additional step of modification after saving. Within the file itself, the first row of data needs to be deleted. Then, the columns “Geographic Area Name” and “Estimate!!EMPLOYMENT STATUS!!Population 16 years and over!!In labor force!!Armed Forces” should be renamed to “geography” and “armed_forces_employed” respectively in order to simplify using the data in later steps.</p>
 <p>The next section details data contained in the Repository and its purpose.</p>
 

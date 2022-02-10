@@ -6,7 +6,7 @@
 ]{book}
 \title{California Military Economic Impact Study Process Guide}
 \author{Britnee Pannell \& Sumeet Bedi}
-\date{2022-02-09}
+\date{Last Updated: 2022-02-10}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -161,8 +161,8 @@ This section details how to obtain all the necessary data for this project. Data
 
 \emph{Please note, there is no guarantee that the data sources described below will exist in this form indefinitely.}
 
-\hypertarget{employ}{%
-\section{Employment Data}\label{employ}}
+\hypertarget{employment}{%
+\section{Employment Data}\label{employment}}
 
 This report focused on two types of employment data:
 
@@ -177,22 +177,41 @@ This report focused on two types of employment data:
 These employment data types were sourced from two separate websites.
 
 \textbf{Civilian employment} is available from the \href{https://www.fedscope.opm.gov/}{Office of Personnel Management's (OPM) FedScope website}, which provides federal workforce data. The report uses September data to align with the federal fiscal year. To obtain the data:
-1. Load the Office of Personnel Management's (OPM) FedScope website.
-2. Click on ``Employment'' under the ``Status Data'' bullet point to access quarterly employment data cubes. 3. Click September of the desired year.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Load the Office of Personnel Management's (OPM) FedScope website.
+\item
+  Click on ``Employment'' under the ``Status Data'' bullet point to access quarterly employment data cubes.
+\item
+  Click September of the desired year.
+\end{enumerate}
+
 Filter the data by agency type (``Cabinet Level'') and location (``United States'' and a state of one's choice) in order to get the civilian employment numbers for the Departments of Defense (which is an aggregate of the Air Force, Army, Defense, and Navy cabinet agencies), Homeland Security, Veterans Affairs, and Energy. This data can be exported out as a PDF, CSV, or Excel file.
 
-\textbf{Military employment} is available from the \href{https://dwp.dmdc.osd.mil/dwp/app/main}{Defense Manpower Data Center (DMDC) website}. As with civilian employment, the report uses September data to align with the federal fiscal year. To obtain the data:\\
-1. Load the Defense Manpower Data Center (DMDC) website.
-2. Hover over to Department of Defense (DoD) Data/Reports and select ``Statistics \& Reports.''\\
-3. On the linked page, scroll to the ``DoD Personnel, Workforce Reports \& Publications'' text, and click on its hyperlink. This opens up a new window to access the military employment data.\\
-4. Scroll to the section ``Military and Civilian Personnel by Service/Agency by State/Country (Updated Quarterly)'' and download the Excel file for September of the desired year.
+\textbf{Military employment} is available from the \href{https://dwp.dmdc.osd.mil/dwp/app/main}{Defense Manpower Data Center (DMDC) website}. As with civilian employment, the report uses September data to align with the federal fiscal year. To obtain the data:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Load the Defense Manpower Data Center (DMDC) website.
+\item
+  Hover over to Department of Defense (DoD) Data/Reports and select ``Statistics \& Reports.''\\
+\item
+  On the linked page, scroll to the ``DoD Personnel, Workforce Reports \& Publications'' text, and click on its hyperlink. This opens up a new window to access the military employment data.\\
+\item
+  Scroll to the section ``Military and Civilian Personnel by Service/Agency by State/Country (Updated Quarterly)'' and download the Excel file for September of the desired year.
+\end{enumerate}
 
 \hypertarget{usa}{%
 \section{USASpending Data}\label{usa}}
 
 This report utilizes \href{https://www.usaspending.gov/}{USAspending.gov} for the majority of its direct spending data. The spending types obtained from this site include contracts and grants for the U.S. Departments of Defense, Homeland Security, Veterans Affairs, and Energy, as well as direct payments from Veterans Affairs (i.e., veterans' benefits). Data is available from the \href{https://www.usaspending.gov/download_center/custom_award_data}{``Custom Awards Data''} webpage. Data is available by award type (contracts, grants, and/or direct payments), awarding agency (Defense, Homeland Security, Veterans Affairs, Energy), recipient location (United States for ``Country,'' and, optionally, a specific state), action date range (a fiscal year ``FY 20XX''), and file format. This download process must be done once per agency.
 
-Code that automates this entire process has been developed to capture all USAspending data at once. Please refer to Section \ref{processing-data} in the Methods section for more details.
+Code that automates this entire process has been developed to capture all USAspending data at once. Please refer to Section \textbf{\ref{processing-data}} in the Methods section for more details.
 
 \hypertarget{additional}{%
 \section{Additional Data}\label{additional}}
@@ -204,8 +223,8 @@ The remainder of direct spending data used in these reports was SmartPay, a char
 
 For more information about SmartPay, please visit the \href{https://www.gsa.gov/travel/plan-book/gsa-smartpay}{General Services Administration's (GSA) SmartPay website}.
 
-\hypertarget{data-obtained-online}{%
-\subsection{Data Obtained Online}\label{data-obtained-online}}
+\hypertarget{online-data}{%
+\subsection{Data Obtained Online}\label{online-data}}
 
 A variety of data sources are obtained online in order to assist with the data processing for this report. This includes:
 
@@ -241,13 +260,13 @@ The code repository is necessary to repeat the California study. It may also be 
 \item
   Open the `README.md' file ({[}LINK{]})
 \item
-  Fill out the parameters file with required specifications. The `README.md' file contains general instructions, and section 6.1 of the Methods section ({[}add link to section here{]}) has more detailed explanations.
+  Fill out the parameters file with required specifications. The `README.md' file contains general instructions, and Section \textbf{\ref{review-p}} of the Methods section has more detailed explanations.
 \end{enumerate}
 
 \hypertarget{modify-data}{%
 \section{Modify Data Files}\label{modify-data}}
 
-There are certain custom user files that must be created as part of this analysis. In particular, the \emph{TEMPLATE\_emp.csv} file in the data/raw/ folder must be altered to properly load in and calculate employment data. Because employment data for this report is not easily obtainable or transmissible via code, our team has created this template file for users to fill in their statewide employment numbers. Also provided is the .csv file used in this study, labeled \emph{CALIFORNIA\_emp.csv}, to serve as an example of a properly filled out form. The first two columns in this file, active\_duty\_military and reserve\_military, are military employment numbers from DMDC, while the remaining seven columns are civilian employment numbers (for the Departments of Defense, Homeland Security, Veterans Affairs, and Energy) from FedScope. For more information on how to obtain this data, refer to section 3.1 ({[}LINK{]}) on data requirements for employment data. After edits are made to this file, it should be renamed based on the study area named in the ``state'' general parameter ({[}LINK{]}) and saved to the data/raw/ folder in the repository.
+There are certain custom user files that must be created as part of this analysis. In particular, the \emph{TEMPLATE\_emp.csv} file in the data/raw/ folder must be altered to properly load in and calculate employment data. Because employment data for this report is not easily obtainable or transmissible via code, our team has created this template file for users to fill in their statewide employment numbers. Also provided is the .csv file used in this study, labeled \emph{CALIFORNIA\_emp.csv}, to serve as an example of a properly filled out form. The first two columns in this file, active\_duty\_military and reserve\_military, are military employment numbers from DMDC, while the remaining seven columns are civilian employment numbers (for the Departments of Defense, Homeland Security, Veterans Affairs, and Energy) from FedScope. For more information on how to obtain this data, refer to Section \textbf{\ref{employment}} on data requirements for employment data. After edits are made to this file, it should be renamed based on the study area named in the ``state'' general variable in the parameters file and saved to the data/raw/ folder in the repository.
 
 The repository requires two additional files to be obtained and added to the data/temp/ folder:
 
@@ -259,7 +278,7 @@ The repository requires two additional files to be obtained and added to the dat
   \textbf{American Community Survey Data}
 \end{itemize}
 
-Refer to section 3.3.2 ({[}LINK{]}) for details on how to retrieve these files. After these files are downloaded, they should be renamed and saved to the data/temp/ folder in the repository. It is recommended to use a consistent naming convention to make references and use of these files easier. Our naming convention involves naming the relevant data contained in the file, and the analysis year the file was obtained for. Hence the property data becomes \emph{``fed\_prop\_2021.csv.''} The ACS data was renamed \emph{``2019\_acs.xlsx''} to reflect the year the file was obtained for, and the data it contains.
+Refer to Section \textbf{\ref{online-data}} for details on how to retrieve these files. After these files are downloaded, they should be renamed and saved to the data/temp/ folder in the repository. It is recommended to use a consistent naming convention to make references and use of these files easier. Our naming convention involves naming the relevant data contained in the file, and the analysis year the file was obtained for. Hence the property data becomes \emph{``fed\_prop\_2021.csv.''} The ACS data was renamed \emph{``2019\_acs.xlsx''} to reflect the year the file was obtained for, and the data it contains.
 
 The American Community Survey Data file requires an additional step of modification after saving. Within the file itself, the first row of data needs to be deleted. Then, the columns ``Geographic Area Name'' and ``Estimate!!EMPLOYMENT STATUS!!Population 16 years and over!!In labor force!!Armed Forces'' should be renamed to ``geography'' and ``armed\_forces\_employed'' respectively in order to simplify using the data in later steps.
 
@@ -268,10 +287,10 @@ The next section details data contained in the Repository and its purpose.
 \hypertarget{data-dictionary-for-repository}{%
 \chapter{Data Dictionary for Repository}\label{data-dictionary-for-repository}}
 
-This section details each file contained in the code repository and a summary of what it is used for in the project. For a more detailed explanation, please see the Methods section. ({[}LINK{]}).
+This section details each file contained in the code repository and a summary of what it is used for in the project. For a more detailed explanation, please see Section \textbf{\ref{methods}}, ``Methods''.
 
-\hypertarget{meis_methodology-folder}{%
-\section{MEIS\_Methodology Folder}\label{meis_methodology-folder}}
+\hypertarget{MEIS-folder}{%
+\section{MEIS\_Methodology Folder}\label{MEIS-folder}}
 
 This is the main folder, containing all data in the repository.
 
@@ -323,8 +342,8 @@ This folder is within the data folder and contains all raw data provided to the 
   \textbf{TEMPLATE\_emp.csv:} This file is a template for users to fill out employment numbers for their region of interest. Follow instructions in ({[}link to MODIFY DATA section{]}) to make use of this file.
 \end{itemize}
 
-\hypertarget{blank_sheets_for_r-folder}{%
-\subsubsection{Blank\_Sheets\_for\_R Folder}\label{blank_sheets_for_r-folder}}
+\hypertarget{sheets}{%
+\subsubsection{Blank\_Sheets\_for\_R Folder}\label{sheets}}
 
 This folder contains the template spreadsheets used in the final preparation of data for entry into IMPLAN. For more information on the difference between the event types that comprise IMPLAN's activity sheet, refer to \href{https://support.implan.com/hc/en-us/articles/360019638713-Explaining-Event-Types}{IMPLAN's article on this topic}.
 
@@ -342,8 +361,8 @@ This folder contains the template spreadsheets used in the final preparation of 
   \textbf{InstitutionSpendingPattern6.xlsx:} An Excel sheet that goes into the IMPLAN activity sheets as the sixth worksheet tab.
 \end{itemize}
 
-\hypertarget{deprecated-folder}{%
-\subsubsection{deprecated Folder}\label{deprecated-folder}}
+\hypertarget{deprecated-folder-deprecated-raw}{%
+\subsubsection{deprecated Folder \{deprecated-raw\}}\label{deprecated-folder-deprecated-raw}}
 
 This folder contains raw data only used by the Deprecated master script.
 
@@ -355,8 +374,8 @@ This folder contains raw data only used by the Deprecated master script.
   \textbf{2021\_employment\_totals.xlsx:} This file contains the necessary employment data broken out by each California county and congressional district
 \end{itemize}
 
-\hypertarget{temp-folder}{%
-\subsection{Temp Folder}\label{temp-folder}}
+\hypertarget{temp-folder-temp-folder}{%
+\subsection{Temp Folder \{temp-folder\}}\label{temp-folder-temp-folder}}
 
 This folder is also located within the data folder and holds all files that are made while either master script is running. These files are deleted when the final output is finished being processed.
 
@@ -404,8 +423,8 @@ This folder within the main folder contains all script files needed by the maste
   \textbf{generate\_employment\_dataframe.R:} An R script that calculates employment data and generates two dataframes, one for the county and one for the district IMPLAN sheets.
 \end{itemize}
 
-\hypertarget{deprecated-folder-1}{%
-\subsection{Deprecated Folder}\label{deprecated-folder-1}}
+\hypertarget{deprecated-folder-deprecated-script}{%
+\subsection{Deprecated Folder \{deprecated-script\}}\label{deprecated-folder-deprecated-script}}
 
 This folder within the src folder contains all scripts that are only used by the DEPRECATED\_run\_analysis\_master.R script. DO NOT MODIFY ANY OF THESE FILES.
 
@@ -459,7 +478,7 @@ This section contains the variables needed in order to generate user specific em
 \item
   \textbf{res\_mult:} This variable represents the multiplier required to calculate the number of equivalent full-time positions generated by members of the military reserves. In anticipation that this value may change over time, it is included in the parameters file.\\
 \item
-  \textbf{national\_sus\_dhs:} This variable represents the number of Homeland Security employees that are ``suppressed.'' This means that the precise location of their work is intentionally redacted for matters of national security. This number is updated quarterly on FedScope ({[}Link to obtain data section){]}.
+  \textbf{national\_sus\_dhs:} This variable represents the number of Homeland Security employees that are ``suppressed.'' This means that the precise location of their work is intentionally redacted for matters of national security. This number is updated quarterly on FedScope see Section \textbf{\ref{employment}}.
 \item
   \textbf{sus\_dhs\_mult:} This variable represents the percentage of suppressed employees in each state. This multiplier comes from 2016 data. End users should make their own approximations of this value if they are focused on a study region smaller than the state level.
 \item
@@ -564,7 +583,7 @@ This section contains the variables required to aggregate the different spending
 \hypertarget{review-files}{%
 \section{Reviewing User Specific Files}\label{review-files}}
 
-After modifying the parameters file and before running any code, make sure you have obtained, modified and renamed the following data as per instructions in Section \ref{employ}. If these files are not properly named and located, the CODE WILL NOT RUN:
+After modifying the parameters file and before running any code, make sure you have obtained, modified and renamed the following data as per instructions in Section \textbf{\ref{modify-data}}. If these files are not properly named and located, the CODE WILL NOT RUN:
 
 \begin{itemize}
 \tightlist
@@ -615,7 +634,7 @@ Lines 37 and 38 begin checking for errors in the filtered USAspending data and m
 
 Line 37 loads in a R script file that goes through the filtered USAspending contracts and remediates errors in certain contract entries. The first lines in the script load two files into dataframes: 1) the filtered USAspending contracts file (\emph{contracts}); and 2) a NAICS to IMPLAN crosswalk provided by IMPLAN (\emph{naics\_to\_implan}). There are several code fixes and removal of duplicate codes that our team determined, to the best of our knowledge, to be the most accurate way to relate a NAICS code to an IMPLAN code. After this, the crosswalk is merged into the \emph{contracts} dataframe by NAICS code in order to get an IMPLAN code for each contract entry.
 
-However, this merge does not give all contract entries an IMPLAN code. This can be for a variety of reasons, including: 1) a contract entry from USAspending not having a NAICS code; and 2) an incorrect and/or outdated NAICS code that was not part of IMPLAN's provided crosswalk. The lines of code following the merge work to fix the contract entry errors. First, an IMPLAN code was hardcoded to the contracts with no NAICS code based on the contract recipient's name and industry sector. Next, the contracts which had a mistyped or older NAICS code were pulled out to a new dataframe (\emph{contracts\_missing\_implan}) and hardcoded to an IMPLAN code based on our team's best research into which IMPLAN code each entry would best fit into. This presents a degree of error when parsing out the contract spending, but also represents the best available workaround given time and information constraints. A new way of handling the error checks for contracts is detailed in \href{next}{Section 9: What's Next}.
+However, this merge does not give all contract entries an IMPLAN code. This can be for a variety of reasons, including: 1) a contract entry from USAspending not having a NAICS code; and 2) an incorrect and/or outdated NAICS code that was not part of IMPLAN's provided crosswalk. The lines of code following the merge work to fix the contract entry errors. First, an IMPLAN code was hardcoded to the contracts with no NAICS code based on the contract recipient's name and industry sector. Next, the contracts which had a mistyped or older NAICS code were pulled out to a new dataframe (\emph{contracts\_missing\_implan}) and hardcoded to an IMPLAN code based on our team's best research into which IMPLAN code each entry would best fit into. This presents a degree of error when parsing out the contract spending, but also represents the best available workaround given time and information constraints. A new way of handling the error checks for contracts is detailed in Section \textbf{\ref{next}}, ``What's Next?''
 
 The final steps of this script involve dropping the contract entries with no IMPLAN code from the original \emph{contracts} dataframe. Then, the dataframe which fixed the contracts missing IMPLAN codes (\emph{contracts\_missing\_implan}) is merged back into the original \emph{contracts} dataframe. The \emph{contracts} dataframe now has all contract entries cleaned, with an IMPLAN code for each entry. Last, only the columns necessary for the analysis moving forward are kept, and then the cleaned \emph{contracts} dataframe is written into a new CSV file in the data/temp/ folder.
 
@@ -637,7 +656,7 @@ Lines 40 and 42 provide an important notice to manually fix some errors in the t
 
 In order to properly remediate these issues, our team utilized the \emph{dod\_county\_shares} Excel file in the data/raw/ folder. Looking at this file, the ``Districts'' tab in that Excel sheet provides a breakdown from the California Redistricting Commission of how much a county overlaps one or more congressional districts based on land area. Then the contract, grant, or direct payment CSV files' entries are filtered by county. These entries are randomly assigned to a district based on the percentage of their county that resides in each district. For example, if 20 contract entries without a district assignment were in Alameda County, 47\% of those entries (\textasciitilde9) would be assigned to CA-13, 42\% (\textasciitilde8) assigned to CA-15, and 12\% (\textasciitilde3) assigned to CA-17.
 
-This method inherently presents a degree of error with allocating spending across congressional districts. Given time constraints and data limitations, this workaround presented itself as the best solution at the time. Our team is working on a new and improved way to address these manual fixes - for more details, refer to Section 9: What's Next {[}(ADD LINK){]}.
+This method inherently presents a degree of error with allocating spending across congressional districts. Given time constraints and data limitations, this workaround presented itself as the best solution at the time. Our team is working on a new and improved way to address these manual fixes - for more details, refer to Section \textbf{\ref{next}}, ``What's Next?''.
 
 \hypertarget{concat-usa}{%
 \subsection{Concatenating the USAspending Data}\label{concat-usa}}
@@ -664,13 +683,13 @@ Lines 62 through 64 do the simple calculation of aggregating the VA benefits dat
 \hypertarget{compile-emp}{%
 \subsection{Compiling Employment Data}\label{compile-emp}}
 
-Line 67 loads in a R script that calculates the necessary employment data. All prior steps focused on preparing spending data for IMPLAN -- this is the only step necessary for preparing employment data. The first couple of lines in this script read the state employment CSV (detailed in Section 4.2 {[}(ADD LINK){]}) into a dataframe, \emph{state\_emp}, and define values for statewide military, civilian, Department of Defense, Department of Homeland Security, Veterans Affairs, and Department of Energy employment. From that point on, the code works to apportion the statewide employment numbers for each county and congressional district. Certain employment types have different methods and files needed in order to do this local apportionment.
+Line 67 loads in a R script that calculates the necessary employment data. All prior steps focused on preparing spending data for IMPLAN -- this is the only step necessary for preparing employment data. The first couple of lines in this script read the state employment CSV (detailed in Section \textbf{\ref{modify-data}}) into a dataframe, \emph{state\_emp}, and define values for statewide military, civilian, Department of Defense, Department of Homeland Security, Veterans Affairs, and Department of Energy employment. From that point on, the code works to apportion the statewide employment numbers for each county and congressional district. Certain employment types have different methods and files needed in order to do this local apportionment.
 
 ACS data is used for military employment calculations. We assume that the distribution of residents employed in the armed forces across counties and districts is a good proxy for estimating the location of their employment. The ACS data file is read into a dataframe (\emph{acs\_data}) and two columns are added. The first column takes the number of employed armed forces in a county/district from the ACS and divides it by the statewide employed armed forces value to obtain a percentage, which we name \emph{armed\_forces\_percent}. The second column, \emph{military\_personnel}, takes \emph{armed\_forces\_percent} and multiplies it by the statewide military employment value (obtained from \emph{state\_emp}). Then, the geography and military\_personnel columns are retained, and the county and district military employment numbers are saved into separate dataframes.
 
-Next, the \emph{dod\_county\_shares.xlsx} file (detailed in Section 5.2.1 ({[}ADD LINK{]})) is used to apportion Department of Defense (DoD) civilian employees. ACS data does not account for the high concentration of DoD employees in Lassen County due to the presence of the Sierra Army Depot. Our self-created file, which is based on apportionment across counties from 2016 DoD employment numbers, does account for this, and is therefore used in place of the ACS armed forces apportionment. The \emph{dod\_county\_shares.xlsx} file has two sheets, one for counties and one for districts. Each sheet is read into a dataframe to apportion the counties and districts, respectively. The counties dataframe (\emph{dod\_county}) apportions the statewide DoD civilian employees by the percent share that each county had for DoD employees in 2016. The districts dataframe (\emph{dod\_district}) is based off the counties dataframe but uses the percentage of county land area that lies within a district to distribute the DoD employees per county for each district. This distribution from county to district is then aggregated by district in order to get the DoD employees by district. Then, the two DoD dataframes (\emph{dod\_county} and \emph{dod\_district}) retain their respective geography column and DoD employment totals to complete the DoD apportionment.
+Next, the \emph{dod\_county\_shares.xlsx} file (detailed in Section \textbf{\ref{raw-folder}}) is used to apportion Department of Defense (DoD) civilian employees. ACS data does not account for the high concentration of DoD employees in Lassen County due to the presence of the Sierra Army Depot. Our self-created file, which is based on apportionment across counties from 2016 DoD employment numbers, does account for this, and is therefore used in place of the ACS armed forces apportionment. The \emph{dod\_county\_shares.xlsx} file has two sheets, one for counties and one for districts. Each sheet is read into a dataframe to apportion the counties and districts, respectively. The counties dataframe (\emph{dod\_county}) apportions the statewide DoD civilian employees by the percent share that each county had for DoD employees in 2016. The districts dataframe (\emph{dod\_district}) is based off the counties dataframe but uses the percentage of county land area that lies within a district to distribute the DoD employees per county for each district. This distribution from county to district is then aggregated by district in order to get the DoD employees by district. Then, the two DoD dataframes (\emph{dod\_county} and \emph{dod\_district}) retain their respective geography column and DoD employment totals to complete the DoD apportionment.
 
-GSA federal property data (detailed in section 3.3.2) is used to apportion Department of Homeland Security (DHS) and Veterans Affairs (VA) employment. The square footage of DHS and VA buildings across counties and districts in the state can provide a rough estimate for apportioning the statewide employment for those agencies. First, federal property data is read into a dataframe (\emph{fedprop}), necessary columns are selected, and then appropriate filters are applied for property type and departments of interest. After this initial read in, a new dataframe is created just for VA properties (\emph{va\_fedprop}). A new column for employees is calculated by multiplying the statewide VA employment by the percentage of that region's building square footage divided by the state total. Then, two new dataframes are made to aggregate employees by county (\emph{va\_county}) and district (\emph{va\_district}). This entire process is then recreated for DHS, with three respective dataframes being made for the DHS calculations (\emph{dhs\_fedprop}, \emph{dhs\_county}, and \emph{dhs\_district}).
+GSA federal property data (detailed in Section \textbf{\ref{online-data}}) is used to apportion Department of Homeland Security (DHS) and Veterans Affairs (VA) employment. The square footage of DHS and VA buildings across counties and districts in the state can provide a rough estimate for apportioning the statewide employment for those agencies. First, federal property data is read into a dataframe (\emph{fedprop}), necessary columns are selected, and then appropriate filters are applied for property type and departments of interest. After this initial read in, a new dataframe is created just for VA properties (\emph{va\_fedprop}). A new column for employees is calculated by multiplying the statewide VA employment by the percentage of that region's building square footage divided by the state total. Then, two new dataframes are made to aggregate employees by county (\emph{va\_county}) and district (\emph{va\_district}). This entire process is then recreated for DHS, with three respective dataframes being made for the DHS calculations (\emph{dhs\_fedprop}, \emph{dhs\_county}, and \emph{dhs\_district}).
 
 Next, the \emph{county\_emp} and \emph{district\_emp} dataframes are created. These dataframes will be used in the final step to help allocate the county and district employment for the IMPLAN activity sheets. Each dataframe merges together the four employment dataframes developed for each respective geography from the above steps (DHS, VA, DoD, and military) and ensures that all the numbers in the dataframes are read as numeric rather than character strings. The final step for these two dataframes is to add in columns of implan\_545 (which is just military employment) and implan\_546 (which is the sum of DoD, DHS, and VA employment). For the \emph{county\_emp} dataframe, two additional columns are needed: \emph{inverse\_545} (the statewide military employees minus a county's military employees) and \emph{inverse\_546} (the statewide DoD, DHS, and VA employees minus a county's DoD, DHS, and VA employees). These new columns in these dataframes will be read in the next section and fill in the employment data for IMPLAN.
 
@@ -714,9 +733,9 @@ For researchers looking to perform this study on their own, we hope to offer som
 \item
   If it is determined that FOIA data is wanted and/or needed for your study, file your requests many months in advance.
 \item
-  Running the code up to the aggregate function {[}REFERENCE TO METHOD SECTION{]} and looking at how many IMPLAN sectors have a spending amount should provide a good barometer for how long the IMPLAN processing will take for the statewide model. The California statewide model had 400 IMPLAN sectors and took roughly 20 minutes to run.
+  Running the code up to the aggregate function (see Section \textbf{\ref{agg-data}}), and looking at how many IMPLAN sectors have a spending amount should provide a good barometer for how long the IMPLAN processing will take for the statewide model. The California statewide model had 400 IMPLAN sectors and took roughly 20 minutes to run.
 \item
-  After running the for-loop code {[}REFERENCE TO METHOD SECTION{]} for generating localized IMPLAN activity sheets, note that the activity sheets for the multi-region inverse models will take significantly more time than the sheets for the normal models. Roughly speaking, a single inverse model takes a couple of hours to finish running, while a single region model should complete within half an hour.
+  After running the for-loop code (Section \textbf{\ref{for-loop}}), for generating localized IMPLAN activity sheets, note that the activity sheets for the multi-region inverse models will take significantly more time than the sheets for the normal models. Roughly speaking, a single inverse model takes a couple of hours to finish running, while a single region model should complete within half an hour.
 \end{itemize}
 
 The process guide for this study was created to be a useful tool for researchers to conduct similar economic impact studies. Through this document, we hope that additional quality studies continue to come about and assist in making government spending data more readily accessible and transparent. Furthermore, we hope to continue making process improvements in order to ensure that this study retains its functionality and capacity for future years.

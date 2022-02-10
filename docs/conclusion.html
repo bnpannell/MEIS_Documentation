@@ -24,7 +24,6 @@
 <meta name="author" content="Britnee Pannell &amp; Sumeet Bedi" />
 
 
-<meta name="date" content="2022-02-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -102,12 +101,12 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>3</b> Data Requirements</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#employ"><i class="fa fa-check"></i><b>3.1</b> Employment Data</a></li>
+<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#employment"><i class="fa fa-check"></i><b>3.1</b> Employment Data</a></li>
 <li class="chapter" data-level="3.2" data-path="data.html"><a href="data.html#usa"><i class="fa fa-check"></i><b>3.2</b> USASpending Data</a></li>
 <li class="chapter" data-level="3.3" data-path="data.html"><a href="data.html#additional"><i class="fa fa-check"></i><b>3.3</b> Additional Data</a>
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="data.html"><a href="data.html#smartpay"><i class="fa fa-check"></i><b>3.3.1</b> SmartPay Data via FOIA</a></li>
-<li class="chapter" data-level="3.3.2" data-path="data.html"><a href="data.html#data-obtained-online"><i class="fa fa-check"></i><b>3.3.2</b> Data Obtained Online</a></li>
+<li class="chapter" data-level="3.3.2" data-path="data.html"><a href="data.html#online-data"><i class="fa fa-check"></i><b>3.3.2</b> Data Obtained Online</a></li>
 <li class="chapter" data-level="3.3.3" data-path="data.html"><a href="data.html#provided"><i class="fa fa-check"></i><b>3.3.3</b> Data Provided Raw/Self-Made</a></li>
 </ul></li>
 </ul></li>
@@ -118,16 +117,16 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="5" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html"><i class="fa fa-check"></i><b>5</b> Data Dictionary for Repository</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#meis_methodology-folder"><i class="fa fa-check"></i><b>5.1</b> MEIS_Methodology Folder</a></li>
+<li class="chapter" data-level="5.1" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#MEIS-folder"><i class="fa fa-check"></i><b>5.1</b> MEIS_Methodology Folder</a></li>
 <li class="chapter" data-level="5.2" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#data-folder"><i class="fa fa-check"></i><b>5.2</b> Data Folder</a>
 <ul>
 <li class="chapter" data-level="5.2.1" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#raw-folder"><i class="fa fa-check"></i><b>5.2.1</b> Raw Folder</a></li>
-<li class="chapter" data-level="5.2.2" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#temp-folder"><i class="fa fa-check"></i><b>5.2.2</b> Temp Folder</a></li>
+<li class="chapter" data-level="5.2.2" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#temp-folder-temp-folder"><i class="fa fa-check"></i><b>5.2.2</b> Temp Folder {temp-folder}</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#output-folder"><i class="fa fa-check"></i><b>5.3</b> Output Folder</a></li>
 <li class="chapter" data-level="5.4" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#src-folder"><i class="fa fa-check"></i><b>5.4</b> SRC Folder</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#deprecated-folder-1"><i class="fa fa-check"></i><b>5.4.1</b> Deprecated Folder</a></li>
+<li class="chapter" data-level="5.4.1" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#deprecated-folder-deprecated-script"><i class="fa fa-check"></i><b>5.4.1</b> Deprecated Folder {deprecated-script}</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>6</b> Methods</a>
@@ -192,8 +191,8 @@ div.csl-indent {
 <p>For researchers looking to perform this study on their own, we hope to offer some advice on the planning and timeline stages for such a project:</p>
 <ul>
 <li>If it is determined that FOIA data is wanted and/or needed for your study, file your requests many months in advance.</li>
-<li>Running the code up to the aggregate function [REFERENCE TO METHOD SECTION] and looking at how many IMPLAN sectors have a spending amount should provide a good barometer for how long the IMPLAN processing will take for the statewide model. The California statewide model had 400 IMPLAN sectors and took roughly 20 minutes to run.</li>
-<li>After running the for-loop code [REFERENCE TO METHOD SECTION] for generating localized IMPLAN activity sheets, note that the activity sheets for the multi-region inverse models will take significantly more time than the sheets for the normal models. Roughly speaking, a single inverse model takes a couple of hours to finish running, while a single region model should complete within half an hour.</li>
+<li>Running the code up to the aggregate function (see Section <strong><a href="methods.html#agg-data">6.3.10</a></strong>), and looking at how many IMPLAN sectors have a spending amount should provide a good barometer for how long the IMPLAN processing will take for the statewide model. The California statewide model had 400 IMPLAN sectors and took roughly 20 minutes to run.</li>
+<li>After running the for-loop code (Section <strong><a href="methods.html#for-loop">6.3.12</a></strong>), for generating localized IMPLAN activity sheets, note that the activity sheets for the multi-region inverse models will take significantly more time than the sheets for the normal models. Roughly speaking, a single inverse model takes a couple of hours to finish running, while a single region model should complete within half an hour.</li>
 </ul>
 <p>The process guide for this study was created to be a useful tool for researchers to conduct similar economic impact studies. Through this document, we hope that additional quality studies continue to come about and assist in making government spending data more readily accessible and transparent. Furthermore, we hope to continue making process improvements in order to ensure that this study retains its functionality and capacity for future years.</p>
 
