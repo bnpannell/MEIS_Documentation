@@ -1,15 +1,19 @@
-# Data Requirements 
+# Data Requirements {#data}
 
 This section details how to obtain all the necessary data for this project. Data can be broken into three types:  
+
 - **Employment**
 - **USAspending**
 - **Additional Data** 
+
 *Please note, there is no guarantee that the data sources described below will exist in this form indefinitely.*  
 
-## Employment Data 
+## Employment Data{#employ}
 This report focused on two types of employment data:  
+
 - **Civilian**  
 - **Military**
+
 These employment data types were sourced from two separate websites. 
 
 **Civilian employment** is available from the [Office of Personnel Management's (OPM) FedScope website](https://www.fedscope.opm.gov/), which provides federal workforce data. The report uses September data to align with the federal fiscal year. To obtain the data: 
@@ -23,13 +27,13 @@ Filter the data by agency type (“Cabinet Level”) and location (“United Sta
 3. On the linked page, scroll to the “DoD Personnel, Workforce Reports & Publications” text, and click on its hyperlink. This opens up a new window to access the military employment data.  
 4. Scroll to the section “Military and Civilian Personnel by Service/Agency by State/Country (Updated Quarterly)” and download the Excel file for September of the desired year. 
 
-## USASpending Data 
+## USASpending Data {#usa}
 This report utilizes [USAspending.gov](https://www.usaspending.gov/) for the majority of its direct spending data. The spending types obtained from this site include contracts and grants for the U.S. Departments of Defense, Homeland Security, Veterans Affairs, and Energy, as well as direct payments from Veterans Affairs (i.e., veterans’ benefits).  Data is available from the [“Custom Awards Data”](https://www.usaspending.gov/download_center/custom_award_data) webpage. Data is available by award type (contracts, grants, and/or direct payments), awarding agency (Defense, Homeland Security, Veterans Affairs, Energy), recipient location (United States for “Country,” and, optionally, a specific state), action date range (a fiscal year “FY 20XX”), and file format. This download process must be done once per agency. 
 
-Code that automates this entire process has been developed to capture all USAspending data at once. Please refer to section 6.3 of the Methods ([ADD LINK]) section for more details. 
+Code that automates this entire process has been developed to capture all USAspending data at once. Please refer to Section \@ref(processing-data) in the Methods section for more details. 
 
-## Additional Data 
-### SmartPay Data via FOIA 
+## Additional Data {#additional}
+### SmartPay Data via FOIA {#smartpay}
 The remainder of direct spending data used in these reports was SmartPay, a charge card program for federal employees. In order to obtain this data, Freedom of Information Act requests (commonly known as FOIAs) were filed to the federal agencies.  
 
 For more information about SmartPay, please visit the [General Services Administration's (GSA) SmartPay website](https://www.gsa.gov/travel/plan-book/gsa-smartpay). 
@@ -43,5 +47,5 @@ A variety of data sources are obtained online in order to assist with the data p
 
 - [NAICS to IMPLAN crosswalk](https://support.implan.com/hc/en-us/articles/360034896614-546-Industries-Conversions-Bridges-Construction-2018-Data) from IMPLAN. IMPLAN provides a variety of crosswalks that are used to relate data from other sources to IMPLAN’s 546 industries codes. On this page, go to the second heading titled “2017 NAICS to IMPLAN 546 Industries” and download the Excel file. This crosswalk is utilized to help relate the USAspending contracts data to IMPLAN sectors in order to run that spending data through the IMPLAN software. 
 
-### Data Provided Raw/Self-Made
+### Data Provided Raw/Self-Made {#provided} 
 The repository contains raw data files that have been built for this project. Specific instructions on how to access this repository and utilize these raw data sources are explained in the next section. 

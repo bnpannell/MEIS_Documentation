@@ -3,6 +3,7 @@ This section details each file contained in the code repository and a summary of
 
 ## MEIS_Methodology Folder
 This is the main folder, containing all data in the repository. 
+
 - **.gitignore:** Lists files that will be ignored when using Git to synchronize updates to repository. 
 - **DEPRECATED_run_analysis_master.R:** This file contains the script used for the 2021 project. This process guide pertains mostly to the code running from this master script. 
 - **LICENSE:** Contains licensing information for the repository. 
@@ -16,7 +17,8 @@ This is the main folder, containing all data in the repository.
 This is a folder located in the main folder and is designed to hold data for this project.
 
 ### Raw Folder
-This folder is within the data folder and contains all raw data provided to the user. The purpose of the raw data is to simplify data processing.  
+This folder is within the data folder and contains all raw data provided to the user. The purpose of the raw data is to simplify data processing. 
+
 - **2007_to_2017_NAICS.xlsx:** This file contains the crosswalk used in the master script to update 2007 NAICS codes to 2017 NAICS codes. This file is a new development to automate error checking when linking IMPLAN codes to NAICS codes. It is NOT used in the Deprecated master script. 
 - **2012_2017_NAICS_to_IMPLAN.xlsx:** This file contains the 2017 NAICS to IMPLAN crosswalk as well as several additions. 2012 NAICS to IMPLAN values were appended to this file in addition to several 2002 NAICS codes that required updating. This file is a new development to automate error checking when linking IMPLAN codes to NAICS codes. It is NOT used in the Deprecated master script. 
 - **business_type_to_implan546_crosswalk.csv:** This file was created to serve as a crosswalk between grant recipient business types and their corresponding IMPLAN codes. This file was made by manually looking up each business type and entering its corresponding IMPLAN code value. 
@@ -26,7 +28,8 @@ This folder is within the data folder and contains all raw data provided to the 
 - **TEMPLATE_emp.csv:** This file is a template for users to fill out employment numbers for their region of interest. Follow instructions in ([link to MODIFY DATA section]) to make use of this file.
 
 #### Blank_Sheets_for_R Folder
-This folder contains the template spreadsheets used in the final preparation of data for entry into IMPLAN. For more information on the difference between the event types that comprise IMPLAN’s activity sheet, refer to [IMPLAN’s article on this topic](https://support.implan.com/hc/en-us/articles/360019638713-Explaining-Event-Types). 
+This folder contains the template spreadsheets used in the final preparation of data for entry into IMPLAN. For more information on the difference between the event types that comprise IMPLAN’s activity sheet, refer to [IMPLAN’s article on this topic](https://support.implan.com/hc/en-us/articles/360019638713-Explaining-Event-Types).
+
 - **CommodityOutput2.xlsx:** An Excel sheet that goes into the IMPLAN activity sheets as the second worksheet tab. 
 - **LaborIncomeChange3.xlsx:** An Excel sheet that goes into the IMPLAN activity sheets as the third worksheet tab. 
 - **HouseholdSpendingChange4.xlsx:** An Excel sheet that goes into the IMPLAN activity sheets as the fourth worksheet tab. This Excel worksheet tab is what will hold the Veteran Affairs direct payments data. 
@@ -35,18 +38,23 @@ This folder contains the template spreadsheets used in the final preparation of 
 
 #### deprecated Folder
 This folder contains raw data only used by the Deprecated master script. 
+
 - **2017_implan_online_naics_to_implan546.xlsx:** This file contains the crosswalk for linking 2017 IMPLAN codes to NAICS code. 
 - **2021_employment_totals.xlsx:** This file contains the necessary employment data broken out by each California county and congressional district
 
 ### Temp Folder
 This folder is also located within the data folder and holds all files that are made while either master script is running. These files are deleted when the final output is finished being processed. 
+
 - **placeholderfortemp.txt:** This file prevents Github from deleting the temp folder, as it is empty by default.
 
 ## Output Folder
-This folder is located within the main folder and holds all the final output files needed by IMPLAN to complete this project. New output files will get created and placed into this folder as scripts are run. - **placeholder.txt:** This file prevents Github from deleting the output folder, as it is empty by default.  
+This folder is located within the main folder and holds all the final output files needed by IMPLAN to complete this project. New output files will get created and placed into this folder as scripts are run. 
+
+- **placeholder.txt:** This file prevents Github from deleting the output folder, as it is empty by default.  
 
 ## SRC Folder
 This folder within the main folder contains all script files needed by the master script when it is running. Scripts in this folder may be used by either of the master scripts contained in this repository. DO NOT MODIFY ANY OF THESE FILES. 
+
 - **obtain_usaspending.R:** An R script that calls to USAspending’s Application Programming Interface (API) in order to obtain the USAspending data desired based on the criteria defined in this R script. 
 - **filter_usaspending.R:** An R script that defines a function for further filtering the USAspending data that was obtained from the API call. 
 - **error_check_and_weight_contracts.R:** An R script that works through multiple steps and lines of code to fix errors in the USAspending contracts data based on the type of error. 
@@ -59,6 +67,7 @@ This folder within the main folder contains all script files needed by the maste
 
 ### Deprecated Folder
 This folder within the src folder contains all scripts that are only used by the DEPRECATED_run_analysis_master.R script. DO NOT MODIFY ANY OF THESE FILES. 
+
 - **DEPRECATED_error_check_contracts.R:** An R script of hardcode fixes to errors in the contracts data in order to get an IMPLAN code for every entry. 
 - **DEPRECATED_error_check_grants.R:** An R script of hardcode fixes to errors in the grants data in order to get an IMPLAN code for every entry.  
 - **DEPRECATED_create_implan_sheets.R:** An R script that runs two for loop codes that help to generate the IMPLAN activity sheets for every California county and congressional district. 

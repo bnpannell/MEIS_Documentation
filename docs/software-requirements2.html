@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 7 Conclusion/ Discussion | California Military Economic Impact Study Process Guide</title>
+  <title>Section 2 Software Requirements{#2} | California Military Economic Impact Study Process Guide</title>
   <meta name="description" content="This GitBook explains the process used to develop the 2020 California Military Economic Impact Study." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 7 Conclusion/ Discussion | California Military Economic Impact Study Process Guide" />
+  <meta property="og:title" content="Section 2 Software Requirements{#2} | California Military Economic Impact Study Process Guide" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="bnpannell/MEIS_Documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 7 Conclusion/ Discussion | California Military Economic Impact Study Process Guide" />
+  <meta name="twitter:title" content="Section 2 Software Requirements{#2} | California Military Economic Impact Study Process Guide" />
   
   <meta name="twitter:description" content="This GitBook explains the process used to develop the 2020 California Military Economic Impact Study." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="methods6.html"/>
-<link rel="next" href="whats-next.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="data.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -178,33 +178,37 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="conclusion-discussion" class="section level1" number="7">
-<h1><span class="header-section-number">Section 7</span> Conclusion/ Discussion</h1>
-<p>From our analysis for this project, we found that national security contributes significantly to California’s economy. The total impact appears similar to high profile sectors such as the agriculture and film industries. In 2019, the federal government invested at least $47.0 billion and directly employed approximately 348,000 residents in the state. This resulted in $181.2 billion in economic impact and supported over 792,000 full-time equivalent jobs in California.</p>
-<p>Our process for this project provided us with some lessons:</p>
+<div id="software-requirements2" class="section level1" number="2">
+<h1><span class="header-section-number">Section 2</span> Software Requirements{#2}</h1>
+<p>To recreate or replicate this study, specialized software is needed to obtain and process federal data. All the software that was used in this process is free and available online. It is best practice to use the most updated software version.</p>
+<ol style="list-style-type: decimal">
+<li>The R coding language from <a href="https://cloud.r-project.org/">cloud.r-project.org</a>. This language is used to obtain and process data.</li>
+<li>RStudio Desktop from <a href="https://rstudio.com/products/rstudio/download/#download">rstudio.com</a>. RStudio is the integrated development environment (IDE) used to run R scripts and develop code.</li>
+<li>Git from <a href="https://git-scm.com/downloads">git-scm.com</a>. A comprehensive guide to installing Git is available at <a href="https://happygitwithr.com/install-git.html">happygitwithr.com</a>. Git allows version control of edits across a multi-person team of researchers.</li>
+<li>If a GitHub account is needed, one can sign up and register at <a href="https://github.com/" class="uri">https://github.com/</a>. Individual free plans are available, as well as <a href="https://help.github.com/en/articles/applying-for-an-educator-or-researcher-discount">free upgrades</a> for qualifying academic purposes. GitHub is used to develop and host this project.</li>
+</ol>
+<div id="download-necessary-r-libraries2.1" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Download Necessary R Libraries{#2.1}</h2>
+<p>To make sure the code can be run, please ensure that the following R library packages are installed. If you are using RStudio, packages can be installed from CRAN using the ‘install.packages(“<strong>[package_name]</strong>”)’ command in the terminal.</p>
 <ul>
-<li>FOIA data can be difficult to obtain, as it is dependent on how quickly and accurately a federal agency responds to your request. From our experience, we have received responses to our FOIA requests at least six months after our initial submission.However, data obtained from FOIAs (SmartPay) constituted 3.4% of the nation’s national security-related direct spending. Depending on your resources and priorities, choosing to omit this data would typically have minimal impacts on the overall estimates.</li>
-<li>Manually obtaining and processing government spending data (such as USAspending) is time and labor intensive. In developing an automated way of making this more efficient, we found that there were not a lot of good resources on how to interact with APIs for the initial data grab. The APIs that exist do not have clear instructions, and it takes time to learn how to interact with them. Even in automating this process, the limitation of time and labor presents itself. As a caution, take ample time to understand the APIs to ensure the correct data is obtained, especially if branching out from the API used for this study.<br />
-</li>
-<li>Within the manually processing of government spending data, a particular pain point was the remediation of errors in the USAspending data. Contracts data may have had old, mistyped, or missing NAICS codes that required additional searching of previous crosswalks to properly allocate spending entries to the correct IMPLAN code. Additionally, the errors of missing or “90” congressional district values require diligence in approach to remediate that issue.</li>
-<li>Processing this data in IMPLAN for the county and congressional district models can be time consuming, and approximate time will vary based on the number of counties and congressional districts being processed.</li>
+<li><strong>dplyr:</strong> Used for manipulating dataframes. <span class="citation">(<a href="references.html#ref-dplyr1" role="doc-biblioref">Wickham et al. 2021</a>)</span></li>
+<li><strong>httr:</strong> Used for working with URLs and HTTP. <span class="citation">(<a href="references.html#ref-httr2" role="doc-biblioref">Wickham 2020</a>)</span></li>
+<li><strong>jsonlite:</strong> Used for interacting with JSON data and web APIs. <span class="citation">(<a href="references.html#ref-json3" role="doc-biblioref">Ooms 2014</a>)</span></li>
+<li><strong>openxlsx:</strong> Used for reading, writing and editing xlsx files. <span class="citation">(<a href="references.html#ref-openxlsx4" role="doc-biblioref">Schauberger and Walker 2021</a>)</span></li>
+<li><strong>readxl:</strong> Used for legacy excel .xls files. <span class="citation">(<a href="references.html#ref-readxl5" role="doc-biblioref">Wickham and Bryan 2019</a>)</span></li>
+<li><strong>tidyverse:</strong> A collection of R packages optimized for data science. <span class="citation">(<a href="references.html#ref-tidyverse6" role="doc-biblioref">Wickham et al. 2019</a>)</span></li>
 </ul>
-<p>For researchers looking to perform this study on their own, we hope to offer some advice on the planning and timeline stages for such a project:</p>
-<ul>
-<li>If it is determined that FOIA data is wanted and/or needed for your study, file your requests many months in advance.</li>
-<li>Running the code up to the aggregate function [REFERENCE TO METHOD SECTION] and looking at how many IMPLAN sectors have a spending amount should provide a good barometer for how long the IMPLAN processing will take for the statewide model. The California statewide model had 400 IMPLAN sectors and took roughly 20 minutes to run.</li>
-<li>After running the for-loop code [REFERENCE TO METHOD SECTION] for generating localized IMPLAN activity sheets, note that the activity sheets for the multi-region inverse models will take significantly more time than the sheets for the normal models. Roughly speaking, a single inverse model takes a couple of hours to finish running, while a single region model should complete within half an hour.</li>
-</ul>
-<p>The process guide for this study was created to be a useful tool for researchers to conduct similar economic impact studies. Through this document, we hope that additional quality studies continue to come about and assist in making government spending data more readily accessible and transparent. Furthermore, we hope to continue making process improvements in order to ensure that this study retains its functionality and capacity for future years.</p>
+<p>The next section details data necessary to complete this project as well as how to obtain it.</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="methods6.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="whats-next.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -235,7 +239,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/bnpannell/MEIS_Documentation/conclusion.Rmd",
+"link": "https://github.com/bnpannell/MEIS_Documentation/requirements.Rmd",
 "text": "Edit"
 },
 "history": {

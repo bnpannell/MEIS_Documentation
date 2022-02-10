@@ -1,16 +1,13 @@
-# Software Requirements
+# Software Requirements {#software}
 
 To recreate or replicate this study, specialized software is needed to obtain and process federal data. All the software that was used in this process is free and available online. It is best practice to use the most updated software version. 
 
 1. The R coding language from [cloud.r-project.org](https://cloud.r-project.org/). This language is used to obtain and process data.
-
 2. RStudio Desktop from [rstudio.com](https://rstudio.com/products/rstudio/download/#download). RStudio is the integrated development environment (IDE) used to run R scripts and develop code.
-
 3. Git from [git-scm.com](https://git-scm.com/downloads). A comprehensive guide to installing Git is available at [happygitwithr.com](https://happygitwithr.com/install-git.html). Git allows version control of edits across a multi-person team of researchers. 
-
 4. If a GitHub account is needed, one can sign up and register at <https://github.com/>. Individual free plans are available, as well as [free upgrades](https://help.github.com/en/articles/applying-for-an-educator-or-researcher-discount) for qualifying academic purposes. GitHub is used to develop and host this project. 
 
-## Download Necessary R Libraries
+## Download Necessary R Libraries{#libraries}
 To make sure the code can be run, please ensure that the following R library packages are installed. If you are using RStudio, packages can be installed from CRAN using the 'install.packages("**[package_name]**")' command in the terminal.
 
 - **dplyr:** Used for manipulating dataframes. [@dplyr1]

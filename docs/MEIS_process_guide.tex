@@ -6,7 +6,7 @@
 ]{book}
 \title{California Military Economic Impact Study Process Guide}
 \author{Britnee Pannell \& Sumeet Bedi}
-\date{2022-01-24}
+\date{2022-02-09}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -97,19 +97,20 @@
 \hypertarget{introduction}{%
 \chapter{Introduction}\label{introduction}}
 
-The California Military Economic Impact Study report series began in 2018, when the California Governor's Office of Planning \& Research (OPR) and the Governor's Military Council (GMC) requested the California Research Bureau (CRB, a unit of the California State Library) to conduct this study. This report provides detailed statewide and localized economic impacts of federal national security activity in the state of California. The federal agencies identified as related to national security includes the Departments of Defense (DoD), Homeland Security (DHS), Veterans Affairs (VA), and specified sub-agencies of the Department of Energy (DOE). The type of economic activity detailed includes spending (contracts, grants, veterans' benefits, and SmartPay charge card) and employment data (civilian and military). The first report, published in August 2018, utilized federal fiscal year 2016 data, while the second report, published in December 2019, used fiscal year 2018 data.
+The California Military Economic Impact Study series began in 2016, when the California Governor's Office of Planning \& Research (OPR) and the Governor's Military Council requested the California Research Bureau, a unit of the California State Library, to conduct the first assessment. This study estimates detailed statewide and localized economic impacts of national security activity in California. The federal agencies identified as related to national security spending include the Departments of Defense, Homeland Security, Veterans Affairs, and specified sub-agencies of the Department of Energy. Economic activity detailed in the report includes spending (contracts, grants, veterans' benefits, and SmartPay charge card) and employment data (civilian and military). The first report, published in August 2018, utilized federal fiscal year 2016 data, while the second report, published in December 2019, used fiscal year 2018 data.
 
-Following these 2 reports, OPR and CRB secured grant funding from DoD to support two full-time equivalent (FTE) positions to develop supplemental reports that help localize the economic impacts detailed in the statewide report. In December 2020, CRB produced the 2020 California Military Economic Impact Study, and followed this third edition of the statewide report with two first-time supplements that discuss the economic impacts in every county and congressional district in California. In December 2021, CRB completed the fourth version of the statewide report as well as the second edition of the county and congressional district supplements. After completion of the second round of supplements, CRB was tasked with producing this process guide document.
+Following these two reports, OPR secured grant funding from the U.S. Department of Defense to support two full-time, temporary positions to develop supplemental reports that localize the economic impacts detailed in the statewide report. In December 2020, the California Research Bureau produced the 2020 California Military Economic Impact Study and followed this third edition of the statewide report with two first-time supplements that discuss the economic impacts in every county and congressional district in California. In December 2021, the Research Bureau completed the fourth edition of the statewide report as well as the second edition of the county and congressional district supplements. After completion of the second round of supplements, the Research Bureau was tasked with producing this process guide document.
 
-This process guide and supporting documentation were developed in order to allow other states to replicate the methodology of this study for their respective geography of interest. Additionally, this documentation serves to provide the rationale behind how the data was gathered, wrangled, and analyzed in order to justify the conclusions in our reports.
+This process guide and supporting documentation were developed to allow other states to replicate the methodology of this study for their respective geography of interest. Additionally, this documentation serves to provide the rationale behind how the data was gathered, error checked, and analyzed in order to justify the estimates in our reports.
 
-\hypertarget{software-requirements}{%
-\chapter{Software Requirements}\label{software-requirements}}
+\hypertarget{software}{%
+\chapter{Software Requirements}\label{software}}
 
-To recreate or replicate this study, specialized software is needed to obtain and process federal data. Fortunately, all the software that was used in this process is free and available online. It is best practice to use the most updated software version.
+To recreate or replicate this study, specialized software is needed to obtain and process federal data. All the software that was used in this process is free and available online. It is best practice to use the most updated software version.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
+\tightlist
 \item
   The R coding language from \href{https://cloud.r-project.org/}{cloud.r-project.org}. This language is used to obtain and process data.
 \item
@@ -120,10 +121,10 @@ To recreate or replicate this study, specialized software is needed to obtain an
   If a GitHub account is needed, one can sign up and register at \url{https://github.com/}. Individual free plans are available, as well as \href{https://help.github.com/en/articles/applying-for-an-educator-or-researcher-discount}{free upgrades} for qualifying academic purposes. GitHub is used to develop and host this project.
 \end{enumerate}
 
-\hypertarget{download-necessary-r-libraries}{%
-\section{Download Necessary R Libraries}\label{download-necessary-r-libraries}}
+\hypertarget{libraries}{%
+\section{Download Necessary R Libraries}\label{libraries}}
 
-To make sure the code can be run, please ensure that the following R library packages are installed. If you are using RStudio, packages can be installed from CRAN using the ``install.packages(\emph{{[}package\_name{]}})'' command in the terminal.
+To make sure the code can be run, please ensure that the following R library packages are installed. If you are using RStudio, packages can be installed from CRAN using the `install.packages(``\textbf{{[}package\_name{]}}'')' command in the terminal.
 
 \begin{itemize}
 \tightlist
@@ -143,89 +144,134 @@ To make sure the code can be run, please ensure that the following R library pac
 
 The next section details data necessary to complete this project as well as how to obtain it.
 
-\hypertarget{data-requirements}{%
-\chapter{Data Requirements}\label{data-requirements}}
+\hypertarget{data}{%
+\chapter{Data Requirements}\label{data}}
 
-This section details how to obtain all the necessary data for this project, which we broke out into 3 types: 1) employment, 2) USAspending, and 3) all other additional data. \emph{There is no guarantee that the data sources described below will exist in this form indefinitely, so care will be taken to keep this document as up to date as possible.}
+This section details how to obtain all the necessary data for this project. Data can be broken into three types:
 
-\hypertarget{employment-data}{%
-\section{Employment Data}\label{employment-data}}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Employment}
+\item
+  \textbf{USAspending}
+\item
+  \textbf{Additional Data}
+\end{itemize}
 
-This report focused on two types of employment data: civilian and military. These employment data types were found on two separate websites:
+\emph{Please note, there is no guarantee that the data sources described below will exist in this form indefinitely.}
 
-\textbf{Civilian employment} was obtained from the \href{https://www.fedscope.opm.gov/}{Office of Personnel Management's (OPM) FedScope website}, which provides federal workforce data. From this link, one can click on ``Employment'' under the ``Status Data'' bullet point to access quarterly employment data cubes. Given that the report focuses on federal fiscal years, the employment data of interest is of Quarter 3 of a given year (i.e.~September). When one clicks on a September cube of their desired year, one can filter the data by agency type (``Cabinet Level'') and location (``United States'' and a state of one's choice) in order to get the civilian employment numbers for the Departments of Defense (which is an aggregate of the Air Force, Army, Defense, and Navy cabinet agencies), Homeland Security, Veterans Affairs, and Energy. This data can be exported out as a PDF, CSV, or Excel file.
+\hypertarget{employ}{%
+\section{Employment Data}\label{employ}}
 
-\textbf{Military employment} was obtained from the \href{https://dwp.dmdc.osd.mil/dwp/app/main}{Defense Manpower Data Center (DMDC) website}, which serves under the Office of the Secretary of Defense. From this link, one can hover over to DoD Data/Reports and select ``Statistics \& Reports''. On this page, scroll to the ``DoD Personnel, Workforce Reports \& Publications'' text, and click on its hyperlink. \href{https://dwp.dmdc.osd.mil/dwp/app/DoD-data-reports/workforce-reports}{This opens up a new window to access the military employment data}. Similar to civilian employment, the data of interest is from September of a given year. One can scroll to the section ``Military and Civilian Personnel by Service/Agency by State/Country (Updated Quarterly)'', and download the Excel file for September of their desired year.
+This report focused on two types of employment data:
 
-\hypertarget{usaspending-data}{%
-\section{USASpending Data}\label{usaspending-data}}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Civilian}\\
+\item
+  \textbf{Military}
+\end{itemize}
 
-This report utilized \href{https://www.usaspending.gov/}{USAspending.gov} for a large majority of the direct spending done by federal national security agencies in California. The spending types obtained from this site include contracts and grants for DoD, DHS, VA and DOE, as well as direct payments from VA (i.e.~veterans' benefits). From this link, one can hover over to ``Download'' and click on ``Custom Award Data''. \href{https://www.usaspending.gov/download_center/custom_award_data}{On this webpage}, one can select the appropriate spending award types (contracts, grants, and/or direct payments), awarding agency (DoD, DHS, VA, DOE), recipient location (United States for ``Country'', and a specific state should you want to filter the data further), action date range (a fiscal year ``FY 20XX''), and file format. This download process must be done once per agency.
+These employment data types were sourced from two separate websites.
 
-For obtaining USAspending data, we have developed code that automates this entire process and easily captures all USAspending data in one instance. Please refer to our methods section of this process guide for more details.
+\textbf{Civilian employment} is available from the \href{https://www.fedscope.opm.gov/}{Office of Personnel Management's (OPM) FedScope website}, which provides federal workforce data. The report uses September data to align with the federal fiscal year. To obtain the data:
+1. Load the Office of Personnel Management's (OPM) FedScope website.
+2. Click on ``Employment'' under the ``Status Data'' bullet point to access quarterly employment data cubes. 3. Click September of the desired year.
+Filter the data by agency type (``Cabinet Level'') and location (``United States'' and a state of one's choice) in order to get the civilian employment numbers for the Departments of Defense (which is an aggregate of the Air Force, Army, Defense, and Navy cabinet agencies), Homeland Security, Veterans Affairs, and Energy. This data can be exported out as a PDF, CSV, or Excel file.
 
-\hypertarget{additional-data}{%
-\section{Additional Data}\label{additional-data}}
+\textbf{Military employment} is available from the \href{https://dwp.dmdc.osd.mil/dwp/app/main}{Defense Manpower Data Center (DMDC) website}. As with civilian employment, the report uses September data to align with the federal fiscal year. To obtain the data:\\
+1. Load the Defense Manpower Data Center (DMDC) website.
+2. Hover over to Department of Defense (DoD) Data/Reports and select ``Statistics \& Reports.''\\
+3. On the linked page, scroll to the ``DoD Personnel, Workforce Reports \& Publications'' text, and click on its hyperlink. This opens up a new window to access the military employment data.\\
+4. Scroll to the section ``Military and Civilian Personnel by Service/Agency by State/Country (Updated Quarterly)'' and download the Excel file for September of the desired year.
 
-\hypertarget{smartpay-data-via-foia}{%
-\subsection{SmartPay Data via FOIA}\label{smartpay-data-via-foia}}
+\hypertarget{usa}{%
+\section{USASpending Data}\label{usa}}
 
-The remaining portion of direct spending detailed in these reports was SmartPay, a charge card program for federal employees. In order to obtain this data, Freedom of Information Act requests (commonly known as FOIAs) were filed to the federal national security agencies.
+This report utilizes \href{https://www.usaspending.gov/}{USAspending.gov} for the majority of its direct spending data. The spending types obtained from this site include contracts and grants for the U.S. Departments of Defense, Homeland Security, Veterans Affairs, and Energy, as well as direct payments from Veterans Affairs (i.e., veterans' benefits). Data is available from the \href{https://www.usaspending.gov/download_center/custom_award_data}{``Custom Awards Data''} webpage. Data is available by award type (contracts, grants, and/or direct payments), awarding agency (Defense, Homeland Security, Veterans Affairs, Energy), recipient location (United States for ``Country,'' and, optionally, a specific state), action date range (a fiscal year ``FY 20XX''), and file format. This download process must be done once per agency.
+
+Code that automates this entire process has been developed to capture all USAspending data at once. Please refer to Section \ref{processing-data} in the Methods section for more details.
+
+\hypertarget{additional}{%
+\section{Additional Data}\label{additional}}
+
+\hypertarget{smartpay}{%
+\subsection{SmartPay Data via FOIA}\label{smartpay}}
+
+The remainder of direct spending data used in these reports was SmartPay, a charge card program for federal employees. In order to obtain this data, Freedom of Information Act requests (commonly known as FOIAs) were filed to the federal agencies.
 
 For more information about SmartPay, please visit the \href{https://www.gsa.gov/travel/plan-book/gsa-smartpay}{General Services Administration's (GSA) SmartPay website}.
 
 \hypertarget{data-obtained-online}{%
 \subsection{Data Obtained Online}\label{data-obtained-online}}
 
-A variety of data sources needed to be obtained online in order to assist with the data processing for this report. This includes:
+A variety of data sources are obtained online in order to assist with the data processing for this report. This includes:
 
 \begin{itemize}
 \item
-  \href{https://www.gsa.gov/policy-regulations/policy/real-property-policy/asset-management/federal-real-property-profile-frpp/federal-real-property-public-data-set}{Federal Real Public Property data} from the GSA. At this link, the GSA provides an Excel file that breaks down how much federal property is spread out across the United States. This data is used to help localize the number of statewide DHS and VA civilian employees across counties and districts.
+  \href{https://www.gsa.gov/policy-regulations/policy/real-property-policy/asset-management/federal-real-property-profile-frpp/federal-real-property-public-data-set}{Federal Real Public Property data} from the GSA. The GSA provides an Excel file that details federal property by location. This data is used to distribute statewide Homeland Security and Veterans Affairs civilian employment across counties and districts.
 \item
-  \href{https://data.census.gov/cedsci/}{American Community Survey data} from the Census Bureau. At this link, type into the search bar at the center of the webpage ``DP03''. This returns a table of ``Selected economic characteristics''. From this table, one can filter to the appropriate geography (state, county, congressional district, etc.), year, and such to download into an Excel file. This data is used to help localize the number of statewide military personnel across counties and districts.
+  \href{https://data.census.gov/cedsci/}{American Community Survey data} from the Census Bureau. Type ``DP03'' into the search bar at the center of the webpage. This returns a table of ``Selected economic characteristics.'' From this table, filter to the appropriate geography (state, county, congressional district, etc.) and year to download an Excel file. This data is used to distribute statewide military employment across counties and districts. To address issues of small sample size, our team used five-year estimates of this data.
 \item
-  \href{https://support.implan.com/hc/en-us/articles/360034896614-546-Industries-Conversions-Bridges-Construction-2018-Data}{NAICS to IMPLAN crosswalk} from IMPLAN. At this link, IMPLAN provides a variety of crosswalks that one can use to relate data from other source to IMPLAN's 546 industries. On this page, one can go to the second heading titled ``2017 NAICS to IMPLAN 546 Industries'' and download the Excel file. This crosswalk is utilized to help relate the USAspending contracts data to IMPLAN sectors in order to run that spending data through the IMPLAN software.
+  \href{https://support.implan.com/hc/en-us/articles/360034896614-546-Industries-Conversions-Bridges-Construction-2018-Data}{NAICS to IMPLAN crosswalk} from IMPLAN. IMPLAN provides a variety of crosswalks that are used to relate data from other sources to IMPLAN's 546 industries codes. On this page, go to the second heading titled ``2017 NAICS to IMPLAN 546 Industries'' and download the Excel file. This crosswalk is utilized to help relate the USAspending contracts data to IMPLAN sectors in order to run that spending data through the IMPLAN software.
 \end{itemize}
 
-\hypertarget{data-provided-rawself-made}{%
-\subsection{Data Provided Raw/Self-Made}\label{data-provided-rawself-made}}
+\hypertarget{provided}{%
+\subsection{Data Provided Raw/Self-Made}\label{provided}}
 
-The repository contains some raw data files that we have prepared for this project. Specific instructions on how to access this repository and utilize these raw data sources are explained in the next section.
+The repository contains raw data files that have been built for this project. Specific instructions on how to access this repository and utilize these raw data sources are explained in the next section.
 
-\hypertarget{setting-up-the-repository}{%
-\chapter{Setting Up the Repository}\label{setting-up-the-repository}}
+\hypertarget{setup}{%
+\chapter{Setting Up the Repository}\label{setup}}
 
-Our code repository is necessary to repeat the California study. It may also be used as a frame work to run additional studies outside of the initial region. These instructions assume you will be using Github to obtain and manage a copy of the repository.
+The code repository is necessary to repeat the California study. It may also be used as a framework to produce estimates for other regions. These instructions assume GitHub will be used to obtain and manage a copy of the repository.
 
-\hypertarget{obtain-repository}{%
-\section{Obtain Repository}\label{obtain-repository}}
+\hypertarget{get-repo}{%
+\section{Obtain Repository}\label{get-repo}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Using Github, navigate to the repository ({[}LINK TO REPO FOREVER HOME HERE{]}) and fork the repository to the user's account.
+  Using GitHub, navigate to the repository ({[}LINK TO REPO FOREVER HOME HERE{]}) and fork the repository to the user's account.
 \item
   Clone the repository to a new RStudio Project.
 \item
-  Open the `README.md' file ({[}LINK{]})\\
+  Open the `README.md' file ({[}LINK{]})
 \item
-  Fill out the parameters file with required specifications. The `README.md' file contains general instructions, section 6.1 of the Methods section ({[}add link to section here{]}) has more detailed explanations.
+  Fill out the parameters file with required specifications. The `README.md' file contains general instructions, and section 6.1 of the Methods section ({[}add link to section here{]}) has more detailed explanations.
 \end{enumerate}
 
-\hypertarget{modify-data-files}{%
-\section{Modify Data Files}\label{modify-data-files}}
+\hypertarget{modify-data}{%
+\section{Modify Data Files}\label{modify-data}}
 
-Section used for instructing how to set up data repositories for custom user made data? Link back to this section from section 6
+There are certain custom user files that must be created as part of this analysis. In particular, the \emph{TEMPLATE\_emp.csv} file in the data/raw/ folder must be altered to properly load in and calculate employment data. Because employment data for this report is not easily obtainable or transmissible via code, our team has created this template file for users to fill in their statewide employment numbers. Also provided is the .csv file used in this study, labeled \emph{CALIFORNIA\_emp.csv}, to serve as an example of a properly filled out form. The first two columns in this file, active\_duty\_military and reserve\_military, are military employment numbers from DMDC, while the remaining seven columns are civilian employment numbers (for the Departments of Defense, Homeland Security, Veterans Affairs, and Energy) from FedScope. For more information on how to obtain this data, refer to section 3.1 ({[}LINK{]}) on data requirements for employment data. After edits are made to this file, it should be renamed based on the study area named in the ``state'' general parameter ({[}LINK{]}) and saved to the data/raw/ folder in the repository.
+
+The repository requires two additional files to be obtained and added to the data/temp/ folder:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Federal Real Public Property Data}
+\item
+  \textbf{American Community Survey Data}
+\end{itemize}
+
+Refer to section 3.3.2 ({[}LINK{]}) for details on how to retrieve these files. After these files are downloaded, they should be renamed and saved to the data/temp/ folder in the repository. It is recommended to use a consistent naming convention to make references and use of these files easier. Our naming convention involves naming the relevant data contained in the file, and the analysis year the file was obtained for. Hence the property data becomes \emph{``fed\_prop\_2021.csv.''} The ACS data was renamed \emph{``2019\_acs.xlsx''} to reflect the year the file was obtained for, and the data it contains.
+
+The American Community Survey Data file requires an additional step of modification after saving. Within the file itself, the first row of data needs to be deleted. Then, the columns ``Geographic Area Name'' and ``Estimate!!EMPLOYMENT STATUS!!Population 16 years and over!!In labor force!!Armed Forces'' should be renamed to ``geography'' and ``armed\_forces\_employed'' respectively in order to simplify using the data in later steps.
+
+The next section details data contained in the Repository and its purpose.
 
 \hypertarget{data-dictionary-for-repository}{%
 \chapter{Data Dictionary for Repository}\label{data-dictionary-for-repository}}
 
-This section details each file contained in the code repository and a summary of what it is used for in the project. For a more detailed explanation, please see the ``Methods'' section. {[}add link later{]}
+This section details each file contained in the code repository and a summary of what it is used for in the project. For a more detailed explanation, please see the Methods section. ({[}LINK{]}).
 
-\hypertarget{meis_methodology-folder-change-name-later}{%
-\section{MEIS\_Methodology Folder {[}CHANGE NAME LATER{]}}\label{meis_methodology-folder-change-name-later}}
+\hypertarget{meis_methodology-folder}{%
+\section{MEIS\_Methodology Folder}\label{meis_methodology-folder}}
 
 This is the main folder, containing all data in the repository.
 
@@ -234,60 +280,66 @@ This is the main folder, containing all data in the repository.
 \item
   \textbf{.gitignore:} Lists files that will be ignored when using Git to synchronize updates to repository.
 \item
-  \textbf{.Rhistory:} Contains the history of commands given by a user in an R Session
-\item
-  \textbf{LICENSE:} Contains licensing information for the repository
-\item
-  \textbf{MEIS\_Methodology.Rproj:} the R project package used to open the repository in an IDE such as RStudio.
-\item
-  \textbf{README.md:} The first file you should read in any repository. Contains basic installation information, information on the repository contents and instructions on how to use the repository.
-\item
-  \textbf{parameters.R:} Contains all variables that may require user editing in order for code to run properly. Use of this file is documented in the README.md file.
-\item
-  \textbf{run\_analysis\_master.R:} The newest version of the code to process the Federal data. Currently this file is in development for the upcoming 2022 version of this project.
-\item
   \textbf{DEPRECATED\_run\_analysis\_master.R:} This file contains the script used for the 2021 project. This process guide pertains mostly to the code running from this master script.
+\item
+  \textbf{LICENSE:} Contains licensing information for the repository.
+\item
+  \textbf{MEIS\_Methodology.Rproj:} The R project package used to open the repository in an IDE such as RStudio.
+\item
+  \textbf{parameters.R:} Contains all variables that may require user editing for code to run properly. Use of this file is documented in the README.md file.
+\item
+  \textbf{README.md:} The first file you should read in any repository. Contains basic installation instructions, information on the repository contents and guidance on how to use the repository.
+\item
+  \textbf{.Rhistory:} Contains the history of commands given by a user in an R Session.
+\item
+  \textbf{run\_analysis\_master.R:} The newest version of the code to process the Federal data. Currently, this file is in development for the upcoming 2022 version of this project and is not yet ready for use.
 \end{itemize}
 
 \hypertarget{data-folder}{%
-\section{data Folder}\label{data-folder}}
+\section{Data Folder}\label{data-folder}}
 
 This is a folder located in the main folder and is designed to hold data for this project.
 
 \hypertarget{raw-folder}{%
-\subsection{raw Folder}\label{raw-folder}}
+\subsection{Raw Folder}\label{raw-folder}}
 
-This folder is located within the data folder and contains all raw data provided to the user. The purpose of the raw data is to simplify the data processing.
+This folder is within the data folder and contains all raw data provided to the user. The purpose of the raw data is to simplify data processing.
 
 \begin{itemize}
 \tightlist
 \item
-  \textbf{2007\_to\_2017\_NAICS.xlsx:} This file contains the cross walk used in the master script to update 2007 NAICs codes to 2017 NAICs codes. This file is a new development to automate error checking when linking IMPLAN codes to NAICs codes. It is NOT used in the Deprecated master script.
+  \textbf{2007\_to\_2017\_NAICS.xlsx:} This file contains the crosswalk used in the master script to update 2007 NAICS codes to 2017 NAICS codes. This file is a new development to automate error checking when linking IMPLAN codes to NAICS codes. It is NOT used in the Deprecated master script.
 \item
-  \textbf{2012\_2017\_NAICS\_to\_IMPLAN.xlsx:} This file contains the 2017 NAICS to IMPLAN crosswalk (available online from IMPLAN), as well as several additions. 2012 NAICS to IMPLAN values were appended to this file in addition to several 2002 NAICs codes that required updating. This file is a new development to automate error checking when linking IMPLAN codes to NAICs codes. It is NOT used in the Deprecated master script.
+  \textbf{2012\_2017\_NAICS\_to\_IMPLAN.xlsx:} This file contains the 2017 NAICS to IMPLAN crosswalk as well as several additions. 2012 NAICS to IMPLAN values were appended to this file in addition to several 2002 NAICS codes that required updating. This file is a new development to automate error checking when linking IMPLAN codes to NAICS codes. It is NOT used in the Deprecated master script.
 \item
   \textbf{business\_type\_to\_implan546\_crosswalk.csv:} This file was created to serve as a crosswalk between grant recipient business types and their corresponding IMPLAN codes. This file was made by manually looking up each business type and entering its corresponding IMPLAN code value.
 \item
-  \textbf{contract\_recipient\_to\_district\_crosswalk.xlxs:} This file was created to serve as an aid to error checking by assigning a District values to certain contract data that lacked them. Creation of this file involved looking up addresses of businesses with no given District in order to correctly assign a District to the data. It is NOT used in the Deprecated master script.
+  \textbf{CALIFORNIA\_emp.csv:} This file was created to hold employment numbers for selected federal agencies for the state of California. It serves as an example of how to fill out the \textbf{``TEMPLATE\_emp.csv''} file and to allow for a repeat of the 2021 study.\\
+\item
+  \textbf{contract\_recipient\_to\_district\_crosswalk.xlsx:} This file was created to serve as an aid to error checking by assigning a district value to certain contract data that lacked them. Creation of this file involved looking up addresses of businesses with no given district in order to correctly assign a district to the data. It is NOT used in the Deprecated master script.\\
+\item
+  \textbf{dod\_county\_shares.xlsx:} This file contains the percentage of each county by land area that is assigned to each California congressional district as of 2021.
+\item
+  \textbf{TEMPLATE\_emp.csv:} This file is a template for users to fill out employment numbers for their region of interest. Follow instructions in ({[}link to MODIFY DATA section{]}) to make use of this file.
 \end{itemize}
 
 \hypertarget{blank_sheets_for_r-folder}{%
 \subsubsection{Blank\_Sheets\_for\_R Folder}\label{blank_sheets_for_r-folder}}
 
-This folder contains the template spreadsheets used in the final preparation of data for entry into IMPLAN.
+This folder contains the template spreadsheets used in the final preparation of data for entry into IMPLAN. For more information on the difference between the event types that comprise IMPLAN's activity sheet, refer to \href{https://support.implan.com/hc/en-us/articles/360019638713-Explaining-Event-Types}{IMPLAN's article on this topic}.
 
 \begin{itemize}
 \tightlist
 \item
-  \textbf{CommodityOutput2.xlsx:}
+  \textbf{CommodityOutput2.xlsx:} An Excel sheet that goes into the IMPLAN activity sheets as the second worksheet tab.
 \item
-  \textbf{HouseholdSpendingChange4.xlsx:}
+  \textbf{LaborIncomeChange3.xlsx:} An Excel sheet that goes into the IMPLAN activity sheets as the third worksheet tab.
 \item
-  \textbf{IndustrySpendingPattern5.xlsx:}
+  \textbf{HouseholdSpendingChange4.xlsx:} An Excel sheet that goes into the IMPLAN activity sheets as the fourth worksheet tab. This Excel worksheet tab is what will hold the Veteran Affairs direct payments data.
 \item
-  \textbf{InstitutionSpendingPattern6.xlsx}
+  \textbf{IndustrySpendingPattern5.xlsx:} An Excel sheet that goes into the IMPLAN activity sheets as the fifth worksheet tab.
 \item
-  \textbf{LaborIncomeChange3.xlsx:}
+  \textbf{InstitutionSpendingPattern6.xlsx:} An Excel sheet that goes into the IMPLAN activity sheets as the sixth worksheet tab.
 \end{itemize}
 
 \hypertarget{deprecated-folder}{%
@@ -298,15 +350,13 @@ This folder contains raw data only used by the Deprecated master script.
 \begin{itemize}
 \tightlist
 \item
-  \textbf{2017\_implan\_online\_naics\_to\_implan546.xlsx:} This file contains the crosswalk for linking 2017 IMPLAN codes to NAICs code.
+  \textbf{2017\_implan\_online\_naics\_to\_implan546.xlsx:} This file contains the crosswalk for linking 2017 IMPLAN codes to NAICS code.
 \item
-  \textbf{2021\_employment\_totals.xlsx:}
-\item
-  \textbf{DOD\_County\_Shares\_R.xlsx:} This file contains the percentage of each County by surface area that is assigned to each Californian Congressional District as of 2021.
+  \textbf{2021\_employment\_totals.xlsx:} This file contains the necessary employment data broken out by each California county and congressional district
 \end{itemize}
 
 \hypertarget{temp-folder}{%
-\subsection{temp Folder}\label{temp-folder}}
+\subsection{Temp Folder}\label{temp-folder}}
 
 This folder is also located within the data folder and holds all files that are made while either master script is running. These files are deleted when the final output is finished being processed.
 
@@ -317,9 +367,9 @@ This folder is also located within the data folder and holds all files that are 
 \end{itemize}
 
 \hypertarget{output-folder}{%
-\section{output Folder}\label{output-folder}}
+\section{Output Folder}\label{output-folder}}
 
-This folder is within the main folder and holds all of the final output files needed by IMPLAN in order to complete this project. New output files will get created and placed into this folder as scripts are run.
+This folder is located within the main folder and holds all the final output files needed by IMPLAN to complete this project. New output files will get created and placed into this folder as scripts are run.
 
 \begin{itemize}
 \tightlist
@@ -328,41 +378,45 @@ This folder is within the main folder and holds all of the final output files ne
 \end{itemize}
 
 \hypertarget{src-folder}{%
-\section{src Folder}\label{src-folder}}
+\section{SRC Folder}\label{src-folder}}
 
 This folder within the main folder contains all script files needed by the master script when it is running. Scripts in this folder may be used by either of the master scripts contained in this repository. DO NOT MODIFY ANY OF THESE FILES.
 
 \begin{itemize}
 \tightlist
 \item
-  \textbf{aggregate\_usaspending.R:}
+  \textbf{obtain\_usaspending.R:} An R script that calls to USAspending's Application Programming Interface (API) in order to obtain the USAspending data desired based on the criteria defined in this R script.
 \item
-  \textbf{concatenate\_usaspending.R:}
+  \textbf{filter\_usaspending.R:} An R script that defines a function for further filtering the USAspending data that was obtained from the API call.
 \item
-  \textbf{error\_check\_and\_weight\_contracts.R:}
+  \textbf{error\_check\_and\_weight\_contracts.R:} An R script that works through multiple steps and lines of code to fix errors in the USAspending contracts data based on the type of error.
 \item
-  \textbf{error\_check\_grants.R:}
+  \textbf{error\_check\_grants.R:} An R script that works through multiple steps and lines of code to fix errors in the USAspending grants data.
 \item
-  \textbf{filter\_usaspending.R:}
+  \textbf{concatenate\_usaspending.R:} An R script that defines a function for concatenating a certain group of CSVs based on the file name pattern (in this case, the cleaned USAspending data) while ignoring the Veteran Affairs benefits CSV file.
 \item
-  \textbf{obtain\_usaspending.R:}
+  \textbf{split\_usaspending.R:} An R script that defines a function for splitting out Department of Energy spending from the main USAspending data prior to aggregating the spending.
 \item
-  \textbf{split\_usaspending.R:}
+  \textbf{natsec\_doe.R:} An R script that filters down the Department of Energy spending to national security-related offices and gives a national security adjustment proportion to use for Energy employment and SmartPay calculations.
+\item
+  \textbf{aggregate\_usaspending.R:} An R script that defines a function for aggregating a defined dataframe's spending figure (in this study, federal\_action\_obligation from USAspending data) by IMPLAN code.
+\item
+  \textbf{generate\_employment\_dataframe.R:} An R script that calculates employment data and generates two dataframes, one for the county and one for the district IMPLAN sheets.
 \end{itemize}
 
 \hypertarget{deprecated-folder-1}{%
-\subsection{deprecated Folder}\label{deprecated-folder-1}}
+\subsection{Deprecated Folder}\label{deprecated-folder-1}}
 
 This folder within the src folder contains all scripts that are only used by the DEPRECATED\_run\_analysis\_master.R script. DO NOT MODIFY ANY OF THESE FILES.
 
 \begin{itemize}
 \tightlist
 \item
-  \textbf{DEPRECATED\_create\_implan\_sheets.R:}
+  \textbf{DEPRECATED\_error\_check\_contracts.R:} An R script of hardcode fixes to errors in the contracts data in order to get an IMPLAN code for every entry.
 \item
-  \textbf{DEPRECATED\_error\_check\_contracts.R:}
+  \textbf{DEPRECATED\_error\_check\_grants.R:} An R script of hardcode fixes to errors in the grants data in order to get an IMPLAN code for every entry.\\
 \item
-  \textbf{DEPRECATED\_error\_check\_grants.R:}
+  \textbf{DEPRECATED\_create\_implan\_sheets.R:} An R script that runs two for loop codes that help to generate the IMPLAN activity sheets for every California county and congressional district.
 \end{itemize}
 
 \hypertarget{methods}{%
@@ -370,200 +424,328 @@ This folder within the src folder contains all scripts that are only used by the
 
 The following section details how to use the data and R code provided as well as an explanation of how the code works.
 
-\hypertarget{reviewing-the-parameters-file}{%
-\section{Reviewing the Parameters File}\label{reviewing-the-parameters-file}}
+\hypertarget{review-p}{%
+\section{Reviewing the Parameters File}\label{review-p}}
 
-The first step in working with this code involves looking at the Parameters file. This file allows for alterations in the data analysis based on particular criteria that one may want to modify in their study, such as geography of interest, year, agencies of interest, and so forth. The default entries in the parameters file are based on this study of California.
+This file allows for alterations in the data analysis that one may want to customize for their study, such as geography of interest, year, agencies of interest, and so forth. If any changes to the code are necessary in order to customize the output results, the only place users will need to make changes is in this parameters file. The default entries in the parameters file are based on the 2021 California study to provide an example of how to enter the desired variables.
 
-\emph{Readme will eventually link to this section}
+\hypertarget{sections-p}{%
+\subsection{Sections of the Parameters File}\label{sections-p}}
 
-\hypertarget{making-user-specific-data-files}{%
-\section{Making User Specific Data Files}\label{making-user-specific-data-files}}
+Each section of the parameters file defines variables used in a specific portion of the code. This section details the purpose of these variables and their intended use. The README.md file ({[}LINK{]}) contains correct syntax to use when making alterations to avoid breaking the code's functionality. Please refer to both sections as needed while altering the parameters file.
 
-The second step to focus on after modifying the parameters file is to ensure that user specific data files have been created in order to run this analysis. In this particular case, employment data (detailed in Section 3.1) and error check files were created in order to properly assign and allocate employment and spending data across California counties and congressional districts.
+\hypertarget{global}{%
+\subsubsection{General Global Variables}\label{global}}
 
-\hypertarget{processing-the-data}{%
-\section{Processing the Data}\label{processing-the-data}}
-
-After modifying the parameter files with the appropriate criteria and creating user specific data, one can begin working through the code to process the data and prepare it for IMPLAN. Refer to the \textbf{deprecated\_run\_analysis\_master.R} script to run through the data analysis process for this project.
-
-\hypertarget{clearing-environment-and-loading-in-packages-and-parameters}{%
-\subsection{Clearing Environment, and Loading in Packages and Parameters}\label{clearing-environment-and-loading-in-packages-and-parameters}}
-
-The first lines of code provide some housekeeping steps prior to running through the analysis. Line 6 allows the user to clear their global environment in RStudio, removing all previously defined or loaded packages, variables, values, etc. In running through the analysis wholesale, a good first step is to clear one's environment. Following this is lines 9-14, which load in the various RStudio library packages that are needed to perform this analysis. For more information on these packages, please refer to our References section (``ADD IN LINK TO REFERENCES AND/OR R PACKAGE DESCRIPTIONS''). The final housekeeping step involves line 17, which loads in the parameters file mentioned above.
-
-\hypertarget{loading-in-functions}{%
-\subsection{Loading in Functions}\label{loading-in-functions}}
-
-Lines 20-23 compose the second step of the data analysis process: loading in functions that standardize and simplify working through the data. Line 20 loads in a function that is used to place additional filters on the obtained USAspending data and write the filtered data into CSV files. These additional filters are also outlined in the parameters file, but the actual filter function is not run until lines 26-30 (see step 3 for more details).
-
-Line 21 loads in a function that concatenates the USAspending contract and grant data files into one dataframe in R, while also removing direct payments from that concatenation (as it is calculated separate from contracts and grants. more on this will be detailed below). The actual concatenate function is not run until lines 39 and 41 (see step 5 for more details). Line 22 loads in a function that splits out the concatenated USAspending dataframe by agency, taking out DOE data from the main dataframe. This is done because DOE's spending activity has been kept separate from the main data analysis of the project. The actual split function is not run until lines 44-47 (see step 6 for more details). Line 23 loads in a function that aggregates the USAspending and DOEspending dataframes by IMPLAN sector. This gets the contracts and grants spending data for two IMPLAN activity sheets complete: one for the main statewide analysis, and one for the DOE statewide analysis. The actual aggregate function is not run until lines 55-60 (see step 7 for more details).
-
-\hypertarget{obtaining-the-usaspending-data}{%
-\subsection{Obtaining the USAspending Data}\label{obtaining-the-usaspending-data}}
-
-Line 26 loads in a R script that performs a call to USAspending.gov's API that grabs the relevant contract, grant, and direct payment spending data that we need for our analysis and downloads it into two files (one for contracts, and one for grants/direct payments) at a specified file path location. In this case, the two CSV files obtained are downloaded into the data/temp folder. The parameters file is particularly important for this line of code, as the parameters file holds many of the filters that are used to sort what data is obtained from USAspending with this code.
-
-\hypertarget{filtering-the-usaspending-data}{%
-\subsection{Filtering the USAspending Data}\label{filtering-the-usaspending-data}}
-
-Lines 29-34 begin the third step of filtering down the USAspending data obtained from the API call. Lines 29 and 30 read in the downloaded contracts and grants/direct payments files (respectively) and assign them each to a variable. Lines 33 and 34 perform the filter\_usaspending function (that was loaded in at line 20) on each of those variables.
-
-The filter\_usaspending function has five elements that must be referenced: file\_name, state, doe\_filters, filters, and out\_name.
+This section contains general variables pertaining to the year the study takes place and the state the study focuses on.
 
 \begin{itemize}
 \tightlist
 \item
-  The \textbf{file\_name} element is a call to whichever data file we want to pass through to be filtered - in this case, the two USAspending CSVs that are defined in lines 29 and 30.
+  \textbf{f\_year:} this variable represents the fiscal year, or the timeframe during which data was generated. Often, the year that the study data comes from is older than the year the study is performed. This value is important to specify to ensure that 1) the data exists, and 2) that you are pulling the correct data.\\
 \item
-  The \textbf{state} element is defined in our parameters, based on the state of interest for our study. In this case, that state is California. This element is added to ensure that the primary\_place\_of\_performance\_state is the same as the recipient\_state (which was filtered in our obtain\_usaspending function), thus ensuring that all data entries included in the analysis are in the state of interest for the study.
+  \textbf{year:} this variable represents the year that the study is performed in. Its main purpose is to ensure a naming convention is enforced for generated output files.
 \item
-  The \textbf{doe\_filters} element is defined in our parameters, based on \textbf{doe\_offices}. This element is included to filter out DOE spending done in the state that is not national security-related. The basis for this filter element is from a list of DOE sub-agencies that were demarcated as national security-related.
-\item
-  The \textbf{filters} element is defined in our parameters, based on \textbf{contract\_columns} and \textbf{grant\_columns}, respectively. This element is included to pare down the columns of data from the USAspending files to retain only the pertinent columns of data for our analysis.
-\item
-  The \textbf{out\_name} element is defined in our parameters, based on \textbf{c\_out\_name} and \textbf{g\_out\_name}, respectively. This element is included to give a naming convention for the files that get generated as a result of running the filter function.
+  \textbf{state:} this variable represents the state being analyzed. It is used to filter some data and to aid in enforcing naming conventions for generated output files.
 \end{itemize}
 
-After running the filter functions, two CSVs files should be generated in the data/temp folder, by the name defined from the \textbf{out\_name} element.
+\hypertarget{generated-employ}{%
+\subsubsection{User Generated Employment Files}\label{generated-employ}}
 
-\hypertarget{error-checking-the-usaspending-data}{%
-\subsection{Error checking the USAspending Data}\label{error-checking-the-usaspending-data}}
-
-Lines 37-38 begin the fourth step of checking for errors in the filtered USAspending data and fixing them to have an IMPLAN code associated with each entry. The process for error checking and fixing the data are relatively the same for contracts and grants - the only major difference being the variable of interest in fixing the errors. For contracts, the focus is on NAICS codes, while the grants look at business types.
-
-\hypertarget{error-checking-contracts}{%
-\subsubsection{Error Checking Contracts}\label{error-checking-contracts}}
-
-Line 37 loads in a R script file that goes through the filtered USAspending contracts file and remediates issues in certain contract entries. The first lines in this R script load two files into two dataframes: 1) the filtered USAspending contracts file (\textbf{contracts}); and 2) a NAICS to IMPLAN crosswalk that was \href{https://support.implan.com/hc/en-us/articles/360034896614-546-Industries-Conversions-Bridges-Construction-2018-Data}{provided online on IMPLAN's website} (\textbf{naics\_to\_implan}). After reading in the NAICS to IMPLAN crosswalk, there are a couple of code fixes and removal of duplicate codes that our team determined to, in our best knowledge, be the most accurate way to relate those NAICS codes to an IMPLAN code. After this, the NAICS to IMPLAN crosswalk is merged into the contracts dataframe by NAICS code in order to get an IMPLAN code associated with each contract entry.
-
-However, this merge does not give all contract entries an IMPLAN code. This can be for a variety of reasons, including: 1) a contract entry from USAspending not having a NAICS code; and 2) an incorrect and/or outdated NAICS code that was not a part of IMPLAN's provided crosswalk. The lines of code following the merge work to fix the error contract entries. First, the contracts with no NAICS codes were hardcoded in the \textbf{contracts} dataframe to a specific IMPLAN code based on the contract recipient's name and the industry which they work in. Next, the contracts which had a mistyped or older NAICS code were pulled out to a new dataframe (\textbf{contracts\_missing\_implan}) and hardcoded to an IMPLAN code based on our team's best research into which IMPLAN code each entry would best fit into. This presents a degree of error when parsing out the contract spending, but also represents the best available workaround given time and information constraints. A new way of handling the error checks for contracts is detailed in \href{LINK\%20TO\%20SECTION\%209\%20OF\%20PROCESS\%20GUIDE}{Section 9: What's Next}.
-
-The final steps of this contracts error check involve dropping out the contract entries which had no IMPLAN code from the original \textbf{contracts} dataframe. Then, the dataframe which fixed the contracts that were missing IMPLAN codes (\textbf{contracts\_missing\_implan}) is merged back into the original \textbf{contracts} dataframe. The \textbf{contracts} dataframe now has all contract entries ``cleaned'' with an IMPLAN code for each entry. Last, only the columns necessary for this analysis are selected, and then the cleaned \textbf{contracts} dataframe is written into a new CSV file.
-
-\hypertarget{error-checking-grantsdirect-payments}{%
-\subsubsection{Error Checking Grants/Direct Payments}\label{error-checking-grantsdirect-payments}}
-
-Line 38 loads in a R script file that goes through the filtered USAspending grants and direct payments file and remediates issues in certain grants entries. First, the script loads in the filtered USAspending grants and direct payments file into a dataframe (\textbf{grants}). Next, we pull out the VA direct payments from the \textbf{grants} dataframe, and define it into its' own dataframe (\textbf{va\_benefits}). This is done because VA direct payments does not a require an IMPLAN code and is thus calculated separate from contracts and grants from IMPLAN in the IMPLAN activity sheets. The \textbf{grants} dataframe filters out the direct payments based on the \textbf{assistance\_code} column of the data, where entries that have an assistance code of 10 are the direct payment entries.
-
-After VA direct payments are separate from grants, the next step is to load a business type to IMPLAN crosswalk into a dataframe (\textbf{business\_to\_implan}). This file was self-created by the team as the best method for relating grants data to IMPLAN codes, given that USAspending grants data entries do not provide for NAICS codes. The business type to crosswalk is then merged with the \textbf{grants} dataframe in order to get an IMPLAN code associated with every grant entry.
-
-However, this merge does not give all grant entries an IMPLAN code. In the case of the grants data, they may be missing a business type value, or their business type may be one that is not captured in the self-created crosswalk. Thus, the lines after the merge work to hardcode IMPLAN codes into the \textbf{grants} dataframe based on the grant recipient's name and the industry which they work in. After these hardcodes, a second dataframe (\textbf{grants\_missing\_implan}) is defined to capture if any other grant entries are missing an IMPLAN code. If a grant entry is still missing an IMPLAN code, it would need to be fixed in the \textbf{grants\_missing\_implan} dataframe and then merged back into the original \textbf{grants} dataframe.
-
-Now that the grants data has been ``cleaned'', the final steps in this script involve selecting only the necessary columns of data for the \textbf{va\_benefits} and \textbf{grants} dataframes, and writing each one into their own respective CSV files.
-
-\hypertarget{manually-fixing-congressional-district-errors}{%
-\subsection{Manually Fixing Congressional District Errors}\label{manually-fixing-congressional-district-errors}}
-
-Lines 40 and 42 provide an important notice to only continue with the code once some manual fixes have been implemented in the three cleaned CSV files produced from the above error check codes. \textbf{This step is essential to ensuring no weird errors come out along the way.} The issue in the USAspending data for contracts, grants, and direct payments is the \textbf{recipient\_congressional\_district} column, where certain entries in all three CSV files have a district value of ``NA'' (contracts) or ``90'' (grants, and direct payments). There may be multiple reasons for this error, with the most plausible being that these data entries are in locations that span across multiple counties and/or congressional districts.
-
-In order to properly remediate these issues, our team utilized the \emph{DOD\_County\_Shares\_R.xlsx} file in the raw data folder. Looking at this file, the ``Districts'' tab in that Excel sheet provides a breakdown of how much a county spans across one or multiple congressional district(s) based on land area from the California Redistricting Commission. We would then filter the contract, grant, or direct payment entries by county, and randomly assign a certain number of entries to a district based on their county. For example, if 20 contract entries that had a ``NA'' value in the district column were in Alameda County, we would assign 47\% of those entries (\textasciitilde9) to CA-13, 42\% (\textasciitilde8) to CA-15, and 12\% (\textasciitilde3) to CA-17.
-
-This method also inherently presents a degree of error with allocating spending across congressional districts. Even so, given time constraints, this workaround presented itself as the best solution at the time. Our team is working on a new way to address these manual fixes through code - for more details, refer to \href{LINK\%20TO\%20SECTION\%209\%20OF\%20PROCESS\%20GUIDE}{Section 9: What's Next}.
-
-\hypertarget{concatenating-the-usaspending-data}{%
-\subsection{Concatenating the USAspending Data}\label{concatenating-the-usaspending-data}}
-
-Lines 45-46
-
-\hypertarget{splitting-doe-from-usaspending-data}{%
-\subsection{Splitting DOE from USAspending Data}\label{splitting-doe-from-usaspending-data}}
-
-Lines 49-52
-
-\hypertarget{aggregating-the-spending-data-for-statewide-numbers}{%
-\subsection{Aggregating the spending Data for Statewide Numbers}\label{aggregating-the-spending-data-for-statewide-numbers}}
-
-Lines 58-59 and 61-63
-
-\hypertarget{compiling-employment-data}{%
-\subsection{Compiling Employment Data}\label{compiling-employment-data}}
-
-Lines ??-??
-
-\hypertarget{running-for-loops-to-generate-implan-activity-sheets}{%
-\subsection{Running For Loops to Generate IMPLAN Activity Sheets}\label{running-for-loops-to-generate-implan-activity-sheets}}
-
-Line ??
-
-\begin{itemize}
-\item
-  Process data
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Clean contracts and grant data-
-  \item
-    Clean spending data
-  \item
-    Error check contract spending data
-  \end{itemize}
-
-  Will need to go into detail about changes in the code between this year (2021) and subsequent years
-
-  More detailed mention of how the error checking of the USASpending.gov contract data is needed
-  A detailed walk through of how to manually check data and use the multiple NAICS to IMPLAN crosswalks to catch data
-  Mention how IMPLAN automatically removes any codes having to do with construction so those have to be manually coded
-
-  Some errors occur due to the transaction not being given a NAICS code, those need to be manually fixed
-
-  Issues occur with NAICS codes that apply to multiple IMPLAN codes- give detailed explanation of how this was worked around and data was processed and added back to the main cleaned data.
-\end{itemize}
-
-\hypertarget{using-implan}{%
-\chapter{Using IMPLAN}\label{using-implan}}
-
-Once the IMPLAN activity sheets for your desired geographies have been produced, it is time to upload them into IMPLAN and allow the tool to run its analysis. When you log into IMPLAN, the homepage should display 3 boxes to navigate through: Regions, Impacts, and Projects.
-
-\begin{itemize}
-\item
-  \textbf{Regions:} Click on Regions to begin your analysis. This should open up a map of the United States. Select the region of interest for the analysis (state, county, congressional district, etc.) and give this project a name. After saving the project, move on to the Impacts tab.
-\item
-  \textbf{Impacts:} In the Impacts tab, look for the button to the right of the ``Save'' button. Click on that, and select ``upload event template''. From there, find the activity sheet for the geography of interest and select that for upload. Ensure that ``Industry Change'' and ``Household Spending'' can be selected, and choose those for uploading into IMPLAN. The data points for the respective IMPLAN sectors should then auto-populate on IMPLAN. If your analysis is including SmartPay spending data, be sure to manually add that in as type ``Institutional Spending'', specification 11001, and the value amount. Choose to select all events (the button to the left of the ``Save'' button) and drag them over to the geography's model on the right side of the IMPLAN screen. After that, select to run the model at the bottom right. Depending on how big the model, IMPLAN will take time to generate the results. Once the model is done with its analysis, click on the ``View Results'' button.
-\item
-  \textbf{Results:} Once on this page, one can sort through the results of the IMPLAN activity sheet that was ran for a geography and download CSV files of a variety of data points. For this report, the data points of interest included economic indicators like output and full-time employment (FTE) opportunities, both generally and across industries, as well as government and tax revenue generated.
-\end{itemize}
-
-As part of our final step before developing and writing the reports, our team created code to combine all the input and output data from IMPLAN into one big spreadsheet which was used to create the graphs and charts seen throughout the reports.
-
-\hypertarget{conclusion-discussion}{%
-\chapter{Conclusion/ Discussion}\label{conclusion-discussion}}
-
-Hopefully we provide some guidelines and aid in discovering and processing this data so that quality studies can come about and
-Government spending can become more transparent.
-
-Utilizing IMPLAN to manage government spending data doesn't come with a lot of instructions
-
-You have to trust that the data entry is accurate, many instances of older NAICS codes exist and this has the potential to introduce errors into the code.
-
-Limited time to process the data due to a new method of processing the data
-
-\hypertarget{whats-next}{%
-\chapter{What's Next?}\label{whats-next}}
-
-A section on where we hope to add and develop this process. Potentially the section to outline changes to the code we have already made for the upcoming 2021 report.
-
-\hypertarget{license-your-gitbook}{%
-\chapter{License your GitBook}\label{license-your-gitbook}}
-
-In the spirit of Open Science, it is good to think about making your course materials Open Source. That means that other people can use them. In principle, if you publish materials online without license information, you hold the copyright to those materials. If you want them to be Open Source, you must include a license. It is not always obvious what license to choose.
-
-The Creative Commons licenses are typically suitable for course materials. This GitBook, for example, is licensed under CC-BY 4.0. That means you can use and remix it as you like, but you must credit the original source.
-
-If your project is more focused on software or source code, consider using the \href{https://www.gnu.org/licenses/gpl-3.0.en.html}{GNU GPL v3 license} instead.
-
-You can find \href{https://creativecommons.org/share-your-work/licensing-examples}{more information about the Creative Commons Licenses here}. Specific licenses that might be useful are:
+This section contains the variables needed in order to generate user specific employment data pertaining to the study region.
 
 \begin{itemize}
 \tightlist
 \item
-  \href{https://creativecommons.org/share-your-work/public-domain/cc0/}{CC0 (``No Rights Reserved'')}, everybody can do what they want with your work.
+  \textbf{res\_mult:} This variable represents the multiplier required to calculate the number of equivalent full-time positions generated by members of the military reserves. In anticipation that this value may change over time, it is included in the parameters file.\\
 \item
-  \href{https://creativecommons.org/licenses/by/4.0/}{CC-BY 4.0 (``Attribution'')}, everybody can do what they want with your work, but they must credit you. Note that this license may not be suitable for software or source code!
+  \textbf{national\_sus\_dhs:} This variable represents the number of Homeland Security employees that are ``suppressed.'' This means that the precise location of their work is intentionally redacted for matters of national security. This number is updated quarterly on FedScope ({[}Link to obtain data section){]}.
+\item
+  \textbf{sus\_dhs\_mult:} This variable represents the percentage of suppressed employees in each state. This multiplier comes from 2016 data. End users should make their own approximations of this value if they are focused on a study region smaller than the state level.
+\item
+  \textbf{acs:} This variable represents the file name used for downloaded American Community Survey (ACS) data used in calculating how military personnel are distributed throughout the study region (by county and congressional district).\\
+\item
+  \textbf{dod\_shares:} This variable represents the file name used for the DoD County shares file. In the event the user needs to use a different file than the one provided; the name of the new file can be altered here.\\
+\item
+  \textbf{fed\_prop:} This variable represents the file name of the document that stores information on federally owned buildings. The square footage of these buildings is used to estimate the proportion of federal employees in each agency per county and congressional district in the study area.
 \end{itemize}
 
-For compatibility between CC and GNU licenses, see \href{https://creativecommons.org/faq/\#Can_I_apply_a_Creative_Commons_license_to_software.3F}{this FAQ}.
+\hypertarget{usa-api}{%
+\subsubsection{USAspending.gov API Variables}\label{usa-api}}
+
+This section contains the variables needed to run the code to automate obtaining federal spending data from the USAspending.gov website API. Usaspending.gov provides \href{https://github.com/fedspendingtransparency/usaspending-api/blob/master/usaspending_api/api_contracts/contracts/v2/bulk_download/awards.md}{additional documentation on how the USAspending API runs and its variable requirements}.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{agency\_type:} This variable represents whether the agency or agencies in question awarded the contract money or funded it. USAspending.gov provides \href{https://fedspendingtransparency.github.io/whitepapers/types/}{more information on agency type definitions}.
+\item
+  \textbf{agency\_tier:} This variable represents which tier the agency resides in. An example of a top tier agency is the Department of Energy, and subtier of a top tier agency is the Missile Defense Agency (a subtier of the Department of Energy).
+\item
+  \textbf{agency\_name:} This variable represents the name of the agency or agencies targeted in the code.
+\item
+  \textbf{tier\_name:} This is an optional variable, representing the name of the agency only if it is a subtier agency.
+\item
+  \textbf{date\_type:} This variable represents the date type of the spending data. Whether the date range will focus on when the money was spent (action date) or the last time information was entered about a contract (last modified date).
+\item
+  \textbf{date\_range\_start:} This variable represents the start date of the spending data being analyzed. It is usually the beginning of a fiscal year or quarter.
+\item
+  \textbf{date\_range\_end:} This variable represents the end date of the spending data being analyzed. It is usually the end of a fiscal year or quarter.
+\item
+  \textbf{awards:} This variable represents the award type of the spending data. It includes categories such as contract spending, grant award spending, Veterans Affairs disbursements and direct payments to individuals or businesses.
+\item
+  \textbf{recipient\_locations\_country:} This variable represents the country to limit spending data to. USA needs to be specified to omit spending and resulting economic activity that occurs overseas.
+\item
+  \textbf{recipient\_locations\_state:} This variable represents the state (if applicable) to limit the spending data to. Multiple states can be specified if put into a list format.
+\item
+  \textbf{recipient\_locations\_county:} This optional variable represents the county(ies) to limit the spending data to, if further refinement within a state is desired. This variable can contain multiple counties for multiple states. However, this variable is mutually exclusive with the district variable. One or the other may be filled out, but NOT BOTH.\\
+\item
+  \textbf{recipient\_locations\_district:} This variable represents the congressional district(s) to limit the spending data to. This variable can contain multiple districts for multiple states (although you may grab more data than intended if the same district name is used in multiple states). Data is usually more accurate at the county level, and district data is often left blank where there are multiple recipients in a county that overlaps multiple districts. As a result, county-based analysis may be preferable.
+\end{itemize}
+
+\hypertarget{filter}{%
+\subsubsection{Filter USAspending Variables}\label{filter}}
+
+This section contains the variables required to filter the downloaded USAspending data.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{doe:} this variable represents the syntax used in USAspending data for naming the Department of Energy (DOE). It is used to help filter and analyze DOE data.\\
+\item
+  \textbf{contract\_columns:} This variable represents the column headers of contract spending data to filter.
+\item
+  \textbf{grant\_columns:} This variable represents the column headers of grant data to filter.
+\item
+  \textbf{c\_label:} This variable represents a section of the name generated when the USAspending contracts data is automatically downloaded. It allows users to specify which unique portion of the file name the code searches for in order to simplify loading in the correct file for further processing.
+\item
+  \textbf{g\_label:} This variable represents a section of the name generated when the USAspending grants data is automatically downloaded. It allows users to specify which unique portion of the file name the code searches for in order to simplify loading in the correct file for further processing.
+\item
+  \textbf{c\_out\_name:} This variable represents the desired output name of the filtered contracts data.
+\item
+  \textbf{g\_out\_name:} This variable represents the desired output name of the filtered grants data.
+\end{itemize}
+
+\hypertarget{concatenate}{%
+\subsubsection{Concatenate USAspending Variables}\label{concatenate}}
+
+This section contains the variable required to run the code to merge the separate contracts and grants data into one file. This is to make subsequent portions of the code easier to run.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{u\_out\_name:} This variable represents the desired output name of the concatenated USAspending data.
+\end{itemize}
+
+\hypertarget{doe-spend}{%
+\subsubsection{National Security DOE Spending Variables}\label{doe-spend}}
+
+This section contains the variable required to calculate which portion of federal DOE spending applies to national security.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{doe\_offices:} This variable represents the list of DOE sub tier agencies that receive national security funding.
+\end{itemize}
+
+\hypertarget{aggregate}{%
+\subsubsection{Aggregate USAspending Variables}\label{aggregate}}
+
+This section contains the variables required to aggregate the different spending data to prepare it for entry into Excel sheets and upload into IMPLAN.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{u\_state\_outname:} This variable represents the desired output name of the file containing USAspending data that has been aggregated by IMPLAN code.\\
+\item
+  \textbf{doe\_state\_outname:} This variable represents the desired output name of the file containing DOE data that has been aggregated by IMPLAN code.
+\end{itemize}
+
+\hypertarget{review-files}{%
+\section{Reviewing User Specific Files}\label{review-files}}
+
+After modifying the parameters file and before running any code, make sure you have obtained, modified and renamed the following data as per instructions in Section \ref{employ}. If these files are not properly named and located, the CODE WILL NOT RUN:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{TEMPLATE\_emp.csv:} Should be renamed based on the ``state'' parameter and saved to the data/raw/ folder.\\
+\item
+  \textbf{Federal Real Public Property Data:} Should be renamed based on naming conventions and saved to the data/temp/ folder.\\
+\item
+  \textbf{American Community Survey Data:} Should be renamed based on naming conventions and saved to the data/temp/ folder.
+\end{itemize}
+
+\hypertarget{processing-data}{%
+\section{Processing the Data}\label{processing-data}}
+
+After set-up is complete, code can be run to process data for loading into IMPLAN. Refer to the \emph{deprecated\_run\_analysis\_master.R} script to run through the data analysis process for this project.
+
+\hypertarget{set-up-env}{%
+\subsection{Clearing Environment, and Loading in Packages and Parameters}\label{set-up-env}}
+
+Lines 1 through 17 in the deprecated master code serve to set up RStudio to process the federal data. This involves performing some housekeeping by clearing any variables already stored in the global environment, removing previously loaded packages, ensuring needed library packages are present and loading in the variables stored in the parameters file.
+
+\hypertarget{load-functions}{%
+\subsection{Loading in Functions}\label{load-functions}}
+
+Lines 20-23 load in functions that standardize and simplify working through the data. Details about what purposes these functions provide and how they alter data will be described below in the relevant sections.
+
+\hypertarget{obtain-data}{%
+\subsection{Obtaining the USAspending Data}\label{obtain-data}}
+
+Line 26 loads in a R script that performs a call to USAspending.gov's API to grab relevant contract, grant and direct payment spending data. The success of this script depends on correctly filling out the desired filter variables in the parameters file. For our study, we required data for the following awarding, top-tier agencies: Department of Defense, Department of Homeland Security, Veterans Affairs and Department of Energy, for the action date date-type from the 2020 fiscal year (October 1st, 2019 -- September 30th, 2020) in the state of California in the United States. The obtain USAspending script downloads and unzips this data to the data/temp/ folder in the repository. The end output is in the form of two .csv files, one for contracts data and one for grant/direct payment data.
+
+\hypertarget{filter-data}{%
+\subsection{Filtering the USAspending Data}\label{filter-data}}
+
+Lines 29-34 load in the data from USAspending.gov and use the \emph{filter\_usaspending} function to filter it. This serves to reduce the file size in order to speed up subsequent processing. Only data that was needed for this analysis was kept. All data was paired down to federal national security spending that occurred within the State of California using the \emph{primary\_place\_of\_performance} column.
+
+For contracts data the following columns were kept: \emph{federal\_action\_obligation, awarding\_agency\_name, awarding\_sub\_agency\_name, award\_description, funding\_office\_name, recipient\_name, recipient\_county\_name, recipient\_congressional\_district, recipient\_zip\_4\_code} and \emph{naics\_code.}
+
+For grant/direct payment data the following columns were kept: \emph{federal\_action\_obligation, awarding\_agency\_name, awarding\_sub\_agency\_name, award\_description, funding\_office\_name, recipient\_name, recipient\_county\_name, recipient\_congressional\_district, recipient\_zip\_code, recipient\_zip\_last\_4\_code, assistance\_type\_code} and \emph{business\_types\_description.}
+
+\hypertarget{error-check}{%
+\subsection{Error checking the USAspending Data}\label{error-check}}
+
+Lines 37 and 38 begin checking for errors in the filtered USAspending data and modifying them to ensure they have an IMPLAN code for every entry. The only major difference between contracts and grants data is the variable referenced in fixing errors. Contracts data uses NAICS codes. Grants data uses business types.
+
+\hypertarget{error-contracts}{%
+\subsubsection{Error Checking Contracts}\label{error-contracts}}
+
+Line 37 loads in a R script file that goes through the filtered USAspending contracts and remediates errors in certain contract entries. The first lines in the script load two files into dataframes: 1) the filtered USAspending contracts file (\emph{contracts}); and 2) a NAICS to IMPLAN crosswalk provided by IMPLAN (\emph{naics\_to\_implan}). There are several code fixes and removal of duplicate codes that our team determined, to the best of our knowledge, to be the most accurate way to relate a NAICS code to an IMPLAN code. After this, the crosswalk is merged into the \emph{contracts} dataframe by NAICS code in order to get an IMPLAN code for each contract entry.
+
+However, this merge does not give all contract entries an IMPLAN code. This can be for a variety of reasons, including: 1) a contract entry from USAspending not having a NAICS code; and 2) an incorrect and/or outdated NAICS code that was not part of IMPLAN's provided crosswalk. The lines of code following the merge work to fix the contract entry errors. First, an IMPLAN code was hardcoded to the contracts with no NAICS code based on the contract recipient's name and industry sector. Next, the contracts which had a mistyped or older NAICS code were pulled out to a new dataframe (\emph{contracts\_missing\_implan}) and hardcoded to an IMPLAN code based on our team's best research into which IMPLAN code each entry would best fit into. This presents a degree of error when parsing out the contract spending, but also represents the best available workaround given time and information constraints. A new way of handling the error checks for contracts is detailed in \href{next}{Section 9: What's Next}.
+
+The final steps of this script involve dropping the contract entries with no IMPLAN code from the original \emph{contracts} dataframe. Then, the dataframe which fixed the contracts missing IMPLAN codes (\emph{contracts\_missing\_implan}) is merged back into the original \emph{contracts} dataframe. The \emph{contracts} dataframe now has all contract entries cleaned, with an IMPLAN code for each entry. Last, only the columns necessary for the analysis moving forward are kept, and then the cleaned \emph{contracts} dataframe is written into a new CSV file in the data/temp/ folder.
+
+\hypertarget{error-grants}{%
+\subsubsection{Error Checking Grants/Direct Payments}\label{error-grants}}
+
+Line 38 loads in a R script file that goes through the filtered USAspending grants and direct payments data to remediate issues in certain entries. First, the script loads in the filtered USAspending grants and direct payments file into a dataframe (\emph{grants}). Next, Veterans Affairs (VA) direct payments are separated from the \emph{grants} dataframe and placed into their own dataframe (\emph{va\_benefits}). This is done because VA direct payments are calculated separately from contracts and grants in the IMPLAN activity sheets. The \emph{grants} dataframe filters out the direct payments based on the \emph{assistance\_code} column - entries with an assistance code of 10 are the VA direct payment entries.
+
+After separating direct payments from grants, the next step is to load a business type to IMPLAN crosswalk into a dataframe (\emph{business\_to\_implan}). This file was created internally as the best method for relating grants data to IMPLAN codes, as USAspending grants data did not have NAICS codes. The crosswalk is then merged with the \emph{grants} dataframe in order to get an IMPLAN code for each grant entry.
+
+However, this merge does not give all grant entries an IMPLAN code. In the case of the grants data, they may be missing a business type value, or their business type may be one that is not captured in the crosswalk. Thus, the lines after the merge hardcode IMPLAN codes into the \emph{grants} dataframe based on the grant recipient's name and the industry sector. After these hardcodes, a second dataframe (\emph{grants\_missing\_implan}) is defined to capture any other grant entries missing an IMPLAN code. If a grant entry is still missing an IMPLAN code, it will need to be manually fixed in the \emph{grants\_missing\_implan} dataframe and then merged back into the original \emph{grants} dataframe.
+
+Now that the grants data has been cleaned, the final steps in this script involve selecting only the necessary columns of data for the \emph{va\_benefits} and \emph{grants} dataframes and writing each one into their own CSV files in the data/temp/ folder.
+
+\hypertarget{fix-errors}{%
+\subsection{Manually Fixing Congressional District Errors}\label{fix-errors}}
+
+Lines 40 and 42 provide an important notice to manually fix some errors in the three files produced in the error checking step before running additional lines of code. \textbf{This step is essential to ensuring a reduction of errors further along in the analysis.} This step is needed because there are certain entries in all three CSV files where the \emph{recipient\_congressional\_district column} has a district value of ``NA'' (contracts) or ``90'' (grants and direct payments). There are multiple reasons for this error, with the most common being that these data entries are in counties that span across multiple congressional districts.
+
+In order to properly remediate these issues, our team utilized the \emph{dod\_county\_shares} Excel file in the data/raw/ folder. Looking at this file, the ``Districts'' tab in that Excel sheet provides a breakdown from the California Redistricting Commission of how much a county overlaps one or more congressional districts based on land area. Then the contract, grant, or direct payment CSV files' entries are filtered by county. These entries are randomly assigned to a district based on the percentage of their county that resides in each district. For example, if 20 contract entries without a district assignment were in Alameda County, 47\% of those entries (\textasciitilde9) would be assigned to CA-13, 42\% (\textasciitilde8) assigned to CA-15, and 12\% (\textasciitilde3) assigned to CA-17.
+
+This method inherently presents a degree of error with allocating spending across congressional districts. Given time constraints and data limitations, this workaround presented itself as the best solution at the time. Our team is working on a new and improved way to address these manual fixes - for more details, refer to Section 9: What's Next {[}(ADD LINK){]}.
+
+\hypertarget{concat-usa}{%
+\subsection{Concatenating the USAspending Data}\label{concat-usa}}
+
+Lines 45-46 concatenate the cleaned USAspending contracts and grants data. The concatenate function works to bring together the cleaned USAspending contracts and grants files, while omitting the VA benefits file from that grouping. This concatenation step is necessary to eventually aggregate the contracts and grants spending by IMPLAN code for the activity sheets. Line 46 takes this concatenated USAspending contracts and grants dataframe (\emph{concat\_files}) and writes it into a CSV in the data/temp/ folder.
+
+\hypertarget{split-doe}{%
+\subsection{Splitting DOE from USAspending Data}\label{split-doe}}
+
+Lines 49-52 separate the DOE spending from the main USAspending data. This is done because, to this point, our report has kept DOE data separate from the main analysis with the Departments of Defense, Homeland Security, and Veterans Affairs. Line 49 reads in the concatenated USAspending file that was generated from the previous step as a variable. Lines 51 and 52 perform the \emph{split\_usaspending} function on the concatenated data and define two new dataframes: \emph{usaspending} and \emph{doespending}. The \emph{usaspending} dataframe will be used for the main analysis of this project, while the \emph{doespending} dataframe will need some alterations prior to becoming a separate addition to the analysis of this project.
+
+\hypertarget{filter-doe}{%
+\subsection{Filtering DOE to National Security-Related Data}\label{filter-doe}}
+
+Line 55 filters the \emph{doespending} dataframe to only include national security-related activity. This step is important because, unlike the Departments of Defense, Homeland Security, and Veterans Affairs, only a subset of DOE activity is related to national security. A list of these sub-tier agencies can be found under the ``doe\_offices'' variable in the parameters file. This new dataframe provides the DOE national security spending which will be used in IMPLAN. Additionally, a \emph{doe\_ns\_adjustment} is calculated by dividing the sum of \emph{federal\_action\_obligation} in \emph{doe\_ns\_spending} by the sum of \emph{federal\_action\_obligation} in the \emph{doe\_spending} dataframe. This adjustment calculation provides a rough proportion for how much DOE activity in the state is national security related. This value is used to assign statewide DOE employees and SmartPay accordingly.
+
+\hypertarget{agg-data}{%
+\subsection{Aggregating the Spending Data}\label{agg-data}}
+
+Lines 59 and 60 perform the \emph{statewide\_aggregate} function for USAspending and DOE spending, pulling together all the spending data based on IMPLAN code. The CSV files which are written as a result of running the function provide the `statewide spending data by IMPLAN sector' for our main analysis and DOE analysis.
+
+Lines 62 through 64 do the simple calculation of aggregating the VA benefits data for the state (line 62), each county (line 63), and congressional district (line 64). The VA benefits figure from line 62 will go in the IMPLAN activity sheet with the statewide main analysis (i.e., the data and CSV from line 59), while the VA benefits data from lines 63 and 64 will figure into later code.
+
+\hypertarget{compile-emp}{%
+\subsection{Compiling Employment Data}\label{compile-emp}}
+
+Line 67 loads in a R script that calculates the necessary employment data. All prior steps focused on preparing spending data for IMPLAN -- this is the only step necessary for preparing employment data. The first couple of lines in this script read the state employment CSV (detailed in Section 4.2 {[}(ADD LINK){]}) into a dataframe, \emph{state\_emp}, and define values for statewide military, civilian, Department of Defense, Department of Homeland Security, Veterans Affairs, and Department of Energy employment. From that point on, the code works to apportion the statewide employment numbers for each county and congressional district. Certain employment types have different methods and files needed in order to do this local apportionment.
+
+ACS data is used for military employment calculations. We assume that the distribution of residents employed in the armed forces across counties and districts is a good proxy for estimating the location of their employment. The ACS data file is read into a dataframe (\emph{acs\_data}) and two columns are added. The first column takes the number of employed armed forces in a county/district from the ACS and divides it by the statewide employed armed forces value to obtain a percentage, which we name \emph{armed\_forces\_percent}. The second column, \emph{military\_personnel}, takes \emph{armed\_forces\_percent} and multiplies it by the statewide military employment value (obtained from \emph{state\_emp}). Then, the geography and military\_personnel columns are retained, and the county and district military employment numbers are saved into separate dataframes.
+
+Next, the \emph{dod\_county\_shares.xlsx} file (detailed in Section 5.2.1 ({[}ADD LINK{]})) is used to apportion Department of Defense (DoD) civilian employees. ACS data does not account for the high concentration of DoD employees in Lassen County due to the presence of the Sierra Army Depot. Our self-created file, which is based on apportionment across counties from 2016 DoD employment numbers, does account for this, and is therefore used in place of the ACS armed forces apportionment. The \emph{dod\_county\_shares.xlsx} file has two sheets, one for counties and one for districts. Each sheet is read into a dataframe to apportion the counties and districts, respectively. The counties dataframe (\emph{dod\_county}) apportions the statewide DoD civilian employees by the percent share that each county had for DoD employees in 2016. The districts dataframe (\emph{dod\_district}) is based off the counties dataframe but uses the percentage of county land area that lies within a district to distribute the DoD employees per county for each district. This distribution from county to district is then aggregated by district in order to get the DoD employees by district. Then, the two DoD dataframes (\emph{dod\_county} and \emph{dod\_district}) retain their respective geography column and DoD employment totals to complete the DoD apportionment.
+
+GSA federal property data (detailed in section 3.3.2) is used to apportion Department of Homeland Security (DHS) and Veterans Affairs (VA) employment. The square footage of DHS and VA buildings across counties and districts in the state can provide a rough estimate for apportioning the statewide employment for those agencies. First, federal property data is read into a dataframe (\emph{fedprop}), necessary columns are selected, and then appropriate filters are applied for property type and departments of interest. After this initial read in, a new dataframe is created just for VA properties (\emph{va\_fedprop}). A new column for employees is calculated by multiplying the statewide VA employment by the percentage of that region's building square footage divided by the state total. Then, two new dataframes are made to aggregate employees by county (\emph{va\_county}) and district (\emph{va\_district}). This entire process is then recreated for DHS, with three respective dataframes being made for the DHS calculations (\emph{dhs\_fedprop}, \emph{dhs\_county}, and \emph{dhs\_district}).
+
+Next, the \emph{county\_emp} and \emph{district\_emp} dataframes are created. These dataframes will be used in the final step to help allocate the county and district employment for the IMPLAN activity sheets. Each dataframe merges together the four employment dataframes developed for each respective geography from the above steps (DHS, VA, DoD, and military) and ensures that all the numbers in the dataframes are read as numeric rather than character strings. The final step for these two dataframes is to add in columns of implan\_545 (which is just military employment) and implan\_546 (which is the sum of DoD, DHS, and VA employment). For the \emph{county\_emp} dataframe, two additional columns are needed: \emph{inverse\_545} (the statewide military employees minus a county's military employees) and \emph{inverse\_546} (the statewide DoD, DHS, and VA employees minus a county's DoD, DHS, and VA employees). These new columns in these dataframes will be read in the next section and fill in the employment data for IMPLAN.
+
+\hypertarget{for-loop}{%
+\subsection{Running For Loops to Generate IMPLAN Activity Sheets}\label{for-loop}}
+
+Line 70 loads in a R script that holds the entire process for generating IMPLAN activity sheets. The first lines of code in this script read in the individual Excel sheets from IMPLAN's activity sheet template and assigns them to a variable. These variables will be combined later in the process to generate one Excel file (the activity sheet for a given local geography), with each variable becoming its own sheet. After that, two variables are generated (\emph{countynames} and \emph{congressid}) by calling for a unique list of all county names and all congressional district numbers in the \emph{usaspending} dataframe. From there, the localized geographies IMPLAN activity sheets are generated.
+
+The first for loop code fills out and generates the county and inverse county IMPLAN activity sheets by iterating through the \emph{usaspending}, \emph{va\_benefits\_countiesagg}, and \emph{county\_emp dataframes}. Within the first portion of this loop, the \emph{usaspending} dataframe is combined based on each county, and then aggregated by IMPLAN code. This data is combined with the employment data from \emph{county\_emp}, which is also combined based on each county. All of this data is stored into a variable, \emph{temp}, which, along with some lines of code that format \emph{temp}, constitute the first Excel sheet tab of the multi-tab IMPLAN activity sheet. Additionally, the \emph{HouseholdSpendingChange4} variable is altered to input the respective county's \emph{va\_benefits\_countiesagg} value. Then, a list (\emph{templist}) is created, composed of the \emph{temp} variable and all the Excel sheets that were read in. An output path and folder are defined, and the county activity sheet is written into this folder. The second portion of this loop mimics this entire process above but grabs the inverse of each county's data. In other words, the \emph{tempooc} variable and everything that corresponds to it is based on all the spending and employment activity done outside of the county of interest. This data also gets written into an Excel file, which is named by the county followed by ``in'' to denote that it is a county's inverse IMPLAN activity sheet. For our analysis, this for loop code generates 116 total county IMPLAN activity sheets: 58 normal and 58 inverse.
+
+The second for loop fills out and generates the district IMPLAN activity sheets by iterating through \emph{usaspending}, as well as the \emph{va\_benefits\_districtsagg} and \emph{district\_emp} dataframes. Due to limitations with IMPLAN's software, the district inverse models are not run; hence, the district inverse activity sheets are not needed. This for loop follows the exact same process as the first portion of the county for loop -- the only difference being that the data is aggregated by district, and that different variable names are utilized (i.e., \emph{temp2}). This for loop does denote a separate output folder to store all the district IMPLAN activity sheets, and names each Excel file based on ``CA-'' followed by the district number. For our analysis, this for loop code generates 53 total district IMPLAN activity sheets.
+
+\hypertarget{implan}{%
+\section{Using IMPLAN}\label{implan}}
+
+At this point, the activity sheets for the desired local geographies have been generated and are ready to be run through IMPLAN. Note that the data for the statewide main analysis and statewide DOE analysis needs to be written to a file, and copied over into IMPLAN's activity sheet template, in order to run the statewide analysis. For more details on how to run these activity sheets through IMPLAN, refer to their \href{https://support.implan.com/hc/en-us/articles/360040713754-Using-the-Event-Template}{guide on how to use the activity sheets in their software}.
+
+\hypertarget{conclusion}{%
+\chapter{Conclusion/ Discussion}\label{conclusion}}
+
+From our analysis for this project, we found that national security contributes significantly to California's economy. The total impact appears similar to high profile sectors such as the agriculture and film industries. In 2019, the federal government invested at least \$47.0 billion and directly employed approximately 348,000 residents in the state. This resulted in \$181.2 billion in economic impact and supported over 792,000 full-time equivalent jobs in California.
+
+Our process for this project provided us with some lessons:
+
+\begin{itemize}
+\tightlist
+\item
+  FOIA data can be difficult to obtain, as it is dependent on how quickly and accurately a federal agency responds to your request. From our experience, we have received responses to our FOIA requests at least six months after our initial submission.However, data obtained from FOIAs (SmartPay) constituted 3.4\% of the nation's national security-related direct spending. Depending on your resources and priorities, choosing to omit this data would typically have minimal impacts on the overall estimates.
+\item
+  Manually obtaining and processing government spending data (such as USAspending) is time and labor intensive. In developing an automated way of making this more efficient, we found that there were not a lot of good resources on how to interact with APIs for the initial data grab. The APIs that exist do not have clear instructions, and it takes time to learn how to interact with them. Even in automating this process, the limitation of time and labor presents itself. As a caution, take ample time to understand the APIs to ensure the correct data is obtained, especially if branching out from the API used for this study.\\
+\item
+  Within the manually processing of government spending data, a particular pain point was the remediation of errors in the USAspending data. Contracts data may have had old, mistyped, or missing NAICS codes that required additional searching of previous crosswalks to properly allocate spending entries to the correct IMPLAN code. Additionally, the errors of missing or ``90'' congressional district values require diligence in approach to remediate that issue.
+\item
+  Processing this data in IMPLAN for the county and congressional district models can be time consuming, and approximate time will vary based on the number of counties and congressional districts being processed.
+\end{itemize}
+
+For researchers looking to perform this study on their own, we hope to offer some advice on the planning and timeline stages for such a project:
+
+\begin{itemize}
+\tightlist
+\item
+  If it is determined that FOIA data is wanted and/or needed for your study, file your requests many months in advance.
+\item
+  Running the code up to the aggregate function {[}REFERENCE TO METHOD SECTION{]} and looking at how many IMPLAN sectors have a spending amount should provide a good barometer for how long the IMPLAN processing will take for the statewide model. The California statewide model had 400 IMPLAN sectors and took roughly 20 minutes to run.
+\item
+  After running the for-loop code {[}REFERENCE TO METHOD SECTION{]} for generating localized IMPLAN activity sheets, note that the activity sheets for the multi-region inverse models will take significantly more time than the sheets for the normal models. Roughly speaking, a single inverse model takes a couple of hours to finish running, while a single region model should complete within half an hour.
+\end{itemize}
+
+The process guide for this study was created to be a useful tool for researchers to conduct similar economic impact studies. Through this document, we hope that additional quality studies continue to come about and assist in making government spending data more readily accessible and transparent. Furthermore, we hope to continue making process improvements in order to ensure that this study retains its functionality and capacity for future years.
+
+\hypertarget{next}{%
+\chapter{What's Next?}\label{next}}
+
+Looking past this process guide, our team is working to continue improving tasks that make up this project. Moving forward, here are some changes and modifications we hope to implement to improve the process outlined above:
+
+\begin{itemize}
+\tightlist
+\item
+  Making the entire process for this analysis applicable to multiple states. While our team has worked to do this by thoroughly developing our parameters file, we recognize that certain parts of this process are inevitably California-centric. For example, some of the data files used in this report (such as the \emph{dod\_county\_shares.xlsx} file) represent a fix only applicable to California. Our team will consider future process improvements on this point that can make the analysis process even more broadly applicable.
+\item
+  Being vigilant of more APIs so that more of the data analysis process can be automated. One of the biggest breakthroughs for this analysis has been developing a code to automate downloading data from USAspending.gov. However, most of the data sources used for this report (such as FedScope or DMDC) do not have clearly defined or available APIs. Our hope is that these websites will continue to develop ways that can make obtaining data easier, and that we will be able to document, code and share that process.
+\item
+  Automating the error checking portion of the code. Our current process of manually checking for errors across the USAspending data sources is time and labor intensive. Our team hopes to generate a more streamlined process that harnesses the power of code to lessen the amount of manual time and labor needed to remediate errors from USAspending.
+\item
+  Implementing small area estimation in our calculations for county and district apportionment of spending and employment data. Small area estimation provides a more accurate statistical basis for parsing out statewide numbers across smaller local geographies, such as counties and districts. Our team hopes to spend some time learning more about small area estimation in order to more robustly apportion data across counties and districts.
+\item
+  Keeping the process up to date with inevitable changes. Of particular concern are future updates to NAICS codes and state's congressional districts (due in 2022). These changes in code and geography will certainly affect the analysis, and it will be prudent to continue updating and developing our code and documentation to handle these changes.
+\end{itemize}
+
+Ultimately, we hope to develop a one size fits most method for obtaining and analyzing the impacts of federal spending within the United States.
+
+\hypertarget{license}{%
+\chapter{License}\label{license}}
+
+This ``California MEIS Process Guide'' is made available under the \href{http://opendatacommons.org/licenses/by/1.0/}{Open Data Commons Attribution License}. This means you are free to copy, distribute and use the database; to produce works from the database; to modify, transform and build upon the database as long as you attribute any public use of the database, or works produced from the database, in the manner specified in the license. For any use or redistribution of the database, or works produced from it, you must make clear to others the license of the database and keep intact any notices on the original database.
 
   \bibliography{literature.bib}
 

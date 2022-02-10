@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 5 Data Dictionary for Repository | California Military Economic Impact Study Process Guide</title>
+  <title>Section 8 What’s Next? | California Military Economic Impact Study Process Guide</title>
   <meta name="description" content="This GitBook explains the process used to develop the 2020 California Military Economic Impact Study." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 5 Data Dictionary for Repository | California Military Economic Impact Study Process Guide" />
+  <meta property="og:title" content="Section 8 What’s Next? | California Military Economic Impact Study Process Guide" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="bnpannell/MEIS_Documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 5 Data Dictionary for Repository | California Military Economic Impact Study Process Guide" />
+  <meta name="twitter:title" content="Section 8 What’s Next? | California Military Economic Impact Study Process Guide" />
   
   <meta name="twitter:description" content="This GitBook explains the process used to develop the 2020 California Military Economic Impact Study." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="setup.html"/>
-<link rel="next" href="methods.html"/>
+<link rel="prev" href="conclusion.html"/>
+<link rel="next" href="license.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -178,109 +178,26 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-dictionary-for-repository" class="section level1" number="5">
-<h1><span class="header-section-number">Section 5</span> Data Dictionary for Repository</h1>
-<p>This section details each file contained in the code repository and a summary of what it is used for in the project. For a more detailed explanation, please see the Methods section. ([LINK]).</p>
-<div id="meis_methodology-folder" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> MEIS_Methodology Folder</h2>
-<p>This is the main folder, containing all data in the repository.</p>
+<div id="next" class="section level1" number="8">
+<h1><span class="header-section-number">Section 8</span> What’s Next?</h1>
+<p>Looking past this process guide, our team is working to continue improving tasks that make up this project. Moving forward, here are some changes and modifications we hope to implement to improve the process outlined above:</p>
 <ul>
-<li><strong>.gitignore:</strong> Lists files that will be ignored when using Git to synchronize updates to repository.</li>
-<li><strong>DEPRECATED_run_analysis_master.R:</strong> This file contains the script used for the 2021 project. This process guide pertains mostly to the code running from this master script.</li>
-<li><strong>LICENSE:</strong> Contains licensing information for the repository.</li>
-<li><strong>MEIS_Methodology.Rproj:</strong> The R project package used to open the repository in an IDE such as RStudio.</li>
-<li><strong>parameters.R:</strong> Contains all variables that may require user editing for code to run properly. Use of this file is documented in the README.md file.</li>
-<li><strong>README.md:</strong> The first file you should read in any repository. Contains basic installation instructions, information on the repository contents and guidance on how to use the repository.</li>
-<li><strong>.Rhistory:</strong> Contains the history of commands given by a user in an R Session.</li>
-<li><strong>run_analysis_master.R:</strong> The newest version of the code to process the Federal data. Currently, this file is in development for the upcoming 2022 version of this project and is not yet ready for use.</li>
+<li>Making the entire process for this analysis applicable to multiple states. While our team has worked to do this by thoroughly developing our parameters file, we recognize that certain parts of this process are inevitably California-centric. For example, some of the data files used in this report (such as the <em>dod_county_shares.xlsx</em> file) represent a fix only applicable to California. Our team will consider future process improvements on this point that can make the analysis process even more broadly applicable.</li>
+<li>Being vigilant of more APIs so that more of the data analysis process can be automated. One of the biggest breakthroughs for this analysis has been developing a code to automate downloading data from USAspending.gov. However, most of the data sources used for this report (such as FedScope or DMDC) do not have clearly defined or available APIs. Our hope is that these websites will continue to develop ways that can make obtaining data easier, and that we will be able to document, code and share that process.</li>
+<li>Automating the error checking portion of the code. Our current process of manually checking for errors across the USAspending data sources is time and labor intensive. Our team hopes to generate a more streamlined process that harnesses the power of code to lessen the amount of manual time and labor needed to remediate errors from USAspending.</li>
+<li>Implementing small area estimation in our calculations for county and district apportionment of spending and employment data. Small area estimation provides a more accurate statistical basis for parsing out statewide numbers across smaller local geographies, such as counties and districts. Our team hopes to spend some time learning more about small area estimation in order to more robustly apportion data across counties and districts.</li>
+<li>Keeping the process up to date with inevitable changes. Of particular concern are future updates to NAICS codes and state’s congressional districts (due in 2022). These changes in code and geography will certainly affect the analysis, and it will be prudent to continue updating and developing our code and documentation to handle these changes.</li>
 </ul>
-</div>
-<div id="data-folder" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Data Folder</h2>
-<p>This is a folder located in the main folder and is designed to hold data for this project.</p>
-<div id="raw-folder" class="section level3" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> Raw Folder</h3>
-<p>This folder is within the data folder and contains all raw data provided to the user. The purpose of the raw data is to simplify data processing.</p>
-<ul>
-<li><strong>2007_to_2017_NAICS.xlsx:</strong> This file contains the crosswalk used in the master script to update 2007 NAICS codes to 2017 NAICS codes. This file is a new development to automate error checking when linking IMPLAN codes to NAICS codes. It is NOT used in the Deprecated master script.</li>
-<li><strong>2012_2017_NAICS_to_IMPLAN.xlsx:</strong> This file contains the 2017 NAICS to IMPLAN crosswalk as well as several additions. 2012 NAICS to IMPLAN values were appended to this file in addition to several 2002 NAICS codes that required updating. This file is a new development to automate error checking when linking IMPLAN codes to NAICS codes. It is NOT used in the Deprecated master script.</li>
-<li><strong>business_type_to_implan546_crosswalk.csv:</strong> This file was created to serve as a crosswalk between grant recipient business types and their corresponding IMPLAN codes. This file was made by manually looking up each business type and entering its corresponding IMPLAN code value.</li>
-<li><strong>CALIFORNIA_emp.csv:</strong> This file was created to hold employment numbers for selected federal agencies for the state of California. It serves as an example of how to fill out the <strong>“TEMPLATE_emp.csv”</strong> file and to allow for a repeat of the 2021 study.<br />
-</li>
-<li><strong>contract_recipient_to_district_crosswalk.xlsx:</strong> This file was created to serve as an aid to error checking by assigning a district value to certain contract data that lacked them. Creation of this file involved looking up addresses of businesses with no given district in order to correctly assign a district to the data. It is NOT used in the Deprecated master script.<br />
-</li>
-<li><strong>dod_county_shares.xlsx:</strong> This file contains the percentage of each county by land area that is assigned to each California congressional district as of 2021.</li>
-<li><strong>TEMPLATE_emp.csv:</strong> This file is a template for users to fill out employment numbers for their region of interest. Follow instructions in ([link to MODIFY DATA section]) to make use of this file.</li>
-</ul>
-<div id="blank_sheets_for_r-folder" class="section level4" number="5.2.1.1">
-<h4><span class="header-section-number">5.2.1.1</span> Blank_Sheets_for_R Folder</h4>
-<p>This folder contains the template spreadsheets used in the final preparation of data for entry into IMPLAN. For more information on the difference between the event types that comprise IMPLAN’s activity sheet, refer to <a href="https://support.implan.com/hc/en-us/articles/360019638713-Explaining-Event-Types">IMPLAN’s article on this topic</a>.</p>
-<ul>
-<li><strong>CommodityOutput2.xlsx:</strong> An Excel sheet that goes into the IMPLAN activity sheets as the second worksheet tab.</li>
-<li><strong>LaborIncomeChange3.xlsx:</strong> An Excel sheet that goes into the IMPLAN activity sheets as the third worksheet tab.</li>
-<li><strong>HouseholdSpendingChange4.xlsx:</strong> An Excel sheet that goes into the IMPLAN activity sheets as the fourth worksheet tab. This Excel worksheet tab is what will hold the Veteran Affairs direct payments data.</li>
-<li><strong>IndustrySpendingPattern5.xlsx:</strong> An Excel sheet that goes into the IMPLAN activity sheets as the fifth worksheet tab.</li>
-<li><strong>InstitutionSpendingPattern6.xlsx:</strong> An Excel sheet that goes into the IMPLAN activity sheets as the sixth worksheet tab.</li>
-</ul>
-</div>
-<div id="deprecated-folder" class="section level4" number="5.2.1.2">
-<h4><span class="header-section-number">5.2.1.2</span> deprecated Folder</h4>
-<p>This folder contains raw data only used by the Deprecated master script.</p>
-<ul>
-<li><strong>2017_implan_online_naics_to_implan546.xlsx:</strong> This file contains the crosswalk for linking 2017 IMPLAN codes to NAICS code.</li>
-<li><strong>2021_employment_totals.xlsx:</strong> This file contains the necessary employment data broken out by each California county and congressional district</li>
-</ul>
-</div>
-</div>
-<div id="temp-folder" class="section level3" number="5.2.2">
-<h3><span class="header-section-number">5.2.2</span> Temp Folder</h3>
-<p>This folder is also located within the data folder and holds all files that are made while either master script is running. These files are deleted when the final output is finished being processed.</p>
-<ul>
-<li><strong>placeholderfortemp.txt:</strong> This file prevents Github from deleting the temp folder, as it is empty by default.</li>
-</ul>
-</div>
-</div>
-<div id="output-folder" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Output Folder</h2>
-<p>This folder is located within the main folder and holds all the final output files needed by IMPLAN to complete this project. New output files will get created and placed into this folder as scripts are run.</p>
-<ul>
-<li><strong>placeholder.txt:</strong> This file prevents Github from deleting the output folder, as it is empty by default.</li>
-</ul>
-</div>
-<div id="src-folder" class="section level2" number="5.4">
-<h2><span class="header-section-number">5.4</span> SRC Folder</h2>
-<p>This folder within the main folder contains all script files needed by the master script when it is running. Scripts in this folder may be used by either of the master scripts contained in this repository. DO NOT MODIFY ANY OF THESE FILES.</p>
-<ul>
-<li><strong>obtain_usaspending.R:</strong> An R script that calls to USAspending’s Application Programming Interface (API) in order to obtain the USAspending data desired based on the criteria defined in this R script.</li>
-<li><strong>filter_usaspending.R:</strong> An R script that defines a function for further filtering the USAspending data that was obtained from the API call.</li>
-<li><strong>error_check_and_weight_contracts.R:</strong> An R script that works through multiple steps and lines of code to fix errors in the USAspending contracts data based on the type of error.</li>
-<li><strong>error_check_grants.R:</strong> An R script that works through multiple steps and lines of code to fix errors in the USAspending grants data.</li>
-<li><strong>concatenate_usaspending.R:</strong> An R script that defines a function for concatenating a certain group of CSVs based on the file name pattern (in this case, the cleaned USAspending data) while ignoring the Veteran Affairs benefits CSV file.</li>
-<li><strong>split_usaspending.R:</strong> An R script that defines a function for splitting out Department of Energy spending from the main USAspending data prior to aggregating the spending.</li>
-<li><strong>natsec_doe.R:</strong> An R script that filters down the Department of Energy spending to national security-related offices and gives a national security adjustment proportion to use for Energy employment and SmartPay calculations.</li>
-<li><strong>aggregate_usaspending.R:</strong> An R script that defines a function for aggregating a defined dataframe’s spending figure (in this study, federal_action_obligation from USAspending data) by IMPLAN code.</li>
-<li><strong>generate_employment_dataframe.R:</strong> An R script that calculates employment data and generates two dataframes, one for the county and one for the district IMPLAN sheets.</li>
-</ul>
-<div id="deprecated-folder-1" class="section level3" number="5.4.1">
-<h3><span class="header-section-number">5.4.1</span> Deprecated Folder</h3>
-<p>This folder within the src folder contains all scripts that are only used by the DEPRECATED_run_analysis_master.R script. DO NOT MODIFY ANY OF THESE FILES.</p>
-<ul>
-<li><strong>DEPRECATED_error_check_contracts.R:</strong> An R script of hardcode fixes to errors in the contracts data in order to get an IMPLAN code for every entry.</li>
-<li><strong>DEPRECATED_error_check_grants.R:</strong> An R script of hardcode fixes to errors in the grants data in order to get an IMPLAN code for every entry.<br />
-</li>
-<li><strong>DEPRECATED_create_implan_sheets.R:</strong> An R script that runs two for loop codes that help to generate the IMPLAN activity sheets for every California county and congressional district.</li>
-</ul>
+<p>Ultimately, we hope to develop a one size fits most method for obtaining and analyzing the impacts of federal spending within the United States.</p>
 
-</div>
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="setup.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="conclusion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="license.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -311,7 +228,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/bnpannell/MEIS_Documentation/data_dictionary.Rmd",
+"link": "https://github.com/bnpannell/MEIS_Documentation/whats_next.Rmd",
 "text": "Edit"
 },
 "history": {

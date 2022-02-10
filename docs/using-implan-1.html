@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 2 Software Requirements | California Military Economic Impact Study Process Guide</title>
+  <title>Section 7 Using IMPLAN | California Military Economic Impact Study Process Guide</title>
   <meta name="description" content="This GitBook explains the process used to develop the 2020 California Military Economic Impact Study." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 2 Software Requirements | California Military Economic Impact Study Process Guide" />
+  <meta property="og:title" content="Section 7 Using IMPLAN | California Military Economic Impact Study Process Guide" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="bnpannell/MEIS_Documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 2 Software Requirements | California Military Economic Impact Study Process Guide" />
+  <meta name="twitter:title" content="Section 7 Using IMPLAN | California Military Economic Impact Study Process Guide" />
   
   <meta name="twitter:description" content="This GitBook explains the process used to develop the 2020 California Military Economic Impact Study." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="data-requirements.html"/>
+<link rel="prev" href="methods.html"/>
+<link rel="next" href="conclusion-discussion.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -154,9 +154,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="methods.html"><a href="methods.html#using-implan"><i class="fa fa-check"></i><b>6.4</b> Using IMPLAN</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="conclusion-discussion.html"><a href="conclusion-discussion.html"><i class="fa fa-check"></i><b>7</b> Conclusion/ Discussion</a></li>
-<li class="chapter" data-level="8" data-path="whats-next.html"><a href="whats-next.html"><i class="fa fa-check"></i><b>8</b> What’s Next?</a></li>
-<li class="chapter" data-level="9" data-path="license.html"><a href="license.html"><i class="fa fa-check"></i><b>9</b> License</a></li>
+<li class="chapter" data-level="7" data-path="using-implan-1.html"><a href="using-implan-1.html"><i class="fa fa-check"></i><b>7</b> Using IMPLAN</a></li>
+<li class="chapter" data-level="8" data-path="conclusion-discussion.html"><a href="conclusion-discussion.html"><i class="fa fa-check"></i><b>8</b> Conclusion/ Discussion</a></li>
+<li class="chapter" data-level="9" data-path="whats-next.html"><a href="whats-next.html"><i class="fa fa-check"></i><b>9</b> What’s Next?</a></li>
+<li class="chapter" data-level="10" data-path="license.html"><a href="license.html"><i class="fa fa-check"></i><b>10</b> License</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -178,37 +179,24 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="software-requirements" class="section level1" number="2">
-<h1><span class="header-section-number">Section 2</span> Software Requirements</h1>
-<p>To recreate or replicate this study, specialized software is needed to obtain and process federal data. All the software that was used in this process is free and available online. It is best practice to use the most updated software version.</p>
-<ol style="list-style-type: decimal">
-<li>The R coding language from <a href="https://cloud.r-project.org/">cloud.r-project.org</a>. This language is used to obtain and process data.</li>
-<li>RStudio Desktop from <a href="https://rstudio.com/products/rstudio/download/#download">rstudio.com</a>. RStudio is the integrated development environment (IDE) used to run R scripts and develop code.</li>
-<li>Git from <a href="https://git-scm.com/downloads">git-scm.com</a>. A comprehensive guide to installing Git is available at <a href="https://happygitwithr.com/install-git.html">happygitwithr.com</a>. Git allows version control of edits across a multi-person team of researchers.</li>
-<li>If a GitHub account is needed, one can sign up and register at <a href="https://github.com/" class="uri">https://github.com/</a>. Individual free plans are available, as well as <a href="https://help.github.com/en/articles/applying-for-an-educator-or-researcher-discount">free upgrades</a> for qualifying academic purposes. GitHub is used to develop and host this project.</li>
-</ol>
-<div id="download-necessary-r-libraries" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Download Necessary R Libraries</h2>
-<p>To make sure the code can be run, please ensure that the following R library packages are installed. If you are using RStudio, packages can be installed from CRAN using the ‘install.packages(“<strong>[package_name]</strong>”)’ command in the terminal.</p>
+<div id="using-implan-1" class="section level1" number="7">
+<h1><span class="header-section-number">Section 7</span> Using IMPLAN</h1>
+<p>Once the IMPLAN activity sheets for your desired geographies have been produced, it is time to upload them into IMPLAN and allow the tool to run its analysis. When you log into IMPLAN, the homepage should display 3 boxes to navigate through: Regions, Impacts, and Projects.</p>
 <ul>
-<li><strong>dplyr:</strong> Used for manipulating dataframes. <span class="citation">(<a href="references.html#ref-dplyr1" role="doc-biblioref">Wickham et al. 2021</a>)</span></li>
-<li><strong>httr:</strong> Used for working with URLs and HTTP. <span class="citation">(<a href="references.html#ref-httr2" role="doc-biblioref">Wickham 2020</a>)</span></li>
-<li><strong>jsonlite:</strong> Used for interacting with JSON data and web APIs. <span class="citation">(<a href="references.html#ref-json3" role="doc-biblioref">Ooms 2014</a>)</span></li>
-<li><strong>openxlsx:</strong> Used for reading, writing and editing xlsx files. <span class="citation">(<a href="references.html#ref-openxlsx4" role="doc-biblioref">Schauberger and Walker 2021</a>)</span></li>
-<li><strong>readxl:</strong> Used for legacy excel .xls files. <span class="citation">(<a href="references.html#ref-readxl5" role="doc-biblioref">Wickham and Bryan 2019</a>)</span></li>
-<li><strong>tidyverse:</strong> A collection of R packages optimized for data science. <span class="citation">(<a href="references.html#ref-tidyverse6" role="doc-biblioref">Wickham et al. 2019</a>)</span></li>
+<li><p><strong>Regions:</strong> Click on Regions to begin your analysis. This should open up a map of the United States. Select the region of interest for the analysis (state, county, congressional district, etc.) and give this project a name. After saving the project, move on to the Impacts tab.</p></li>
+<li><p><strong>Impacts:</strong> In the Impacts tab, look for the button to the right of the “Save” button. Click on that, and select “upload event template.” From there, find the activity sheet for the geography of interest and select that for upload. Ensure that “Industry Change” and “Household Spending” can be selected, and choose those for uploading into IMPLAN. The data points for the respective IMPLAN sectors should then auto-populate on IMPLAN. If your analysis is including SmartPay spending data, be sure to manually add that in as type “Institutional Spending,” specification 11001, and the value amount. Choose to select all events (the button to the left of the “Save” button) and drag them over to the geography’s model on the right side of the IMPLAN screen. After that, select to run the model at the bottom right. Depending on how big the model, IMPLAN will take time to generate the results. Once the model is done with its analysis, click on the “View Results” button.</p></li>
+<li><p><strong>Results:</strong> Once on this page, one can sort through the results of the IMPLAN activity sheet that was ran for a geography and download CSV files of a variety of data points. For this report, the data points of interest included economic indicators like output and full-time employment (FTE) opportunities, both generally and across industries, as well as government and tax revenue generated.</p></li>
 </ul>
-<p>The next section details data necessary to complete this project as well as how to obtain it.</p>
+<p>As part of our final step before developing and writing the reports, our team created code to combine all the input and output data from IMPLAN into one big spreadsheet which was used to create the graphs and charts seen throughout the reports.</p>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="data-requirements.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="methods.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conclusion-discussion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -239,7 +227,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/bnpannell/MEIS_Documentation/requirements.Rmd",
+"link": "https://github.com/bnpannell/MEIS_Documentation/using_IMPLAN.Rmd",
 "text": "Edit"
 },
 "history": {
