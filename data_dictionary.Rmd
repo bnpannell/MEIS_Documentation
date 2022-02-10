@@ -25,7 +25,7 @@ This folder is within the data folder and contains all raw data provided to the 
 - **CALIFORNIA_emp.csv:** This file was created to hold employment numbers for selected federal agencies for the state of California. It serves as an example of how to fill out the **“TEMPLATE_emp.csv”** file and to allow for a repeat of the 2021 study.    
 - **contract_recipient_to_district_crosswalk.xlsx:** This file was created to serve as an aid to error checking by assigning a district value to certain contract data that lacked them. Creation of this file involved looking up addresses of businesses with no given district in order to correctly assign a district to the data. It is NOT used in the Deprecated master script.  
 - **dod_county_shares.xlsx:** This file contains the percentage of each county by land area that is assigned to each California congressional district as of 2021. 
-- **TEMPLATE_emp.csv:** This file is a template for users to fill out employment numbers for their region of interest. Follow instructions in ([link to MODIFY DATA section]) to make use of this file.
+- **TEMPLATE_emp.csv:** This file is a template for users to fill out employment numbers for their region of interest. Follow instructions in Section **\@ref(modify-data)** to make use of this file.
 
 #### Blank_Sheets_for_R Folder {#sheets}
 This folder contains the template spreadsheets used in the final preparation of data for entry into IMPLAN. For more information on the difference between the event types that comprise IMPLAN’s activity sheet, refer to [IMPLAN’s article on this topic](https://support.implan.com/hc/en-us/articles/360019638713-Explaining-Event-Types).
@@ -36,13 +36,13 @@ This folder contains the template spreadsheets used in the final preparation of 
 - **IndustrySpendingPattern5.xlsx:** An Excel sheet that goes into the IMPLAN activity sheets as the fifth worksheet tab. 
 - **InstitutionSpendingPattern6.xlsx:** An Excel sheet that goes into the IMPLAN activity sheets as the sixth worksheet tab. 
 
-#### deprecated Folder {deprecated-raw}
+#### Deprecated Folder {#deprecated-raw}
 This folder contains raw data only used by the Deprecated master script. 
 
 - **2017_implan_online_naics_to_implan546.xlsx:** This file contains the crosswalk for linking 2017 IMPLAN codes to NAICS code. 
-- **2021_employment_totals.xlsx:** This file contains the necessary employment data broken out by each California county and congressional district
+- **2021_employment_totals.xlsx:** This file contains the necessary employment data broken out by each California county and congressional district.
 
-### Temp Folder {temp-folder}
+### Temp Folder {#temp-folder}
 This folder is also located within the data folder and holds all files that are made while either master script is running. These files are deleted when the final output is finished being processed. 
 
 - **placeholderfortemp.txt:** This file prevents Github from deleting the temp folder, as it is empty by default.
@@ -65,7 +65,7 @@ This folder within the main folder contains all script files needed by the maste
 - **aggregate_usaspending.R:** An R script that defines a function for aggregating a defined dataframe’s spending figure (in this study, federal_action_obligation from USAspending data) by IMPLAN code. 
 - **generate_employment_dataframe.R:** An R script that calculates employment data and generates two dataframes, one for the county and one for the district IMPLAN sheets. 
 
-### Deprecated Folder {deprecated-script}
+### Deprecated Folder {#deprecated-script}
 This folder within the src folder contains all scripts that are only used by the DEPRECATED_run_analysis_master.R script. DO NOT MODIFY ANY OF THESE FILES. 
 
 - **DEPRECATED_error_check_contracts.R:** An R script of hardcode fixes to errors in the contracts data in order to get an IMPLAN code for every entry. 

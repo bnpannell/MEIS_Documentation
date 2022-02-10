@@ -121,12 +121,12 @@ div.csl-indent {
 <li class="chapter" data-level="5.2" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#data-folder"><i class="fa fa-check"></i><b>5.2</b> Data Folder</a>
 <ul>
 <li class="chapter" data-level="5.2.1" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#raw-folder"><i class="fa fa-check"></i><b>5.2.1</b> Raw Folder</a></li>
-<li class="chapter" data-level="5.2.2" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#temp-folder-temp-folder"><i class="fa fa-check"></i><b>5.2.2</b> Temp Folder {temp-folder}</a></li>
+<li class="chapter" data-level="5.2.2" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#temp-folder"><i class="fa fa-check"></i><b>5.2.2</b> Temp Folder</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#output-folder"><i class="fa fa-check"></i><b>5.3</b> Output Folder</a></li>
 <li class="chapter" data-level="5.4" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#src-folder"><i class="fa fa-check"></i><b>5.4</b> SRC Folder</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#deprecated-folder-deprecated-script"><i class="fa fa-check"></i><b>5.4.1</b> Deprecated Folder {deprecated-script}</a></li>
+<li class="chapter" data-level="5.4.1" data-path="data-dictionary-for-repository.html"><a href="data-dictionary-for-repository.html#deprecated-script"><i class="fa fa-check"></i><b>5.4.1</b> Deprecated Folder</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>6</b> Methods</a>
@@ -209,7 +209,7 @@ div.csl-indent {
 <li><strong>contract_recipient_to_district_crosswalk.xlsx:</strong> This file was created to serve as an aid to error checking by assigning a district value to certain contract data that lacked them. Creation of this file involved looking up addresses of businesses with no given district in order to correctly assign a district to the data. It is NOT used in the Deprecated master script.<br />
 </li>
 <li><strong>dod_county_shares.xlsx:</strong> This file contains the percentage of each county by land area that is assigned to each California congressional district as of 2021.</li>
-<li><strong>TEMPLATE_emp.csv:</strong> This file is a template for users to fill out employment numbers for their region of interest. Follow instructions in ([link to MODIFY DATA section]) to make use of this file.</li>
+<li><strong>TEMPLATE_emp.csv:</strong> This file is a template for users to fill out employment numbers for their region of interest. Follow instructions in Section <strong><a href="setup.html#modify-data">4.2</a></strong> to make use of this file.</li>
 </ul>
 <div id="sheets" class="section level4" number="5.2.1.1">
 <h4><span class="header-section-number">5.2.1.1</span> Blank_Sheets_for_R Folder</h4>
@@ -222,17 +222,17 @@ div.csl-indent {
 <li><strong>InstitutionSpendingPattern6.xlsx:</strong> An Excel sheet that goes into the IMPLAN activity sheets as the sixth worksheet tab.</li>
 </ul>
 </div>
-<div id="deprecated-folder-deprecated-raw" class="section level4" number="5.2.1.2">
-<h4><span class="header-section-number">5.2.1.2</span> deprecated Folder {deprecated-raw}</h4>
+<div id="deprecated-raw" class="section level4" number="5.2.1.2">
+<h4><span class="header-section-number">5.2.1.2</span> Deprecated Folder</h4>
 <p>This folder contains raw data only used by the Deprecated master script.</p>
 <ul>
 <li><strong>2017_implan_online_naics_to_implan546.xlsx:</strong> This file contains the crosswalk for linking 2017 IMPLAN codes to NAICS code.</li>
-<li><strong>2021_employment_totals.xlsx:</strong> This file contains the necessary employment data broken out by each California county and congressional district</li>
+<li><strong>2021_employment_totals.xlsx:</strong> This file contains the necessary employment data broken out by each California county and congressional district.</li>
 </ul>
 </div>
 </div>
-<div id="temp-folder-temp-folder" class="section level3" number="5.2.2">
-<h3><span class="header-section-number">5.2.2</span> Temp Folder {temp-folder}</h3>
+<div id="temp-folder" class="section level3" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Temp Folder</h3>
 <p>This folder is also located within the data folder and holds all files that are made while either master script is running. These files are deleted when the final output is finished being processed.</p>
 <ul>
 <li><strong>placeholderfortemp.txt:</strong> This file prevents Github from deleting the temp folder, as it is empty by default.</li>
@@ -260,8 +260,8 @@ div.csl-indent {
 <li><strong>aggregate_usaspending.R:</strong> An R script that defines a function for aggregating a defined dataframe’s spending figure (in this study, federal_action_obligation from USAspending data) by IMPLAN code.</li>
 <li><strong>generate_employment_dataframe.R:</strong> An R script that calculates employment data and generates two dataframes, one for the county and one for the district IMPLAN sheets.</li>
 </ul>
-<div id="deprecated-folder-deprecated-script" class="section level3" number="5.4.1">
-<h3><span class="header-section-number">5.4.1</span> Deprecated Folder {deprecated-script}</h3>
+<div id="deprecated-script" class="section level3" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Deprecated Folder</h3>
 <p>This folder within the src folder contains all scripts that are only used by the DEPRECATED_run_analysis_master.R script. DO NOT MODIFY ANY OF THESE FILES.</p>
 <ul>
 <li><strong>DEPRECATED_error_check_contracts.R:</strong> An R script of hardcode fixes to errors in the contracts data in order to get an IMPLAN code for every entry.</li>
