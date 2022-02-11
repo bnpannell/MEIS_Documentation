@@ -6,7 +6,7 @@
 ]{book}
 \title{California Military Economic Impact Study Process Guide}
 \author{Britnee Pannell \& Sumeet Bedi}
-\date{Last Updated: 2022-02-10}
+\date{Last Updated: 2022-02-11}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -207,7 +207,7 @@ Filter the data by agency type (``Cabinet Level'') and location (``United States
 \end{enumerate}
 
 \hypertarget{usa}{%
-\section{USASpending Data}\label{usa}}
+\section{USAspending Data}\label{usa}}
 
 This report utilizes \href{https://www.usaspending.gov/}{USAspending.gov} for the majority of its direct spending data. The spending types obtained from this site include contracts and grants for the U.S. Departments of Defense, Homeland Security, Veterans Affairs, and Energy, as well as direct payments from Veterans Affairs (i.e., veterans' benefits). Data is available from the \href{https://www.usaspending.gov/download_center/custom_award_data}{``Custom Awards Data''} webpage. Data is available by award type (contracts, grants, and/or direct payments), awarding agency (Defense, Homeland Security, Veterans Affairs, Energy), recipient location (United States for ``Country,'' and, optionally, a specific state), action date range (a fiscal year ``FY 20XX''), and file format. This download process must be done once per agency.
 
@@ -492,7 +492,7 @@ This section contains the variables needed in order to generate user specific em
 \hypertarget{usa-api}{%
 \subsubsection{USAspending.gov API Variables}\label{usa-api}}
 
-This section contains the variables needed to run the code to automate obtaining federal spending data from the USAspending.gov website API. Usaspending.gov provides \href{https://github.com/fedspendingtransparency/usaspending-api/blob/master/usaspending_api/api_contracts/contracts/v2/bulk_download/awards.md}{additional documentation on how the USAspending API runs and its variable requirements}.
+This section contains the variables needed to run the code to automate obtaining federal spending data from the USAspending.gov website API. USAspending.gov provides \href{https://github.com/fedspendingtransparency/usaspending-api/blob/master/usaspending_api/api_contracts/contracts/v2/bulk_download/awards.md}{additional documentation on how the USAspending API runs and its variable requirements}.
 
 \begin{itemize}
 \tightlist
@@ -708,7 +708,7 @@ The second for loop fills out and generates the district IMPLAN activity sheets 
 At this point, the activity sheets for the desired local geographies have been generated and are ready to be run through IMPLAN. Note that the data for the statewide main analysis and statewide DOE analysis needs to be written to a file, and copied over into IMPLAN's activity sheet template, in order to run the statewide analysis. For more details on how to run these activity sheets through IMPLAN, refer to their \href{https://support.implan.com/hc/en-us/articles/360040713754-Using-the-Event-Template}{guide on how to use the activity sheets in their software}.
 
 \hypertarget{conclusion}{%
-\chapter{Conclusion/ Discussion}\label{conclusion}}
+\chapter{Conclusion/Discussion}\label{conclusion}}
 
 From our analysis for this project, we found that national security contributes significantly to California's economy. The total impact appears similar to high profile sectors such as the agriculture and film industries. In 2019, the federal government invested at least \$47.0 billion and directly employed approximately 348,000 residents in the state. This resulted in \$181.2 billion in economic impact and supported over 792,000 full-time equivalent jobs in California.
 

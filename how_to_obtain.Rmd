@@ -31,7 +31,7 @@ Filter the data by agency type (“Cabinet Level”) and location (“United Sta
 3. On the linked page, scroll to the “DoD Personnel, Workforce Reports & Publications” text, and click on its hyperlink. This opens up a new window to access the military employment data.  
 4. Scroll to the section “Military and Civilian Personnel by Service/Agency by State/Country (Updated Quarterly)” and download the Excel file for September of the desired year. 
 
-## USASpending Data {#usa}
+## USAspending Data {#usa}
 This report utilizes [USAspending.gov](https://www.usaspending.gov/) for the majority of its direct spending data. The spending types obtained from this site include contracts and grants for the U.S. Departments of Defense, Homeland Security, Veterans Affairs, and Energy, as well as direct payments from Veterans Affairs (i.e., veterans’ benefits).  Data is available from the [“Custom Awards Data”](https://www.usaspending.gov/download_center/custom_award_data) webpage. Data is available by award type (contracts, grants, and/or direct payments), awarding agency (Defense, Homeland Security, Veterans Affairs, Energy), recipient location (United States for “Country,” and, optionally, a specific state), action date range (a fiscal year “FY 20XX”), and file format. This download process must be done once per agency. 
 
 Code that automates this entire process has been developed to capture all USAspending data at once. Please refer to Section **\@ref(processing-data)** in the Methods section for more details. 

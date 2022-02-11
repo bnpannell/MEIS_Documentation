@@ -25,7 +25,7 @@ This section contains the variables needed in order to generate user specific em
 - **fed_prop:** This variable represents the file name of the document that stores information on federally owned buildings. The square footage of these buildings is used to estimate the proportion of federal employees in each agency per county and congressional district in the study area.  
 
 #### USAspending.gov API Variables {#usa-api}
-This section contains the variables needed to run the code to automate obtaining federal spending data from the USAspending.gov website API. Usaspending.gov provides [additional documentation on how the USAspending API runs and its variable requirements](https://github.com/fedspendingtransparency/usaspending-api/blob/master/usaspending_api/api_contracts/contracts/v2/bulk_download/awards.md). 
+This section contains the variables needed to run the code to automate obtaining federal spending data from the USAspending.gov website API. USAspending.gov provides [additional documentation on how the USAspending API runs and its variable requirements](https://github.com/fedspendingtransparency/usaspending-api/blob/master/usaspending_api/api_contracts/contracts/v2/bulk_download/awards.md). 
 
 - **agency_type:** This variable represents whether the agency or agencies in question awarded the contract money or funded it. USAspending.gov provides [more information on agency type definitions](https://fedspendingtransparency.github.io/whitepapers/types/). 
 - **agency_tier:** This variable represents which tier the agency resides in. An example of a top tier agency is the Department of Energy, and subtier of a top tier agency is the Missile Defense Agency (a subtier of the Department of Energy). 
