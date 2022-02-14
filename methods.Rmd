@@ -5,7 +5,7 @@ The following section details how to use the data and R code provided as well as
 This file allows for alterations in the data analysis that one may want to customize for their study, such as geography of interest, year, agencies of interest, and so forth. If any changes to the code are necessary in order to customize the output results, the only place users will need to make changes is in this parameters file. The default entries in the parameters file are based on the 2021 California study to provide an example of how to enter the desired variables. 
 
 ### Sections of the Parameters File {#sections-p}
-Each section of the parameters file defines variables used in a specific portion of the code. This section details the purpose of these variables and their intended use. The README.md file ([LINK]) contains correct syntax to use when making alterations to avoid breaking the code’s functionality. Please refer to both sections as needed while altering the parameters file. 
+Each section of the parameters file defines variables used in a specific portion of the code. This section details the purpose of these variables and their intended use. The [README.md file](https://github.com/CAStateLibrary/meis_methodology/blob/master/README.md) contains correct syntax to use when making alterations to avoid breaking the code’s functionality. Please refer to both sections as needed while altering the parameters file. 
 
 #### General Global Variables {#global}
 This section contains general variables pertaining to the year the study takes place and the state the study focuses on. 
