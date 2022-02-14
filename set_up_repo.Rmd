@@ -2,9 +2,9 @@
 The code repository is necessary to repeat the California study. It may also be used as a framework to produce estimates for other regions. These instructions assume GitHub will be used to obtain and manage a copy of the repository. 
 
 ## Obtain Repository {#get-repo}
-1. Using GitHub, navigate to the repository ([LINK TO REPO FOREVER HOME HERE]) and fork the repository to the user’s account. 
+1. Using GitHub, [navigate to the repository](https://github.com/CAStateLibrary/meis_methodology) and fork the repository to the user’s account. 
 2. Clone the repository to a new RStudio Project. 
-3. Open the ‘README.md’ file ([LINK]) 
+3. [Open the ‘README.md’ file](https://github.com/CAStateLibrary/meis_methodology/blob/master/README.md).
 4. Fill out the parameters file with required specifications. The ‘README.md’ file contains general instructions, and Section **\@ref(review-p)** of the Methods section has more detailed explanations. 
 
 ## Modify Data Files {#modify-data}
